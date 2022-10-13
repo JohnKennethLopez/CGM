@@ -1,18 +1,16 @@
+
 <html>
     <head>
         <meta charset=" utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CGM</title>
-        <link rel="stylesheet" href="find.css">
-        <link rel="shortcut icon" type="image/png" href="icon.png">
+        <link rel="stylesheet" href="css/find.css">
+        <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        <script src="menu.js" defer></script>
-        <script src="nav.js" defer></script>
-        <script src="scroll.js" defer></script>
+        <script src="JavaScript/menu.js" defer></script>
+        <script src="JavaScript/nav.js" defer></script>
+        <script src="JavaScript/scroll.js" defer></script>
+        <script src="JavaScript/Gmap.js" defer></script>
     </head>
     <body>
         <section id="bg-image">
@@ -28,23 +26,97 @@
                 <li><a href="CounMin.html">Council & Ministries</a></li>
                 <li><a href="program.html">Program</a></li>
                 <li><a href="event.html">Events</a></li>
-                <li><a href="prayer.html">Need Prayers?</a></li>
+                <li><a href="prayer.php">Need Prayers?</a></li>
                 <li><a href="MisSer.html">Missions & Services</a></li>
                 <li><a href="Give.html">Give</a></li>
             </ul>
             </div>
         
-                <h1 class="fchead">Find CGM Church </h1>
-                <h2 class="fchead">near to you</h2>
+                
+                    <div class="choose">
+                        <div class="top">
+                            <h1 class="findhead">Find CGM Chruch<br>Near To You</h1>
+                            <p class="text">Let us not give up meeting together, as some are in the habit of doing, but let us encourge one another-and all the more as you see the Day approaching.</p>
+                            <p class="verse">Hebrews 10:25</p>
+                        </div>
+                        <div class="SelectChapter">
+                            <select name="cgmchapter" id="church">
+                                <option value="select" disabled selected>Choose a CGM Church</option>
+                                    <option id="main" value="CGM Las Piñas Main">CGM Las Piñas Main</option>
+                                    <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
+                                    <option id="balete" value="CGM Balete, Batangas">CGM Balete, Batangas</option>
+                                    <option value="CGM Bustos, Bulacan">CGM Bustos, Bulacan</option>
+                                    <option value="CGM Cabuyao, Laguna">CGM Cabuyao, Laguna</option>
+                                    <option value="CGM Candaba, Pampanga">CGM Candaba, Pampanga</option>
+                                    <option id="edsa" value="CGM EDSA Mandaluyong">CGM EDSA Mandaluyong</option>
+                                    <option value="CGM Gattaran, Cagayan">CGM Gattaran, Cagayan</option>
+                                    <option value="CGM Hinigaran, Negros">CGM Hinigaran, Negros</option>
+                                    <option class="tanauan" value="CGM Mabini, Tanauan">CGM Mabini, Tanauan</option>
+                                    <option value="CGM Mariveles, Bataan">CGM Mariveles, Bataan</option>
+                                    <option value="CGM Nasugbo, Batangas">CGM Nasugbo, Batangas</option>
+                                    <option value="CGM Navotas City">CGM Navotas City</option>
+                                    <option value="CGM Prieto Diaz, Sorsogon">CGM Prieto Diaz Sorsogon</option>
+                                    <option id="pulilan" value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>
+                                    <option value="CGM Sampaloc, Quezon">CGM Sampaloc, Quezon</option>
+                                    <option value="CGM San Pedro, Laguna">CGM San Pedro, Laguna</option>
+                                    <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
+                                    <option value="CGM Taguig City">CGM Taguig City</option>
+                                    <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
+                            </select>
+                        </div>
+                    </div>
         </section>
-        
+
+        <section id="google_map">
+            <div class="tanauan">
+                <div class="outer">
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            CGM Mabini Tanauan
+                        </h1>
+                        <p class="padd">
+                            012 Brgy. Mabini, Tanauan City, Batangas
+                        </p>
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            Sunday | 1st Service 9:00am-11:00am | 2nd service at Bagbag Area 3:00pm-5:00pm
+                        </p>
+                        <h3 class="h3cgm">
+                            Online Service :
+                        </h3>
+                        <div class="psched">
+                            <a href="https://www.facebook.com/edwinmoncayo81"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                        </div>
+                        <p class="psched">
+                            Sunday | 9:00am-11:00am | To watch the live stream just go to CGM Mabini Tanauan Facebook Page.
+                        </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4296.959604661916!2d121.11772050826217!3d14.058818325462532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6fb321148ee9%3A0x6bb27b83fe3fa56b!2sChurch%20of%20God&#39;s%20Miracles%20Mabini%20Tanauan%20Chapter!5e1!3m2!1sen!2sph!4v1665693942024!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57824.07506735483!2d121.02612018585205!3d14.013994872102785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6de22f39faf5%3A0x6970ce9d5fdeadbc!2sChurch%20Of%20God%C5%9B%20Miracles!5e1!3m2!1sen!2sph!4v1665694056850!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.8155137319616!2d121.01069839395186!3d14.436063075434395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d1de0f20117f%3A0xe5adc43eafd4b06e!2sChurch%20of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665694154854!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.4187822216086!2d120.86981591774259!3d14.912315200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339654e0b1980c43%3A0x193045d224cf992c!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698115489!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.8236003449283!2d121.04634831874382!3d14.585758000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83bd0286f0f%3A0x46f2a4fd36b42dad!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698199940!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </section>
+
         <section id="footer">
             <div class="foot1">
                 <h1 class="update">To keep updated<br>Follow us on:</h1>
                     <div class="socmed">
                             <div class="fbyt">
-                                <a href="https://www.facebook.com/CGMMain"><img class="footimg" src="fb.png"><p>Church of God's Miracles - Las Piñas Main</p></a>
-                                <a href="https://www.youtube.com/channel/UCmrFWaixqTWQLfHWfuEJcYA/featured"><img class="footimg" src="yt.png"><p>Church of God's Miracles OFFICIAL</p></a>
+                                <a href="https://www.facebook.com/CGMMain"><img class="footimg" src="css/image/fb.png"><p>Church of God's Miracles - Las Piñas Main</p></a>
+                                <a href="https://www.youtube.com/channel/UCmrFWaixqTWQLfHWfuEJcYA/featured"><img class="footimg" src="css/image/yt.png"><p>Church of God's Miracles OFFICIAL</p></a>
                     </div>
                 </div>
             </div>

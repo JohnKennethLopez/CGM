@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#admin {
+    background: url("image/gv2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 115vh;
+}
+.logo {
+    width: 150px;
+    height: 150px;
+}
+.CGMh1 {
+    padding: 2rem 0 1rem 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #353535;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.cgmadmin {
+    text-align: center;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 3px 3px 3px  rgba(0, 0, 0, 0.8);
+}
+.addash {
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-radius: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 1rem 2rem 1rem 2rem;
+    background: linear-gradient(145deg, #020049, #2427ff);
+    box-shadow:  1px 7px 4px black;
+}
+.inner {
+    border: 0 solid black;
+    border-radius: 30px;
+    background: #e6e6e6;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
+}
+p a {
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+.btn:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.btn {
+    text-align: center;
+    border: 0 solid black;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-top-width: 2px;
+    border-top-color: #020049;
+    border-radius: 0 0 5px 5px;
+    background: hsl(0 0% 0% / 0.8);
+}
+.btn:hover {
+    background: linear-gradient(145deg, #020049, #2427ff);
+}
+.logout{
+    position: relative;
+    padding: 5px 2rem 5px 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    left: 1rem;
+    top: 3rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.logout a {
+    text-decoration: none;
+    color: black;
+}
+.logout a:hover {
+    color: white;
+}
+.logout:hover {
+    background-color: transparent;
+    color: white;
+}
+.list {
+    position: relative;
+    top: 6rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+hr {
+    position: relative;
+    top: 4rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*ATTENDANCE LIST TABLE*/
+#Attendancelist {
+    background: url("./image/white.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.table::-webkit-scrollbar {
+    width: 10px;
+}
+.table::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+}
+.table::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #020049, #2427ff);
+    border-radius: 5px;
+}
+.table::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #2427ff, #020049);
+}
+.table {
+    overflow-y: scroll;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;
+    top: 2rem;
+}
+.tablecont {
+    position: relative;
+    top: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    border-collapse: collapse;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.7);
+}
+.DE {
+    font-size: 10px;
+}
+td {
+    text-align: left;
+    padding: 12px 15px;
+    background: #dfdfdf;
+    font-weight: bolder;
+}
+th {
+    position: sticky;
+    top: 0;
+    letter-spacing: 2px;
+    text-align: left;
+    padding: 12px 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.50);
+    background: #020049;
+    color: white;
+}
+tbody tr {
+    border-bottom: 1px solid #020049;
+}
+tbody tr:last-of-type {
+    border-bottom: 2px solid #020049;
+}
+.edit {
+    background: #020049;
+    color: white;
+    padding: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #8a0000;
+    border-bottom-width: 2px;
+}
+.edit:hover {
+    background: #8a0000;
+    border-bottom-color: #020049;
+}
+.del {
+    background: #020049;
+    color: white;
+    padding: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #8a0000;
+    border-bottom-width: 2px;
+}
+.del:hover {
+    background: #8a0000;
+    border-bottom-color: #020049;
+}
+@media only screen and (max-height: 900px) {
+    #admin {
+        height: 140%;
+    }
+}
+@media only screen and (max-height: 770px) {
+    #admin {
+        height: 169%;
+    }
+}

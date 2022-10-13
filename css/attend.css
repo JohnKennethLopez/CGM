@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#admin {
+    background: url("image/gv2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+}
+.logo {
+    width: 150px;
+    height: 150px;
+}
+.CGMh1 {
+    padding: 2rem 0 1rem 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #353535;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.cgmadmin {
+    text-align: center;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 3px 3px 3px  rgba(0, 0, 0, 0.8);
+}
+.addash {
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-radius: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 1rem 2rem 1rem 2rem;
+    background: linear-gradient(145deg, #020049, #2427ff);
+    box-shadow:  1px 7px 4px black;
+}
+.inner {
+    border: 0 solid black;
+    border-radius: 30px;
+    background: #e6e6e6;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
+}
+p a {
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+.btn:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.btn {
+    text-align: center;
+    border: 0 solid black;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-top-width: 2px;
+    border-top-color: #020049;
+    border-radius: 0 0 5px 5px;
+    background: hsl(0 0% 0% / 0.8);
+}
+.btn:hover {
+    background: linear-gradient(145deg, #020049, #2427ff);
+}
+.logout{
+    position: relative;
+    padding: 5px 2rem 5px 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    left: 1rem;
+    top: 3rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.logout a {
+    text-decoration: none;
+    color: black;
+}
+.logout a:hover {
+    color: white;
+}
+.logout:hover {
+    background-color: transparent;
+    color: white;
+}
+.attend {
+    position: relative;
+    top: 6rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+hr {
+    position: relative;
+    top: 4rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*ATTENDANCE FORM*/
+#attendance {
+    background: url("./image/white.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.attendform {
+    position: relative;
+    top: 5rem;
+    background: linear-gradient(145deg, #020049, #2427ff);
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-radius: 0 0 20px 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem;
+    box-shadow: 5px 30px 40px rgba(0, 0, 0, 1);
+}
+.formIN {
+    border: 0 solid black;
+    border-radius: 0 0 20px 20px;
+    background: #e6e6e6;
+    padding: 2rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.inputform {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0 10px 0;
+}
+.inputform input {
+    height: 45px;
+    width: 100%;
+}
+.inputform input:focus {
+    border-color: #020049;
+}
+.inputform select {
+    height: 45px;
+    width: 100%;
+}
+.inputform select:focus {
+    border-color: #020049;
+}
+.inputform textarea {
+    height: 60px;
+    width: 100%;
+}
+.inputform textarea:focus {
+    border-color: #020049;
+}
+
+.attendform input {
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+.attendform textarea {
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+.attendform select {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+#send {
+    width: 48%;
+    height: 45px;
+    margin: 40px 0 5px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2427ff, #020049);
+    color: white;
+}
+#send:hover {
+    background: linear-gradient(180deg, #020049, #2427ff);
+}
+
+@media only screen and (max-height: 900px) {
+    #admin {
+        height: 140%;
+    }
+}
+@media only screen and (max-height: 770px) {
+    #admin {
+        height: 169%;
+    }
+}
