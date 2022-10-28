@@ -6,7 +6,6 @@
         <title>CGM</title>
         <link rel="stylesheet" href="css/find.css">
         <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
         <script src="JavaScript/menu.js" defer></script>
         <script src="JavaScript/nav.js" defer></script>
         <script src="JavaScript/scroll.js" defer></script>
@@ -25,7 +24,7 @@
                 <li class="focus"><a href="">Find a Church</a></li>
                 <li><a href="CounMin.html">Council & Ministries</a></li>
                 <li><a href="program.html">Program</a></li>
-                <li><a href="event.html">Events</a></li>
+                <li><a href="event.php">Events</a></li>
                 <li><a href="prayer.php">Need Prayers?</a></li>
                 <li><a href="MisSer.html">Missions & Services</a></li>
                 <li><a href="Give.html">Give</a></li>
@@ -36,27 +35,27 @@
                     <div class="choose">
                         <div class="top">
                             <h1 class="findhead">Find CGM Chruch<br>Near To You</h1>
-                            <p class="text">Let us not give up meeting together, as some are in the habit of doing, but let us encourge one another-and all the more as you see the Day approaching.</p>
-                            <p class="verse">Hebrews 10:25</p>
+                            <p class="text">"Let us not give up meeting together, as some are in the habit of doing, but let us encourge one another-and all the more as you see the Day approaching."</p>
+                            <p class="verse">-Hebrews 10:25</p>
                         </div>
                         <div class="SelectChapter">
-                            <select name="cgmchapter" id="church">
+                            <select name="cgmchapter" onchange="showGoogleMap()" id="church">
                                 <option value="select" disabled selected>Choose a CGM Church</option>
-                                    <option id="main" value="CGM Las Piñas Main">CGM Las Piñas Main</option>
+                                    <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
-                                    <option id="balete" value="CGM Balete, Batangas">CGM Balete, Batangas</option>
+                                    <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
                                     <option value="CGM Bustos, Bulacan">CGM Bustos, Bulacan</option>
                                     <option value="CGM Cabuyao, Laguna">CGM Cabuyao, Laguna</option>
                                     <option value="CGM Candaba, Pampanga">CGM Candaba, Pampanga</option>
-                                    <option id="edsa" value="CGM EDSA Mandaluyong">CGM EDSA Mandaluyong</option>
+                                    <option value="CGM EDSA Mandaluyong">CGM EDSA Mandaluyong</option>
                                     <option value="CGM Gattaran, Cagayan">CGM Gattaran, Cagayan</option>
                                     <option value="CGM Hinigaran, Negros">CGM Hinigaran, Negros</option>
-                                    <option class="tanauan" value="CGM Mabini, Tanauan">CGM Mabini, Tanauan</option>
+                                    <option value="Tanauan">CGM Mabini, Tanauan</option>
                                     <option value="CGM Mariveles, Bataan">CGM Mariveles, Bataan</option>
                                     <option value="CGM Nasugbo, Batangas">CGM Nasugbo, Batangas</option>
                                     <option value="CGM Navotas City">CGM Navotas City</option>
                                     <option value="CGM Prieto Diaz, Sorsogon">CGM Prieto Diaz Sorsogon</option>
-                                    <option id="pulilan" value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>
+                                    <option value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>
                                     <option value="CGM Sampaloc, Quezon">CGM Sampaloc, Quezon</option>
                                     <option value="CGM San Pedro, Laguna">CGM San Pedro, Laguna</option>
                                     <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
@@ -67,22 +66,21 @@
                     </div>
         </section>
 
-        <section id="google_map">
-            <div class="tanauan">
+        <section id="googlemap">
+            <div id="tanauan">
                 <div class="outer">
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Mabini Tanauan
                         </h1>
-                        <p class="padd">
-                            012 Brgy. Mabini, Tanauan City, Batangas
-                        </p>
+                        <hr /><br>
                         <h3 class="h3cgm">
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday | 1st Service 9:00am-11:00am | 2nd service at Bagbag Area 3:00pm-5:00pm
+                            Sunday |<span> 1st Service 9:00am-11:00am</span> | <span>2nd service at Bagbag Area 3:00pm-5:00pm</span>
                         </p>
+                        <hr /><br>
                         <h3 class="h3cgm">
                             Online Service :
                         </h3>
@@ -90,7 +88,11 @@
                             <a href="https://www.facebook.com/edwinmoncayo81"><img class="fblink" src="css/image/fb.png"> Facebook</a>
                         </div>
                         <p class="psched">
-                            Sunday | 9:00am-11:00am | To watch the live stream just go to CGM Mabini Tanauan Facebook Page.
+                            Sunday |<span> 9:00am-11:00am</span> | To watch the live stream just go to CGM Mabini Tanauan Facebook Page.
+                        </p>
+                        <hr /><br>
+                        <p class="padd">
+                            012 Brgy. Mabini, Tanauan City, Batangas
                         </p>
                     </div>
                 </div>
@@ -99,14 +101,131 @@
                 </div>
             </div>
             
+            <div id="balete">
+                <div class="outer">
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            CGM Balete
+                        </h1>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            Sunday |<span> 1st Service 7:30am-10:30am</span> | <span>2nd to 5th Sunday, Afternoon Service at Brgy. Looc, Brgy. Malabanan, Brgy. Solis 2:00pm-4:00pm</span>
+                        </p>
+                        <hr /><br>
+                        <p class="padd">
+                            Brgy. Palsara, Balete, Batangas
+                        </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57824.07506735483!2d121.02612018585205!3d14.013994872102785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6de22f39faf5%3A0x6970ce9d5fdeadbc!2sChurch%20Of%20God%C5%9B%20Miracles!5e1!3m2!1sen!2sph!4v1665694056850!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57824.07506735483!2d121.02612018585205!3d14.013994872102785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6de22f39faf5%3A0x6970ce9d5fdeadbc!2sChurch%20Of%20God%C5%9B%20Miracles!5e1!3m2!1sen!2sph!4v1665694056850!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="main">
+                <div class="outer">
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            CGM Las Piñas Main
+                        </h1>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            Sunday | <span>1st Service 7:00am-8:30am</span> | <span> service 9:00am-10:30am</span> | <span>3rd Service 4:00pm-5:30pm</span>
+                        </p>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Online Service :
+                        </h3>
+                        <div class="psched">
+                            <a href="https://www.facebook.com/CGMMain"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                        </div>
+                        <p class="psched">
+                            Sunday | <span>1st Service 7:00am-8:30am</span> | <span> service 9:00am-10:30am</span> | <span>3rd Service 4:00pm-5:30pm</span> | To watch the live stream just go to CGM Las Piñas Main Facebook Page.
+                        </p>
+                        <hr /><br>
+                        <p class="padd">
+                            Lot 1-A Liderato Hernandez St., 1750 Metrocor, Southgate Homes Almanza Uno, Las Pinas, Cavite
+                        </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.8155137319616!2d121.01069839395186!3d14.436063075434395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d1de0f20117f%3A0xe5adc43eafd4b06e!2sChurch%20of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665694154854!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.8155137319616!2d121.01069839395186!3d14.436063075434395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d1de0f20117f%3A0xe5adc43eafd4b06e!2sChurch%20of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665694154854!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="pulilan">
+                <div class="outer">
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            CGM Pulilan
+                        </h1>
+                        
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            Sunday Service | <span>8:00am-10:30am</span> | <span>Friday Miracle Night 7:00pm-8:30pm</span>
+                        </p>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Online Service :
+                        </h3>
+                        <div class="psched">
+                            <a href="https://www.facebook.com/CGM-Pulilan-107443997478145"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                        </div>
+                        <p class="psched">
+                            Sunday | <span>8:00am-10:30am</span> | <span>Friday Miracle Night 7:00pm-8:30pm</span> | To watch the live stream just go to CGM pulilan Facebook.
+                        </p>
+                        <hr /><br>  
+                        <p class="padd">
+                            072 Dimas St. Lumbac Pulilan, Bulacan
+                        </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.4187822216086!2d120.86981591774259!3d14.912315200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339654e0b1980c43%3A0x193045d224cf992c!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698115489!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.4187822216086!2d120.86981591774259!3d14.912315200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339654e0b1980c43%3A0x193045d224cf992c!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698115489!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.8236003449283!2d121.04634831874382!3d14.585758000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83bd0286f0f%3A0x46f2a4fd36b42dad!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698199940!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="edsa">
+                <div class="outer">
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            CGM Edsa
+                        </h1>
+                        
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            Sunday Service | <span>10:00am-11:30am </span> | 
+                        </p>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Online Service :
+                        </h3>
+                        <div class="psched">
+                            <a href="https://www.facebook.com/cgmedsa07"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                        </div>
+                        <p class="psched">
+                            Sunday | <span>10:00am-11:30am </span>| To watch the live stream just go to CGM Edsa Facebook.
+                        </p>
+                        <hr /><br>
+                        <p class="padd">
+                            #304 SHAW BOULEVARD (DUMLAO SPORTS CENTER) PLEASANT HILLS, MANDALUYONG CITY
+                        </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.8236003449283!2d121.04634831874382!3d14.585758000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83bd0286f0f%3A0x46f2a4fd36b42dad!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698199940!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
 
         </section>
 

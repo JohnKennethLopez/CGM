@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 27, 2022 at 04:19 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: Oct 25, 2022 at 06:32 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,7 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `img`, `cgmchapter`, `announceTitle`, `caption`) VALUES
-(0, 'upload/build.jpg', 'CGM San Pedro, Laguna', 'Building More CGM Chapters', 'Nag sisimula nang itayo ang panibagong Chapter ng CGM.');
+(4, 'upload/giving.jpg', 'CGM Navotas City', 'giving', 'Help others without any reason and give without the expectation of receiving anything in return.');
 
 -- --------------------------------------------------------
 
@@ -105,27 +105,6 @@ INSERT INTO `attendance` (`id`, `cgmchapter`, `date`, `fullname`, `gender`, `con
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home`
---
-
-CREATE TABLE `home` (
-  `id` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `pic` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `home`
---
-
-INSERT INTO `home` (`id`, `image`, `img`, `pic`, `photo`) VALUES
-(1, 'upload/tinig1.jpg', 'upload/', 'upload/', 'upload/');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `prayer`
 --
 
@@ -166,9 +145,8 @@ CREATE TABLE `upcoming` (
 --
 
 INSERT INTO `upcoming` (`id`, `title`, `image`, `des`, `date`, `time`, `loc`) VALUES
-(6, 'ISANG TINIG', ' upload/tinig.jpg', 'At sinabi ng Dios kay Moises, AKO YAONG AKO NGA; at kaniyang sinabi, Ganito ang sasabihin mo sa mga anak ni Israel, Sinugo ako sa inyo ni AKO NGA.\r\n-EXODO 3:14', '2022-10-29', '09:00', 'CGM Las pinan Main'),
-(7, 'YOUTH ANNUAL ONLINE', ' upload/', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main'),
-(8, 'YOUTH ANNUAL ONLINE', ' upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main');
+(11, 'Isang TInig', 'upload/tinig.jpg', 'God said to Moses, “I am who I am.[a] This is what you are to say to the Israelites: ‘I am has sent me to you.', '2022-10-29', '09:00', 'CGM Las pinas main'),
+(14, 'Youth Annual Online', 'upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-30', '08:00', 'CGM Las pinas main');
 
 --
 -- Indexes for dumped tables
@@ -181,15 +159,15 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `attendance`
+-- Indexes for table `announcement`
 --
-ALTER TABLE `attendance`
+ALTER TABLE `announcement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home`
+-- Indexes for table `attendance`
 --
-ALTER TABLE `home`
+ALTER TABLE `attendance`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -215,16 +193,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `announcement`
+--
+ALTER TABLE `announcement`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `home`
---
-ALTER TABLE `home`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prayer`
@@ -236,7 +214,7 @@ ALTER TABLE `prayer`
 -- AUTO_INCREMENT for table `upcoming`
 --
 ALTER TABLE `upcoming`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

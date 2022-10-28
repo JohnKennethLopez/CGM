@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 27, 2022 at 04:19 AM
+-- Generation Time: Oct 19, 2022 at 12:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -39,27 +39,6 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `announcement`
---
-
-CREATE TABLE `announcement` (
-  `id` int(11) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `cgmchapter` varchar(255) NOT NULL,
-  `announceTitle` varchar(255) NOT NULL,
-  `caption` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `announcement`
---
-
-INSERT INTO `announcement` (`id`, `img`, `cgmchapter`, `announceTitle`, `caption`) VALUES
-(0, 'upload/build.jpg', 'CGM San Pedro, Laguna', 'Building More CGM Chapters', 'Nag sisimula nang itayo ang panibagong Chapter ng CGM.');
 
 -- --------------------------------------------------------
 
@@ -101,27 +80,6 @@ INSERT INTO `attendance` (`id`, `cgmchapter`, `date`, `fullname`, `gender`, `con
 (18, 'CGM Sta. Rosa, Laguna', '2022/10/12', 'avczxvxbyhfg', 'Female', '12343256', '23', 'asdfvikghjmngbthytxdf'),
 (19, 'CGM Sampaloc, Quezon', '2022/10/12', 'asdasdas', 'Female', 'dasdasdasd', '12', 'asdasdasd'),
 (20, 'CGM Sta. Rosa, Laguna', '2022/10/12', 'qxdbryhjtjn', 'Female', 'q1232', '123312', 'adzxzxc');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `home`
---
-
-CREATE TABLE `home` (
-  `id` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `pic` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `home`
---
-
-INSERT INTO `home` (`id`, `image`, `img`, `pic`, `photo`) VALUES
-(1, 'upload/tinig1.jpg', 'upload/', 'upload/', 'upload/');
 
 -- --------------------------------------------------------
 
@@ -187,12 +145,6 @@ ALTER TABLE `attendance`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home`
---
-ALTER TABLE `home`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `prayer`
 --
 ALTER TABLE `prayer`
@@ -219,12 +171,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `attendance`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `home`
---
-ALTER TABLE `home`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prayer`

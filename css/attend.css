@@ -8,7 +8,9 @@
     background: url("image/gv2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 8rem;
 }
 .logo {
     width: 150px;
@@ -219,15 +221,4 @@ hr {
 }
 #send:hover {
     background: linear-gradient(180deg, #020049, #2427ff);
-}
-
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 140%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #admin {
-        height: 169%;
-    }
 }

@@ -13,8 +13,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
-
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
 }
 .nav {
     position: fixed;
@@ -333,6 +334,8 @@ ul li a {
 @media only screen and (max-width: 420px) {
     #bg-image {
         height: auto;
+        min-height: 100vh;
+        padding-bottom: 8rem;
     }
     .lg {
         display: block;

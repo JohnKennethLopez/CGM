@@ -8,7 +8,9 @@
     background: url("image/gv2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 115vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 7rem;
 }
 .logo {
     width: 150px;
@@ -117,7 +119,9 @@ hr {
     background: url("./image/white.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
 }
 .table::-webkit-scrollbar {
     width: 10px;
@@ -201,14 +205,4 @@ tbody tr:last-of-type {
 .del:hover {
     background: #8a0000;
     border-bottom-color: #020049;
-}
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 140%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #admin {
-        height: 169%;
-    }
 }

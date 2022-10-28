@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -106,68 +109,67 @@ ul li a {
 }
 /*Select a chapter*/
 .findhead {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
-    letter-spacing: 5px;
+    font-family: 'Carter One', cursive;
+    font-size: 35px;
+    letter-spacing: 10px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+    text-shadow: 3px 6px 6px rgba(0, 0, 0, 0.7);
     
 }
 .text {
-    font-size: 15px;
+    font-size: 19px;
     padding-bottom: 5px;
-    font-family: 'Josefin Sans', sans-serif;
-    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
-    font-weight: 900;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
     margin-left: 10%;
     margin-right: 10%;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
 }
 .verse {
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Chakra Petch', sans-serif;
     padding-bottom: 3rem;
+    letter-spacing: 5px;
     font-weight: 900;
-    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
 }
 .top {
     border: 0px solid black;
-    background: #e6e6e6;
-    border-radius: 0 0 30px 30px;
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
+    background: transparent;
+    border-radius: 0 0 20px 20px;
+    color: white;
 }
 .choose {
     position: relative;
     top: 10rem;
     text-align: center;
     border: 0 solid black;
-    background: linear-gradient(145deg, #020049, #2427ff);
+    background: hsl(0 0% 0% / 0.8);
     width: 700px;
     padding: 2rem;
-    border-radius: 0 0 40px 40px;
-    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 4px 20px 20px rgba(0, 0, 0, 0.8);
     margin-left: 50%;
     transform: translateX(-50%);
 }
 .SelectChapter {
     border: 0px solid black;
-    background: #e6e6e6;
+    background: transparent;
     width: 350px;
     padding: 1rem;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 10px 10px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
 Select {
     position: relative;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 3px;
+    font-weight: 900;
     color: black;
     text-align: center;
     border-color: black;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Silkscreen', cursive;
     padding: 11px 5px 5px 0;
     outline: none;
     border-radius: 5px;
@@ -182,27 +184,44 @@ select::-webkit-scrollbar-track {
     border-radius: 5px;
 }
 select::-webkit-scrollbar-thumb {
-    background: #020049;
+    background: hsl(0 0% 0% / 0.8);
     border-radius: 5px;
 }
 select::-webkit-scrollbar-thumb:hover {
-    background: #2427ff;
+    background: hsl(0 0% 0% / 0.5);
 }
 /*Google Map of the selected chapter*/
+#tanauan {
+    display: none;
+}
+#balete {
+    display: none;
+}
+#main {
+    display: none;
+}
+#pulilan {
+    display: none;
+}
+#edsa {
+    display: none;
+}
 .outer {
-    border: 1px solid black;
+    border: 0px solid black;
     padding: 2rem;
     background: linear-gradient(145deg, #020049, #2427ff);
     width: 700px;
     margin-left: 50%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     transform: translateX(-50%);
-    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 .inner {
-    border: 1px solid black;
+    border: 0px solid black;
     padding: 2rem;
     background: #e6e6e6;
-    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
 }
 
 .h1cgm {
@@ -237,6 +256,10 @@ select::-webkit-scrollbar-thumb:hover {
 .psched a {
     text-decoration: none;
     color: black;
+}
+span {
+    color: red;
+    font-size: 18px;
 }
 
 /*Footer*/
@@ -362,7 +385,7 @@ select::-webkit-scrollbar-thumb:hover {
         display: block;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -372,7 +395,7 @@ select::-webkit-scrollbar-thumb:hover {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -447,7 +470,7 @@ select::-webkit-scrollbar-thumb:hover {
         display: block;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -457,7 +480,7 @@ select::-webkit-scrollbar-thumb:hover {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -497,6 +520,66 @@ select::-webkit-scrollbar-thumb:hover {
     .copyright a{
         font-size: 12px;
     }
+    /*Select a chapter*/
+    .findhead {
+        font-size: 20px;
+    }
+    .text {
+        font-size: 15px;
+        padding-bottom: 5px;
+        font-family: 'Dancing Script', cursive;
+        font-weight: bolder;
+        margin-left: 10%;
+        margin-right: 10%;
+        letter-spacing: 2px;
+    }
+    .verse {
+        font-size: 11px;
+        font-family: 'Chakra Petch', sans-serif;
+        padding-bottom: 3rem;
+        letter-spacing: 5px;
+        font-weight: 900;
+    }
+    .top {
+        border: 0px solid black;
+        border-radius: 0 0 10px 10px;
+    }
+    .choose {
+        width: 350px;
+    }
+    .SelectChapter {
+        position: relative;
+        top: 1rem;
+        border-radius: 0 0 0 0;
+        width: 300px;
+    }
+    Select {
+        position: relative;
+        font-size: 10px;
+        letter-spacing: 3px;
+        font-weight: 900;
+        color: black;
+        text-align: center;
+        border-color: black;
+        font-family: 'Silkscreen', cursive;
+        padding: 11px 5px 5px 0;
+        outline: none;
+        border-radius: 5px;
+        border: 0 solid black;
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.8);
+    }
+    /*Google Map of the selected chapter*/
+    .outer {
+        width: 350px;
+    }
+    .psched {
+        font-size: 12px;
+    }
+    .padd {
+        font-size: 15px;
+    }
+    
+
     /*Footer*/
     .foot1 {
         padding-top: 1rem;
