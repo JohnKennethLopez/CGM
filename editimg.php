@@ -64,8 +64,13 @@ if(!isset($_SESSION["username"]))
                     <h1 class="h1up">HOME PICTURES:</h1>
                 <div class="loob">
                     <div class="iisang">
+<<<<<<< HEAD
                         <label for="image">Add Image:</label>
                         <input type="file"  name="img" ><img src="<?php echo $img; ?>" alt="" width="500px">
+=======
+                        <label for="image">Add Images:</label>
+                        <input type="file"  name="image" ><img src="<?php echo $img; ?>" alt="" width="500px">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
             
                     <div class="button">

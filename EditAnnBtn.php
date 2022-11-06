@@ -69,7 +69,11 @@ if(!isset($_SESSION["username"]))
                 <h1>ANNOUNCEMENT:</h1>
                 <div class="loob">
                 <div class="iisang">
+<<<<<<< HEAD
                         <label for="img">Add Image:</label>
+=======
+                        <label for="img">Add Images:</label>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                         <input type="file" name="img"><img src="<?php echo $img; ?>" alt="" width="100px">
                     </div>
                     <div class="isang">

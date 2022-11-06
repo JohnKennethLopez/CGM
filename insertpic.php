@@ -3,7 +3,30 @@ session_start();
     $con = mysqli_connect('localhost','root','','cgm');    
 
     if(isset($_POST['submitpic'])){
+<<<<<<< HEAD
     
+=======
+        $image = $_FILES['image'];
+        print_r($_FILES['image']);
+        $img_loc = $_FILES['image']['tmp_name'];
+        $img_name = $_FILES['image']['name'];
+        $img_des ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+
+        $image = $_FILES['img'];
+        print_r($_FILES['img']);
+        $img_loc = $_FILES['img']['tmp_name'];
+        $img_name = $_FILES['img']['name'];
+        $img ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+
+        $image = $_FILES['pic'];
+        print_r($_FILES['pic']);
+        $img_loc = $_FILES['pic']['tmp_name'];
+        $img_name = $_FILES['pic']['name'];
+        $pic ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 
         $image = $_FILES['photo'];
         print_r($_FILES['photo']);
@@ -14,9 +37,13 @@ session_start();
 
         
 
+<<<<<<< HEAD
         
 
         $query = "INSERT INTO home4 (`photo`) VALUES ('$photo')";
+=======
+        $query = "INSERT INTO home (`image`, `img`, `pic`, `photo`) VALUES (' $img_des', '$img', '$pic', '$photo')";
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
         $query_run = mysqli_query($con,$query);
     
         if ($query_run){
@@ -37,9 +64,16 @@ session_start();
 </head>
 <body>
     <form method="POST" enctype="multipart/form-data">
+<<<<<<< HEAD
 
         <input type="file" name="photo">
     
+=======
+        <input type="file" name="image">
+        <input type="file" name="img">
+        <input type="file" name="pic">
+        <input type="file" name="photo">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
         <input type="submit" name="submitpic" value="POST">
     </form>
 </body>

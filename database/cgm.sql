@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
 -- Generation Time: Oct 28, 2022 at 11:03 AM
+=======
+-- Generation Time: Oct 27, 2022 at 04:19 AM
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -59,8 +63,12 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `img`, `cgmchapter`, `announceTitle`, `caption`) VALUES
+<<<<<<< HEAD
 (0, 'upload/build.jpg', 'CGM San Pedro, Laguna', 'Building More CGM Chapters', 'Nag sisimula nang itayo ang panibagong Chapter ng CGM.'),
 (0, 'upload/giving.jpg', 'CGM Taguig City', 'Sample', 'asdafdfsdaf');
+=======
+(0, 'upload/build.jpg', 'CGM San Pedro, Laguna', 'Building More CGM Chapters', 'Nag sisimula nang itayo ang panibagong Chapter ng CGM.');
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 
 -- --------------------------------------------------------
 
@@ -122,7 +130,11 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`id`, `image`, `img`, `pic`, `photo`) VALUES
+<<<<<<< HEAD
 (6, 'upload/tinig1.jpg', 'upload/online.jpg', 'upload/img3.jpg', 'upload/img5.jpg');
+=======
+(1, 'upload/tinig1.jpg', 'upload/', 'upload/', 'upload/');
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 
 -- --------------------------------------------------------
 
@@ -168,7 +180,11 @@ CREATE TABLE `upcoming` (
 
 INSERT INTO `upcoming` (`id`, `title`, `image`, `des`, `date`, `time`, `loc`) VALUES
 (6, 'ISANG TINIG', ' upload/tinig.jpg', 'At sinabi ng Dios kay Moises, AKO YAONG AKO NGA; at kaniyang sinabi, Ganito ang sasabihin mo sa mga anak ni Israel, Sinugo ako sa inyo ni AKO NGA.\r\n-EXODO 3:14', '2022-10-29', '09:00', 'CGM Las pinan Main'),
+<<<<<<< HEAD
 (7, 'YOUTH ANNUAL ONLINE', 'upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main'),
+=======
+(7, 'YOUTH ANNUAL ONLINE', ' upload/', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main'),
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 (8, 'YOUTH ANNUAL ONLINE', ' upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main');
 
 --
@@ -225,7 +241,11 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 
 --
 -- AUTO_INCREMENT for table `prayer`

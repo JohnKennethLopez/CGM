@@ -28,7 +28,30 @@ if(!isset($_SESSION["username"]))
 
 
     if(isset($_POST['submitevent'])){
+<<<<<<< HEAD
         
+=======
+        $image = $_FILES['image'];
+        print_r($_FILES['image']);
+        $img_loc = $_FILES['image']['tmp_name'];
+        $img_name = $_FILES['image']['name'];
+        $img_des ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+
+        $image = $_FILES['img'];
+        print_r($_FILES['img']);
+        $img_loc = $_FILES['img']['tmp_name'];
+        $img_name = $_FILES['img']['name'];
+        $img ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+
+        $image = $_FILES['pic'];
+        print_r($_FILES['pic']);
+        $img_loc = $_FILES['pic']['tmp_name'];
+        $img_name = $_FILES['pic']['name'];
+        $pic ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 
         $image = $_FILES['photo'];
         print_r($_FILES['photo']);
@@ -38,7 +61,11 @@ if(!isset($_SESSION["username"]))
         move_uploaded_file($img_loc,'upload/'.$img_name);
 
 
+<<<<<<< HEAD
         $query = "UPDATE home SET photo='$photo' where id=$id";
+=======
+        $query = "UPDATE home SET image='$img_des', img='$img', pic='$pic', photo='$photo' where id=$id";
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -66,8 +93,13 @@ if(!isset($_SESSION["username"]))
                     <h1 class="h1up">HOME PICTURES:</h1>
                 <div class="loob">
                     <div class="iisang">
+<<<<<<< HEAD
                         <label for="image">Add Image:</label>
                         <input type="file"  name="photo" ><img src="<?php echo $photo; ?>" alt="" width="500px">
+=======
+                        <label for="image">Add Images:</label>
+                        <input type="file"  name="image" ><img src="<?php echo $photo; ?>" alt="" width="500px">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
             
                     <div class="button">

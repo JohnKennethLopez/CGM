@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Silkscreen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 * {
     margin: 0;
     padding: 0;
@@ -123,7 +126,11 @@ ul li a {
 .text {
     font-size: 19px;
     padding-bottom: 5px;
+<<<<<<< HEAD
     font-family: 'Kaushan Script', cursive;
+=======
+    font-family: 'Dancing Script', cursive;
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     font-weight: bolder;
     margin-left: 10%;
     margin-right: 10%;
@@ -194,6 +201,7 @@ select::-webkit-scrollbar-thumb:hover {
     background: hsl(0 0% 0% / 0.5);
 }
 /*Google Map of the selected chapter*/
+<<<<<<< HEAD
 #googlemap {
     background: url("image/wwww.jpg");
     background-size:cover;
@@ -202,6 +210,8 @@ select::-webkit-scrollbar-thumb:hover {
     height: auto;
     min-height: 0;
 }
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 #tanauan {
     display: none;
 }
@@ -218,14 +228,22 @@ select::-webkit-scrollbar-thumb:hover {
     display: none;
 }
 .outer {
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     border: 0px solid black;
     padding: 2rem;
     background: linear-gradient(145deg, #020049, #2427ff);
     width: 700px;
     margin-left: 50%;
+<<<<<<< HEAD
     top: 2rem;
     margin-bottom: 4rem;
+=======
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     transform: translateX(-50%);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }

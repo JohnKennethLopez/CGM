@@ -48,6 +48,7 @@ if(!isset($_SESSION["username"]))
                     <h1 class="h1up">UPCOMING EVENT:</h1>
                 <div class="loob">
                     <div class="iisang">
+<<<<<<< HEAD
                         <div class="container">
                             <div class="wrapper">
                                 <div class="upimg">
@@ -72,14 +73,23 @@ if(!isset($_SESSION["username"]))
                             <p onclick="defaultbtnactive()" id="custom-btn">Choose a File</p>
                             
                         </div>
+=======
+                        <label for="image">Add Images:</label>
+                        <input type="file" name="image">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
                     <div class="isang">
                         <label for="title">Event Title:</label>
                         <input type="text" name="title" placeholder="Enter the Event Title">
                     </div>
                     <div class="isang">
+<<<<<<< HEAD
                         <label for="loc">Add Location:</label>
                         <input type="text" name="loc" placeholder="Add Location">
+=======
+                        <label for="des">Add Description:</label>
+                        <textarea name="des" id="descrip" placeholder="Add Description"></textarea>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
                     <div class="isang">
                         <label for="date">Insert Date:</label>
@@ -90,8 +100,13 @@ if(!isset($_SESSION["username"]))
                         <input type="time" name="time">
                     </div>
                     <div class="isang">
+<<<<<<< HEAD
                         <label for="des">Add Description:</label>
                         <textarea name="des" id="descrip" placeholder="Add Description"></textarea>
+=======
+                        <label for="loc">Add Location:</label>
+                        <input type="text" name="loc" placeholder="Add Location">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
                         <input type="submit" name="submitevent" id="send" value="POST">
                 </div>
@@ -119,6 +134,7 @@ if(!isset($_SESSION["username"]))
                 <h1>ANNOUNCEMENT:</h1>
                 <div class="loob">
                 <div class="iisang">
+<<<<<<< HEAD
                         <div class="containerr">
                             <div class="wraper">
                                 <div class="upimgg">
@@ -143,6 +159,10 @@ if(!isset($_SESSION["username"]))
                             <p onclick="myFunction()" id="BTN">Choose a File</p>
                         </div>
                         
+=======
+                        <label for="img">Add Images:</label>
+                        <input type="file" name="img">
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                     </div>
                     <div class="isang">
                         <label for="church">CGM Chapter</label>

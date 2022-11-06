@@ -74,7 +74,11 @@ if(!isset($_SESSION["username"]))
                     <h1 class="h1up">UPCOMING EVENT:</h1>
                 <div class="loob">
                     <div class="iisang">
+<<<<<<< HEAD
                         <label for="image">Add Image:</label>
+=======
+                        <label for="image">Add Images:</label>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                         <input type="file"  name="image" ><img src="<?php echo $img_des; ?>" alt="" width="100px">
                     </div>
                     <div class="isang">

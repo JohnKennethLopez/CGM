@@ -78,7 +78,11 @@
     border-color: #020049;
 }
 .isang textarea {
+<<<<<<< HEAD
     height: 100px;
+=======
+    height: 60px;
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     width: 100%;
 }
 .isang textarea:focus {

@@ -230,8 +230,11 @@ ul li a {
 .caption {
     border: 1px solid black;
     font-weight: 900;
+<<<<<<< HEAD
     text-align: justify;
     padding: 10px;
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 }
 
 /*Footer*/
@@ -383,10 +386,13 @@ ul li a {
     #bg-image {
         height: auto;
         padding-bottom: 6rem;
+<<<<<<< HEAD
     }
     .homelg {
         width: 60px;
         height: 60px;
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     }
     .lg {
         display: block;

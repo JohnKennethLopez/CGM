@@ -15,7 +15,11 @@
     z-index: 1;
     height: auto;
     min-height: 100vh;
+<<<<<<< HEAD
     padding-bottom: 10rem;
+=======
+    padding-bottom: 5rem;
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 }
 .nav {
     position: fixed;
@@ -342,10 +346,13 @@ ul li a {
         height: auto;
         min-height: 100vh;
         padding-bottom: 8rem;
+<<<<<<< HEAD
     }
     .homelg {
         width: 60px;
         height: 60px;
+=======
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     }
     .lg {
         display: block;

@@ -12,14 +12,22 @@
     </head>
     <body>
         <section id="bg-image">
+<<<<<<< HEAD
             <div class="homelg">
                 <a href="CGM.php"><img class="lg" src="logo.png" alt=""></a>
             </div>
+=======
+            <a href="CGM.html"><img class="lg" src="logo.png" alt=""></a>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
             <div class="menu">
                 <div class="bur"></div>
             </div>
             <div class="nav" data-visible="false">
+<<<<<<< HEAD
                 <h1 class="logo"><a href="CGM.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
+=======
+                <h1 class="logo"><a href="CGM.html"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="findchurch.html">Find a Church</a></li>
@@ -35,7 +43,11 @@
 
             <div class="eventpic">
                 <div class="upco">
+<<<<<<< HEAD
                     <h1>EVENTS:</h1>
+=======
+                    <h1>UPCOMING EVENTS:</h1>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                 </div>
                 <div class="loob">
                 <?php
@@ -90,7 +102,11 @@
                                     <div class="picc">
                                             <img src="<?php echo $row['img']?>" alt="" width="300px">
                                         <div class="infoo">
+<<<<<<< HEAD
                                             <h1 class="chap"><?php echo $row['cgmchapter']?></h1><br><hr />
+=======
+                                            <h1 class="chap"><?php echo $row['cgmchapter']?></h1><br>
+>>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                                             <h1 class="ann"><?php echo $row['announceTitle']?></h1><br>
                                             <p class="caption"><?php echo $row['caption']?></p>
                                         </div>
