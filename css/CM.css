@@ -14,7 +14,9 @@ body {
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 110vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 16rem;
 }
 .nav {
     position: fixed;
@@ -226,17 +228,6 @@ span {
     text-decoration: none;
     text-align: center;
 }
-
-@media only screen and (max-height: 900px) {
-    #bg-image {
-        height: 115%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #bg-image {
-        height: 125%;
-    }
-}
 @media only screen and (max-width: 1400px) {
     .logo {
         font-size: 15px;
@@ -359,6 +350,10 @@ span {
 @media only screen and (max-width: 400px) {
     #bg-image {
         height: 100%;
+    }
+    .homelg {
+        width: 60px;
+        height: 60px;
     }
     .lg {
         display: block;

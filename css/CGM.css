@@ -3,8 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 13rem;
 }
 .nav {
     position: fixed;
@@ -151,7 +152,7 @@ p a {
     width: 500%;
     height: 500px;
     display: flex;
-    filter:brightness(50%) ;
+    filter:brightness(75%) ;
 
 }
 .slides input {
@@ -163,7 +164,7 @@ p a {
 }
 .photo {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 .nav-man{
     position: relative;
@@ -275,7 +276,8 @@ p a {
 .verse {
     font-size: 19px;
     font-weight: 600;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 3px;
 }
 .verse:not(:last-child) {
     margin-bottom: 40px;
@@ -338,16 +340,7 @@ p a {
     text-decoration: none;
     text-align: center;
 }
-@media only screen and (max-height: 900px) {
-    #bg-image {
-        height: 110%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #bg-image {
-        height: 125%;
-    }
-}
+
 @media only screen and (max-width: 1400px) {
     .logo {
         font-size: 15px;
@@ -536,7 +529,9 @@ p a {
 /*phone responsive*/
 @media only screen and (max-width: 400px) {
     #bg-image {
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 5rem;
     }
     .lg {
         display: block;
@@ -650,8 +645,8 @@ p a {
     }
     /*display image*/
     .slider {
-        width: 340px;
-        height: 240px;
+        width: 360px;
+        height: auto;
     }
     .nav-man{
         width: 340px;

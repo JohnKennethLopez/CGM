@@ -13,7 +13,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 10rem;
 }
 .nav {
     position: fixed;
@@ -383,7 +385,13 @@ ul li a {
 /*phone responsive*/
 @media only screen and (max-width: 400px) {
     #bg-image {
-        height: 140%;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 5rem;
+    }
+    .homelg {
+        width: 60px;
+        height: 60px;
     }
     .lg {
         display: block;

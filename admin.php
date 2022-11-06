@@ -28,6 +28,11 @@ if($rw['total'] > 0){
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/admincss.css">
     <script src="checker.js" defer></script>
+    <script type="text/javascript">
+        function preventBack(){window.history.forward()};
+        setTimeout("preventBack(),0");
+            window.onunload=function(){null;}
+    </script>
 </head>
 <body>
     <section id="admin">

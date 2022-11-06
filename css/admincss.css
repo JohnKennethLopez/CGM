@@ -8,7 +8,9 @@
     background: url("./image/gv2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 3rem;
 }
 .logo {
     width: 150px;
@@ -88,11 +90,7 @@
     background: linear-gradient(180deg, #020049, #2427ff);
 }
 
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 140%;
-    }
-}
+
 @media only screen and (max-width: 400px) {
     #admin {
         overflow: hidden;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 07, 2022 at 10:12 AM
+-- Generation Time: Oct 28, 2022 at 11:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -43,6 +43,28 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `announcement`
+--
+
+CREATE TABLE `announcement` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `cgmchapter` varchar(255) NOT NULL,
+  `announceTitle` varchar(255) NOT NULL,
+  `caption` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `announcement`
+--
+
+INSERT INTO `announcement` (`id`, `img`, `cgmchapter`, `announceTitle`, `caption`) VALUES
+(0, 'upload/build.jpg', 'CGM San Pedro, Laguna', 'Building More CGM Chapters', 'Nag sisimula nang itayo ang panibagong Chapter ng CGM.'),
+(0, 'upload/giving.jpg', 'CGM Taguig City', 'Sample', 'asdafdfsdaf');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `attendance`
 --
 
@@ -69,7 +91,38 @@ INSERT INTO `attendance` (`id`, `cgmchapter`, `date`, `fullname`, `gender`, `con
 (5, 'CGM Bacoor, Cavite', '2022/10/06', 'asdfa', 'Female', 'sadas', '56', 'asdasfd'),
 (6, 'CGM Bacoor, Cavite', '2022/10/06', 'sadas', 'Male', 'dfas', '12', 'asdasf'),
 (7, '', '2022/10/06', 'asdf', 'Male', '05512', '12', 'asdad'),
-(8, '', '2022/10/06', 'casjuar', 'Male', '094532541', '21', 'hjsdghaw');
+(8, '', '2022/10/06', 'casjuar', 'Male', '094532541', '21', 'hjsdghaw'),
+(9, 'CGM Bacoor, Cavite', '2022/10/12', 'asdas', 'Female', 'asdasdasd', '12', 'asdasd'),
+(10, 'CGM Balete, Batangas', '2022/10/12', 'asdasda', 'Male', 'asdasd', '32', 'asdasdasd'),
+(12, 'CGM Gattaran, Cagayan', '2022/10/12', 'xcvxfgvf', 'Male', 'sddsfsd', '17', 'zxczxczxczxczxczxczxczxczxc'),
+(13, 'CGM Mabini, Tanauan', '2022/10/12', 'asdasdczxcdgtb', 'Female', 'azxcasdfds', '18', 'fvxzcvxcvxcvxcvxcvxcvxcvcxvc'),
+(14, 'CGM Las Piñas Main', '2022/10/12', 'zxczxvswvsdfv', 'Male', 'sdvsvxczx', '19', 'vxcvzvxzcvxzcvzxvxzcv'),
+(15, 'CGM Sta. Rosa, Laguna', '2022/10/12', 'agfsdxvdxsfx', 'Female', 'aqfcxdzcvzxv', '22', 'xcvxvxcvrfbfdhgwsrgtsg'),
+(17, 'CGM Pulilan, Bulacan', '2022/10/12', 'asfcxvxcvxcv', 'Female', '12434245', '23', 'qawerafdszdc'),
+(18, 'CGM Sta. Rosa, Laguna', '2022/10/12', 'avczxvxbyhfg', 'Female', '12343256', '23', 'asdfvikghjmngbthytxdf'),
+(19, 'CGM Sampaloc, Quezon', '2022/10/12', 'asdasdas', 'Female', 'dasdasdasd', '12', 'asdasdasd'),
+(20, 'CGM Sta. Rosa, Laguna', '2022/10/12', 'qxdbryhjtjn', 'Female', 'q1232', '123312', 'adzxzxc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home`
+--
+
+CREATE TABLE `home` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `pic` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `home`
+--
+
+INSERT INTO `home` (`id`, `image`, `img`, `pic`, `photo`) VALUES
+(6, 'upload/tinig1.jpg', 'upload/online.jpg', 'upload/img3.jpg', 'upload/img5.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,8 +135,8 @@ CREATE TABLE `prayer` (
   `cgmchapter` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `request` varchar(255) NOT NULL,
-  `report` varchar(255) NOT NULL
+  `request` longtext NOT NULL,
+  `report` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -91,14 +144,32 @@ CREATE TABLE `prayer` (
 --
 
 INSERT INTO `prayer` (`id`, `cgmchapter`, `name`, `email`, `request`, `report`) VALUES
-(1, 'tanauan', 'aaaaaaaaaaaaaaaaaaaaaaaaaaa', 'adsasdasdasd', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'asdasdasdasdaaaaaa'),
-(2, 'CGM Gen. Tinio, Nueva Ecija', 'sadsadsa', 'asf', 'fas', 'asfad'),
-(3, 'CGM Bacoor, Cavite', 'sad', 'victoria del mundo', 'yhggff', 'dfgfes'),
-(4, 'CGM Pulilan, Bulacan', 'gdg', '09078196948', 'esfdfds', 'ahsgfa'),
-(5, 'CGM Gen. Tinio, Nueva Ecija', 'gdg', 'asdafs', '245', 'asdaf'),
-(6, 'CGM Candaba, Pampanga', 'gasgdn', 'zxvsafa', '854a', 'asdawd'),
-(7, 'CGM Bustos, Bulacan', 'sadfs', 'asda', 'asda', 'asdasd'),
-(8, 'CGM Bustos, Bulacan', 'sadfs', 'asda', 'asda', 'asdasd');
+(9, 'CGM Las Piñas Main', 'asdasdasda', 'asdasda', '', 'asdasdasdasdasdasdddddddddddddddddddddddddddddddddddddddddddd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upcoming`
+--
+
+CREATE TABLE `upcoming` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `des` longtext NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `loc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `upcoming`
+--
+
+INSERT INTO `upcoming` (`id`, `title`, `image`, `des`, `date`, `time`, `loc`) VALUES
+(6, 'ISANG TINIG', ' upload/tinig.jpg', 'At sinabi ng Dios kay Moises, AKO YAONG AKO NGA; at kaniyang sinabi, Ganito ang sasabihin mo sa mga anak ni Israel, Sinugo ako sa inyo ni AKO NGA.\r\n-EXODO 3:14', '2022-10-29', '09:00', 'CGM Las pinan Main'),
+(7, 'YOUTH ANNUAL ONLINE', 'upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main'),
+(8, 'YOUTH ANNUAL ONLINE', ' upload/online.jpg', 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.', '2021-10-28', '08:00', 'CGM Las pinan Main');
 
 --
 -- Indexes for dumped tables
@@ -117,9 +188,21 @@ ALTER TABLE `attendance`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `home`
+--
+ALTER TABLE `home`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `prayer`
 --
 ALTER TABLE `prayer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `upcoming`
+--
+ALTER TABLE `upcoming`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -136,12 +219,24 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `home`
+--
+ALTER TABLE `home`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `prayer`
 --
 ALTER TABLE `prayer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `upcoming`
+--
+ALTER TABLE `upcoming`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 

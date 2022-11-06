@@ -14,6 +14,7 @@ if(!isset($_SESSION["username"]))
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/admin2.css">
+    
 </head>
 <body>
     <section id="admin">

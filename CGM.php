@@ -23,7 +23,7 @@
                     <li><a href="findchurch.html">Find a Church</a></li>
                     <li><a href="CounMin.html">Council & Ministries</a></li>
                     <li><a href="program.html">Program</a></li>
-                    <li><a href="event.html">Events</a></li>
+                    <li><a href="event.php">Events</a></li>
                     <li><a href="prayer.php">Need Prayers?</a></li>
                     <li><a href="MisSer.html">Missions & Services</a></li>
                     <li><a href="Give.html">Give</a></li>
@@ -35,25 +35,44 @@
             <p class="who"><a href="about.html">Who We Are</a></p>
             <p class="where"><a href="findchurch.html">Where We Are</a><p>
         </div>
-
+        
         <div class="slider">
             <div class="slides">
                 <input type="radio" name="radio-btn" id="radio1">
                 <input type="radio" name="radio-btn" id="radio2">
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
+                <?php
+                                    $con = new mysqli('localhost','root','','cgm');
+                                    $dibconfig = mysqli_select_db($con,'cgm');
+                                    
+                                    $query = "SELECT * FROM home";
+                                    $query_run = mysqli_query($con,$query);
+                                    $check_upload = mysqli_num_rows($query_run) > 0; 
+                                    if($check_upload){
+                                        while($row = mysqli_fetch_array($query_run)){
+                                    ?>
                 <div class="img first">
-                    <img class="photo" src="css/image/img1.jpg" alt="">
+                    <img class="photo" src="<?php echo $row['image']?>" alt="">
                 </div>
                 <div class="img">
-                    <img class="photo" src="css/image/img3.jpg" alt="">
+                    <img class="photo" src="<?php echo $row['img']?>" alt="">
                 </div>
                 <div class="img">
-                    <img class="photo" src="css/image/img4.jpg" alt="">
+                    <img class="photo" src="<?php echo $row['pic']?>" alt="">
                 </div>
                 <div class="img">
-                    <img class="photo" src="css/image/img5.jpg" alt="">
+                    <img class="photo" src="<?php echo $row['photo']?>" alt="">
                 </div>
+
+                <?php
+                        }
+                        } else{
+                            echo "NO EVENT FOUND!!!";
+                        }
+                    
+
+                ?>
                 <div class="auto">
                     <div class="auto-btn1"></div>
                     <div class="auto-btn2"></div>

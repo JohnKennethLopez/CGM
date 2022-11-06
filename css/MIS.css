@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 12rem;
 }
 .nav {
     position: fixed;
@@ -112,6 +118,114 @@ ul li a {
     font-size: 20px;
     letter-spacing: 5px;
 }
+/*Mission Part*/
+.cont {
+    position: relative;
+    top: 8rem;
+    border: 0 solid black;
+    background: rgba(37, 45, 158, 0.4);
+    padding: 2rem;
+    margin: 0 5% 0;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.mish1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 1rem;
+    font-family: 'Carter One', cursive;
+    letter-spacing: 10px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
+}
+.mission {
+    border: 0 solid black;
+    background: hsl(0 0% 100% / 0.2);
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.reach {
+    border: 0 solid black;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.medical {
+    border: 0 solid black;
+    background: hsl(0 0% 0% / 0.6);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.dental {
+    border: 0 solid black;
+    background: hsl(0 0% 0% / 0.6);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.coffee {
+    border: 0 solid black;
+    background: hsl(0 0% 0% / 0.6);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.house {
+    border: 0 solid black;
+    background: hsl(0 0% 0% / 0.6);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.9);
+}
+.MISpic {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+.h1title {
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+    font-family: 'Paytone One', sans-serif;
+}
+.P_info {
+    color: white;
+    margin: 1rem;
+    text-align: justify;
+    font-family: 'Chakra Petch', sans-serif;
+}
+/*SERVICES PART*/
+#service {
+    background: url("image/wwww.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 14rem;
+}
+.set {
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    float: right;
+    border: 0 solid black;
+    background: linear-gradient(90deg, #2427ff, #020049);
+    border-radius: 5px 0 0 5px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+.set a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-family: 'Orbitron', sans-serif;
+}
+.set:hover {
+    background: linear-gradient(180deg, #020049, #2427ff);
+}
+
 /*Footer*/
 .foot1 {
     background: linear-gradient(90deg, #D6D6D6, #414141);
@@ -260,6 +374,10 @@ ul li a {
 @media only screen and (max-width: 400px) {
     #bg-image {
         height: 100vh;
+    }
+    .homelg {
+        width: 60px;
+        height: 60px;
     }
     .lg {
         display: block;

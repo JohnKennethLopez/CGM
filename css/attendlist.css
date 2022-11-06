@@ -8,7 +8,9 @@
     background: url("image/gv2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 115vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 7rem;
 }
 .logo {
     width: 150px;
@@ -113,11 +115,38 @@ hr {
     margin-right: auto;
 }
 /*ATTENDANCE LIST TABLE*/
+.filter {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    background: linear-gradient(180deg, #020049, #2427ff);
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.inn {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+.backbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
 #Attendancelist {
     background: url("./image/white.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
 }
 .table::-webkit-scrollbar {
     width: 10px;
@@ -160,9 +189,9 @@ td {
     background: #dfdfdf;
     font-weight: bolder;
 }
-th {
+.table th {
     position: sticky;
-    top: 0;
+    top: 0px;
     letter-spacing: 2px;
     text-align: left;
     padding: 12px 15px;
@@ -201,14 +230,4 @@ tbody tr:last-of-type {
 .del:hover {
     background: #8a0000;
     border-bottom-color: #020049;
-}
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 140%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #admin {
-        height: 169%;
-    }
 }

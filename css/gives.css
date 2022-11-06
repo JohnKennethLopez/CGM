@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +18,9 @@
     background-size:cover;
     background-repeat: no-repeat;
     background-position: top center;
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 15rem;    
 }
 .nav {
     position: fixed;
@@ -103,16 +109,206 @@ ul li a {
 .nav, .sticky ul li a {
     color: white;
 }
-.gvhead {
-    font-family: 'Orbitron', sans-serif;
+.givehead {
     position: relative;
-    text-align: center;
-    text-transform: capitalize;
     top: 5rem;
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 5px;
+    text-align: center;
+    border: 0px solid black;
+    background: hsl(0 0% 0% / 0.5);
+    color: white;
+    padding: 1rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
+.gvhead {
+    font-family: 'Carter One', cursive;
+    margin: 5%;
+    font-size: 40px;
+}
+.text {
+    font-size: 20px;
+    padding-bottom: 5px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+.verse {
+    font-size: 15px;
+    font-family: 'Dancing Script', cursive;
+    padding-bottom: 1rem;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+/*give image and information*/
+.bm {
+    width: 500px;
+}
+
+.info {
+    position: relative;
+    top: 10rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.build {
+    width: 500px;
+    border: 0px solid black;
+    background: hsl(0 0% 0% / 0.8);
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.mission {
+    width: 500px;
+    border: 0px solid black;
+    background: hsl(0 0% 0% / 0.8);
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.bmh1 {
+    text-align: center;
+    margin: 5% 15% 5% 15%;
+    color: white;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+.bminfo {
+    text-align: center;
+    margin: 5% 15% 5% 15%;
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 3px;
+    font-size: 15px;
+    padding-bottom: 2rem;
+}
+/*send tithes & offerings*/
+#send {
+    background: url("image/white.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 100vh;
+    overflow-y: hidden;
+}
+.giveimg {
+    width: 400px;
+}
+.sendhere {
+    position: relative;
+    top: 5rem;
+    margin-left: 10%;
+    border: 0px solid black;
+    background: hsl(0 0% 0% / 0.8);
+    width: 400px;
+    text-align: center;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 10px 10px;
+}
+.inner {
+    color: white;
+    padding: 2rem;
+}
+.textt {
+    font-size: 15px;
+    padding-bottom: 5px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.versee {
+    font-size: 12px;
+    font-family: 'Chakra Petch', sans-serif;
+    padding-bottom: 1rem;
+    letter-spacing: 5px;
+    font-weight: 900;
+    float: right;
+}
+.TO {
+    font-family: 'Carter One', cursive;
+}
+Select {
+    position: relative;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    border-color: black;
+    font-family: 'Silkscreen', cursive;
+    padding: 11px 5px 5px 0;
+    outline: none;
+    border-radius: 5px;
+    border: 0 solid black;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.8);
+}
+select::-webkit-scrollbar {
+    width: 10px;
+}
+select::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+}
+select::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 0% / 0.8);
+    border-radius: 5px;
+}
+select::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 0% / 0.5);
+}
+/*method of sending*/
+#main {
+    display: none;
+}
+.border {
+    position: relative;
+    top: -30rem;
+    background: hsl(0 0% 0% / 0.8);
+    margin-right: 10%;
+    border: 0px solid black;
+    width: 600px;
+    float: right;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+.border a {
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+.metinfo {
+    font-family: 'Carter One', cursive;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.cgmh1 {
+    font-family: 'Carter One', cursive;
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+.gcash {
+    font-family: 'Carter One', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.gcash_icon {
+    width: 180px;
+    height: 100px;
+}
+.gcashNO {
+    font-family: 'Silkscreen', cursive;
+}
+.gcash_mess {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
 /*Footer*/
 .foot1 {
     background: linear-gradient(90deg, #D6D6D6, #414141);
@@ -164,6 +360,16 @@ ul li a {
     text-align: center;
 }
 
+@media only screen and (max-height: 900px) {
+    #send {
+        height: 115vh;
+    }
+}
+@media only screen and (max-height: 770px) {
+    #send {
+        height: 125vh;
+    }
+}
 @media only screen and (max-width: 1400px) {
     .logo {
         font-size: 15px;
@@ -177,6 +383,12 @@ ul li a {
 }
 /*ipad responsive*/
 @media only screen and (max-width: 1050px) {
+    #bg-image{
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 15rem;
+        overflow-x: hidden;
+    }
     .lg {
         display: block;
         width: 90px;
@@ -227,7 +439,7 @@ ul li a {
         display: block;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -237,7 +449,7 @@ ul li a {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -257,11 +469,50 @@ ul li a {
     .menu.open .bur::after {
         transform: rotate(-45deg) translate(10px, 10px);
     }
+    /*give image and information*/
+    .info {
+        display: inline-block;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-right: 0%;
+    }
+    /*send tithes & offerings*/
+    #send {
+        background: url("image/white.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 10rem;
+        overflow-x: hidden;
+    }
+    .sendhere {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    /*method of sending*/
+    .border {
+        position: relative;
+        top: 7rem;
+        float: left;
+        margin-right: 0%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
 }
+
 /*phone responsive*/
 @media only screen and (max-width: 400px) {
     #bg-image {
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 15rem;
+        overflow-x: hidden;
+    }
+    .homelg {
+        width: 60px;
+        height: 60px;
     }
     .lg {
         display: block;
@@ -341,6 +592,113 @@ ul li a {
     }
     .menu.open .bur::after {
         transform: rotate(-45deg) translate(10px, 10px);
+    }
+
+    .givehead {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .gvhead {
+        font-family: 'Carter One', cursive;
+        margin: 5%;
+        font-size: 20px;
+    }
+    .text {
+        font-size: 20px;
+        padding-bottom: 5px;
+        font-family: 'Dancing Script', cursive;
+        font-weight: bolder;
+        letter-spacing: 3px;
+    }
+    .verse {
+        font-size: 12px;
+        font-family: 'Chakra Petch', sans-serif;
+        padding-bottom: 1rem;
+        letter-spacing: 5px;
+        font-weight: 900;
+    }
+
+    /*give image and information*/
+    .bm {
+        width: 300px;
+    }
+    .build {
+        width: 300px;
+        border: 0px solid black;
+        background: hsl(0 0% 0% / 0.8);
+    }
+    .mission {
+        width: 300px;
+        border: 0px solid black;
+        background: hsl(0 0% 0% / 0.8);
+    }
+    .bmh1 {
+        text-align: center;
+        margin: 5% 15% 5% 15%;
+        color: white;
+        font-family: 'Dela Gothic One', cursive;
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+    .bminfo {
+        font-size: 12px;
+    }
+    /*send tithes & offerings*/
+    #send {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 10rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .giveimg {
+        width: 300px;
+    }
+    .sendhere {
+        width: 300px;
+    }
+    Select {
+        font-size: 8px;
+    }
+    option {
+        font-size: 12px;
+
+    }
+    /*method of sending*/
+    .border {
+        width: 300px;
+    }
+    .border a {
+        text-decoration: none;
+        color: white;
+        font-weight: 900;
+        font-size: 15px;
+        font-family: 'Chakra Petch', sans-serif;
+    }
+    .metinfo {
+        font-family: 'Carter One', cursive;
+        font-weight: 900;
+        letter-spacing: 3px;
+    }
+    .cgmh1 {
+        font-family: 'Carter One', cursive;
+        letter-spacing: 5px;
+        font-size: 20px;
+    }
+    .gcash {
+        font-family: 'Carter One', cursive;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+    .gcash_icon {
+        width: 180px;
+        height: 100px;
+    }
+    .gcashNO {
+        font-family: 'Silkscreen', cursive;
+    }
+    .gcash_mess {
+        font-family: 'Chakra Petch', sans-serif;
     }
     /*Footer*/
     .foot1 {

@@ -13,8 +13,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
-
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 10rem;
 }
 .nav {
     position: fixed;
@@ -128,8 +129,14 @@ ul li a {
 }
 #misvis {
     background: url("./image/white2.jpg");
-    background-size: cover;
-    height: 100vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 10rem;
 }
 .mv {
     position: relative;
@@ -219,18 +226,18 @@ ul li a {
     text-decoration: none;
     text-align: center;
 }
-@media only screen and (max-height: 900px) {
-    #bg-image {
-        height: 118%;
-    }
-}
+
 @media only screen and (max-height: 770px) {
-    #bg-image {
-        height: 125%;
-    }
+
     /*history and mission vision of the church*/
     .history {
         font-size: 17px;
+    }
+    .pp {
+        font-size: 15px;
+    }
+    .mv {
+        top: 15rem;
     }
 }
 @media only screen and (max-width: 1400px) {
@@ -333,6 +340,12 @@ ul li a {
 @media only screen and (max-width: 420px) {
     #bg-image {
         height: auto;
+        min-height: 100vh;
+        padding-bottom: 8rem;
+    }
+    .homelg {
+        width: 60px;
+        height: 60px;
     }
     .lg {
         display: block;

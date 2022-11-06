@@ -8,7 +8,9 @@
     background: url("image/gv2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
 }
 .logo {
     width: 150px;
@@ -95,14 +97,4 @@ p a {
 .logout:hover {
     background-color: transparent;
     color: white;
-}
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 128%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #admin {
-        height: 154%;
-    }
 }

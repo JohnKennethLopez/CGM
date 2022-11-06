@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#editevent {
+    background: url("./image/white.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+}
+.back {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    background: linear-gradient(180deg, #020049, #2427ff);
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.inn {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+.backbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.tablecont {
+    position: relative;
+    top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Orbitron', sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.7);
+}
+.DE {
+    font-size: 10px;
+}
+td {
+    text-align: left;
+    padding: 12px 15px;
+    background: #dfdfdf;
+}
+th {
+    letter-spacing: 2px;
+    text-align: left;
+    padding: 12px 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.50);
+    background: #020049;
+    color: white;
+}
+tbody tr {
+    border-bottom: 1px solid #020049;
+}
+tbody tr:last-of-type {
+    border-bottom: 2px solid #020049;
+}
+.edit {
+    background: #020049;
+    color: white;
+    padding: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #8a0000;
+    border-bottom-width: 2px;
+}
+.edit:hover {
+    background: #1a77e0;
+    border-bottom-color: #8a0000;
+}
+.del {
+    background: #020049;
+    color: white;
+    padding: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #8a0000;
+    border-bottom-width: 2px;
+}
+.del:hover {
+    background: #8a0000;
+    border-bottom-color: #020049;
+}

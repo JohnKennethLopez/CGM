@@ -39,9 +39,14 @@ if(!isset($_SESSION["username"]))
                 <h1 class="list">Attendance List</h1>
     </section>
     <section id="Attendancelist">
+        <div class="filter">
+            <div class="inn">
+                <p class="backbtn"><a href="search.php">Search a <br>CGM CHAPTER</a></p>
+            </div>
+        </div>
         <div class="table">
             <table class="tablecont">
-                <tr>
+                <thead>
                     <th>CGM CHAPTER</th>
                     <th>DATE</th>
                     <th>FULL NAME</th>
@@ -50,7 +55,7 @@ if(!isset($_SESSION["username"]))
                     <th>CONTACT NUMBER</th>
                     <th>ADDRESS</th>
                     <th class="DE">DELETE & EDIT</th>
-                </tr>
+                </thead>
                 <?php
                     $con = new mysqli('localhost','root','','cgm');
                     $dibconfig = mysqli_select_db($con,'cgm');

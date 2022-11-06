@@ -6,31 +6,96 @@
         <title>CGM</title>
         <link rel="stylesheet" href="css/gives.css">
         <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
         <script src="JavaScript/menu.js" defer></script>
         <script src="JavaScript/nav.js" defer></script>
         <script src="JavaScript/scroll.js" defer></script>
+        <script src="JavaScript/give.js" defer></script>
     </head>
     <body>
         <section id="bg-image">
-            <a href="CGM.html"><img class="lg" src="logo.png" alt=""></a>
+            <div class="homelg">
+                <a href="CGM.php"><img class="lg" src="logo.png" alt=""></a>
+            </div>
             <div class="menu">
                 <div class="bur"></div>
             </div>
             <div class="nav" data-visible="false">
-                <h1 class="logo"><a href="CGM.html"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
+                <h1 class="logo"><a href="CGM.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="findchurch.html">Find a Church</a></li>
                     <li><a href="CounMin.html">Council & Ministries</a></li>
                     <li><a href="program.html">Program</a></li>
-                    <li><a href="event.html">Events</a></li>
+                    <li><a href="event.php">Events</a></li>
                     <li><a href="prayer.php">Need Prayers?</a></li>
                     <li><a href="MisSer.html">Missions & Services</a></li>
                     <li class="focus"><a href="">Give</a></li>
                 </ul>
                 </div>
-                <h1 class="gvhead">Give</h1>
+                <div class="givehead">
+                    <h1 class="gvhead">"Giving opens the <br>way for receiving"</h1>
+                    <P class="text">"A generous person will prosper;
+                        <br>whoever refreshes others will be refreshed."</P>
+                    <br><i><p class="verse">-Proverbs 11:25</p></i>
+                </div>
+                <div class="info">
+                    <div class="build">
+                        <img class="bm" src="css/image/build.jpg" alt="">
+                        <h1 class="bmh1">Building Support</h1>
+                        <p class="bminfo">All the offerings that will be gathered in services or through digital or online donations will help the church to create establishments like new CGM chapters to different places in the Philippines. Building new Churches will reach and help more people.</p>
+                    </div>
+                    <div class="mission">
+                        <img class="bm" src="css/image/mission.jpg" alt="">
+                        <h1 class="bmh1">Mission Support</h1>
+                        <p class="bminfo">We desire to contribute and build special programs to assist individuals impacted by the disasters, as well as medical missions to assist them with their medical concerns and to provide some hope using the word of God to let them know they are not alone in this hardships. </p>
+                    </div>
+                </div>
+
+            </section>
+            <section id="send">
+                <div class="sendhere">
+                    <img class="giveimg" src="css/image/giving.jpg" alt="">
+                    <div class="inner">
+                        <h1 class="TO">You can send your <br>Tithes and Offerings Here:</h1><br><br>
+                        <p class="textt">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
+                        <br><i><p class="versee">-2 Corinthians 9:7</p></i><br>
+                        <select name="cgmchapter" onchange="ShowMethod()" id="church">
+                            <option value="select" disabled selected>Choose a CGM Church</option>
+                                <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
+                                <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
+                                <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
+                                <option value="CGM Bustos, Bulacan">CGM Bustos, Bulacan</option>
+                                <option value="CGM Cabuyao, Laguna">CGM Cabuyao, Laguna</option>
+                                <option value="CGM Candaba, Pampanga">CGM Candaba, Pampanga</option>
+                                <option value="CGM EDSA Mandaluyong">CGM EDSA Mandaluyong</option>
+                                <option value="CGM Gattaran, Cagayan">CGM Gattaran, Cagayan</option>
+                                <option value="CGM Hinigaran, Negros">CGM Hinigaran, Negros</option>
+                                <option value="Tanauan">CGM Mabini, Tanauan</option>
+                                <option value="CGM Mariveles, Bataan">CGM Mariveles, Bataan</option>
+                                <option value="CGM Nasugbo, Batangas">CGM Nasugbo, Batangas</option>
+                                <option value="CGM Navotas City">CGM Navotas City</option>
+                                <option value="CGM Prieto Diaz, Sorsogon">CGM Prieto Diaz Sorsogon</option>
+                                <option value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>
+                                <option value="CGM Sampaloc, Quezon">CGM Sampaloc, Quezon</option>
+                                <option value="CGM San Pedro, Laguna">CGM San Pedro, Laguna</option>
+                                <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
+                                <option value="CGM Taguig City">CGM Taguig City</option>
+                                <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="main">
+                        <div class="border">
+                            <h1 class="cgmh1">CGM Las Piñas Main</h1><br><br>
+                            <p class="metinfo">You can use this method to send your Tithes and offerings, just click the Google form to see the details:</p>
+                            <a href="https://forms.gle/8rM6zML53ta9jz5y6"><img src="css/image/gform.png" alt="" width="30px" height="30px">Google form</a><br><br>
+                            <h1 class="gcash">You can also Send through GCash:</h1>
+                            <img class="gcash_icon" src="css/image/gcash.png" alt="">
+                            <h1 class="gcashNO">0921-786-6788</h1>
+                            <p class="gcash_mess">(You can also add a message when you send through Gcash. Thank you and God bless you.)</p>
+                        </div>
+                </div>
+                
             </section>
         
         <section id="footer">
