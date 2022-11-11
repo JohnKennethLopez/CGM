@@ -40,48 +40,55 @@ if(!isset($_SESSION["username"]))
                 <h1 class="appoint">Appointment Reservation</h1>
     </section>
     <section id="Appointment">
+        <div class="filter">
+            <div class="inn">
+                <p class="backbtn"><a href="searchappoint.php">Search a <br>CGM CHAPTER</a></p>
+            </div>
+        </div>
         <div class="table">
             <table class="tablecont">
                 <tr>
                     <th>DATE</th>
                     <th>CGM CHAPTER</th>
                     <th>FULL NAME</th>
+                    <th>EMAIL</th>
                     <th>CONTACT NUMBER</th>
                     <th>SERVICE</th>
+                    <th>TIME</th>
                     <th>ADDRESS</th>
                     <th>MESSAGE</th>
                     <th class="DE">DELETE & EDIT</th>
                 </tr>
-                <tr>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                </tr>
-                <tr>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                </tr>
-                <tr>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>asd</td>
-                </tr>
+                <?php
+                    $con = new mysqli('localhost','root','','cgm');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+                    
+                    $query = "SELECT * FROM appointment";
+                    $query_run = mysqli_query($con,$query);
+                    $check_attendance = mysqli_num_rows($query_run) > 0; 
+                    if($check_attendance){
+                        while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <tr class="scroll">
+                        <td><?php echo $row['date']?></td>
+                        <td><?php echo $row['cgmchapter']?></td>
+                        <td><?php echo $row['fullname']?></td>
+                        <td><?php echo $row['email']?></td>
+                        <td><?php echo $row['contact']?></td>
+                        <td><?php echo $row['service']?></td>
+                        <td><?php echo $row['time']?></td>
+                        <td><?php echo $row['address']?></td>
+                        <td><?php echo $row['message']?></td>
+                        <td><button class="edit">edit</button><a href="#?delete=<?php echo $row['id']; ?>"><button class="del">delete</button></a></td>
+                    </tr>
+                    <?php
+                        }
+                        } else{
+                            echo " No Appointment Reservation Found!";
+                        }
+                    
+
+                ?>
             </table>
         </div>
     </section>

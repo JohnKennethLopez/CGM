@@ -43,7 +43,6 @@
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
                 <?php
-<<<<<<< HEAD
                                     $con = new mysqli('localhost','root','','cgm');
                                     $dibconfig = mysqli_select_db($con,'cgm');
                                     
@@ -53,17 +52,6 @@
                                     if($check_upload){
                                         while($row = mysqli_fetch_array($query_run)){
                                     ?>
-=======
-                    $con = new mysqli('localhost','root','','cgm');
-                    $dibconfig = mysqli_select_db($con,'cgm');
-                    
-                    $query = "SELECT * FROM home";
-                    $query_run = mysqli_query($con,$query);
-                    $check_upload = mysqli_num_rows($query_run) > 0; 
-                    if($check_upload){
-                        while($row = mysqli_fetch_array($query_run)){
-                    ?>
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                 <div class="img first">
                     <img class="photo" src="<?php echo $row['image']?>" alt="">
                 </div>
@@ -76,10 +64,6 @@
                 <div class="img">
                     <img class="photo" src="<?php echo $row['photo']?>" alt="">
                 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
                 <?php
                         }
                         } else{

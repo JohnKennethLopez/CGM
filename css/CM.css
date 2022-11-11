@@ -121,6 +121,7 @@ ul li a {
 /*COUNCIL & MINISTRY PHOTOS AND INFORMATION*/
 #CouncilMinistry {
     height: auto;
+    background: #cdddff;
 }
 .video {
     width: 75%;
@@ -253,6 +254,10 @@ span {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -292,6 +297,7 @@ span {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -347,7 +353,7 @@ span {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: 100%;
     }
@@ -401,6 +407,7 @@ span {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -449,7 +456,10 @@ span {
         margin-left: 5rem;
     }
     .video {
+        width: 90%;
         top: 10rem;
+        margin-left: 5%;
+        margin-right: 5%;
     }
     .pic {
         grid-gap: 1rem;

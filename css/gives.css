@@ -4,10 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Silkscreen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 * {
     margin: 0;
     padding: 0;
@@ -133,11 +130,7 @@ ul li a {
 .text {
     font-size: 20px;
     padding-bottom: 5px;
-<<<<<<< HEAD
     font-family: 'Kaushan Script', cursive;
-=======
-    font-family: 'Chakra Petch', sans-serif;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     font-weight: bolder;
     letter-spacing: 3px;
 }
@@ -223,11 +216,7 @@ ul li a {
 .textt {
     font-size: 15px;
     padding-bottom: 5px;
-<<<<<<< HEAD
     font-family: 'Kaushan Script', cursive;
-=======
-    font-family: 'Chakra Petch', sans-serif;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     font-weight: bolder;
     letter-spacing: 2px;
 }
@@ -407,6 +396,10 @@ select::-webkit-scrollbar-thumb:hover {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -447,6 +440,7 @@ select::-webkit-scrollbar-thumb:hover {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -520,13 +514,10 @@ select::-webkit-scrollbar-thumb:hover {
         min-height: 100vh;
         padding-bottom: 15rem;
         overflow-x: hidden;
-<<<<<<< HEAD
     }
     .homelg {
         width: 60px;
         height: 60px;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     }
     .lg {
         display: block;
@@ -574,6 +565,7 @@ select::-webkit-scrollbar-thumb:hover {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;

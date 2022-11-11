@@ -1,13 +1,13 @@
-const defaultbTn= document.querySelector("#default");
-const upload = document.querySelector("#BTN");
-const image = document.querySelector("#annimage");
-const filename = document.querySelector(".filename");
-const wrapper = document.querySelector(".wraper");
-const cancel = document.querySelector("#cancell");
+const defaultBtn = document.querySelector("#intBTN");
+const upload = document.querySelector("#custom-btn");
+const image = document.querySelector("#uploadimage");
+const filename = document.querySelector(".file-name");
+const wrapper = document.querySelector(".wrapper");
+const cancel = document.querySelector("#cancel");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
-    function myFunction(){
-            defaultbTn.click();
+    function defaultbtnactive(){
+            defaultBtn.click();
         }
         defaultBtn.addEventListener("change", function(){
             const file = this.files[0];

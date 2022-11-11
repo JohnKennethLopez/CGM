@@ -3,15 +3,25 @@ $con = mysqli_connect('localhost','root','','cgm');
 
 session_start();
 
+if (isset($_SESSION['username']) && isset($_SESSION['id'])) {  
+    header("location:admin2.php");
+}
+else
+{
+
+
+
 if(isset($_POST['loginsubmit'])){
 $username=$_POST['username'];
 $password=$_POST['password'];
 
-$sql=mysqli_query($con, "select * as total from admin where username='".$username."' and password='".$password."'") or die (mysqli_error($con));
+$sql=mysqli_query($con, "select * as total from admin where username='".$username."' and password='".$password."'");
 
 $rw = mysqli_fetch_Array($sql);
 if($rw['total'] > 0){
-  header('display:admin2.php');
+    $_SESSION['username'] = $username;
+    $_SESSION['id'] = $rw['id'];
+  header('location:admin2.php');
     }else{
         die(mysqli_error($con));
     }
@@ -19,6 +29,8 @@ if($rw['total'] > 0){
 }
 
 ?>
+
+
 
 <html>
 <head>
@@ -55,3 +67,6 @@ if($rw['total'] > 0){
     </section>
 </body>
 </html>
+<?php
+}
+?>

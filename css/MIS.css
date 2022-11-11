@@ -212,13 +212,14 @@ ul li a {
     float: right;
     border: 0 solid black;
     background: linear-gradient(90deg, #2427ff, #020049);
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.9);
     text-align: center;
 }
 .set a {
     text-decoration: none;
     color: white;
+    font-size: 12px;
     letter-spacing: 3px;
     font-family: 'Orbitron', sans-serif;
 }
@@ -297,6 +298,10 @@ ul li a {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -336,10 +341,11 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -349,7 +355,7 @@ ul li a {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -373,7 +379,9 @@ ul li a {
 /*phone responsive*/
 @media only screen and (max-width: 400px) {
     #bg-image {
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 12rem;
     }
     .homelg {
         width: 60px;
@@ -425,6 +433,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -457,6 +466,20 @@ ul li a {
     }
     .menu.open .bur::after {
         transform: rotate(-45deg) translate(10px, 10px);
+    }
+    .mshead {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    /*Mission part*/
+    .cont {
+        padding: 1rem;
+    }
+    .mish1 {
+        font-size: 20px;
+    }
+    .mission {
+        padding: 1rem;
     }
     /*Footer*/
     .foot1 {

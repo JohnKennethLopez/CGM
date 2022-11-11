@@ -230,11 +230,8 @@ ul li a {
 .caption {
     border: 1px solid black;
     font-weight: 900;
-<<<<<<< HEAD
     text-align: justify;
     padding: 10px;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 }
 
 /*Footer*/
@@ -308,6 +305,10 @@ ul li a {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -347,6 +348,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -382,17 +384,14 @@ ul li a {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: auto;
         padding-bottom: 6rem;
-<<<<<<< HEAD
     }
     .homelg {
         width: 60px;
         height: 60px;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     }
     .lg {
         display: block;
@@ -440,6 +439,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -472,6 +472,77 @@ ul li a {
     }
     .menu.open .bur::after {
         transform: rotate(-45deg) translate(10px, 10px);
+    }
+    .evehead {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    /*pictures and information events of the church*/
+    .eventpic {
+        position: relative;
+        top: 2rem;
+        padding: 1rem 2rem 2rem 2rem;
+        border: 0px solid black;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+        background: hsl(0 0% 100% / 0.5);
+        margin-left: 5%;
+        margin-right: 5%;
+        height: auto;
+    }
+    .upco {
+        font-family: 'Carter One', cursive;
+        font-size: 15px;
+        letter-spacing: 2px;
+        text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 4%;
+    }
+    .loob {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .pic {
+        border: 0px solid black;
+        background: hsl(0 0% 0% / 0.8);
+        width: 300px;
+        margin-bottom: 2%;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+    }
+    .info h1 {
+        font-size: 20px;
+    }
+    .date {
+        letter-spacing: 2px;
+    }
+    .time {
+        letter-spacing: 1px;
+    }
+    .loc {
+        letter-spacing: 1px;
+    }
+    /*Announcement*/
+    .announce {
+        position: relative;
+        top: 2rem;
+        padding: 1rem 2rem 2rem 2rem;
+        border: 0px solid black;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+        background: hsl(0 0% 0% / 0.5);
+        margin-left: 5%;
+        margin-right: 5%;
+        height: auto;
+    }
+    .anco {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+    .chap {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    .ann {
+        letter-spacing: 1px;
     }
     /*Footer*/
     .foot1 {

@@ -84,16 +84,19 @@ tbody tr:last-of-type {
     background: #1a77e0;
     border-bottom-color: #8a0000;
 }
-.del {
+.delete-btn {
+    text-decoration: none;
     background: #020049;
     color: white;
     padding: 5px;
+    font-size: 12px;
     font-family: 'Orbitron', sans-serif;
     border: 0 solid black;
     border-bottom-color: #8a0000;
     border-bottom-width: 2px;
 }
-.del:hover {
-    background: #8a0000;
+.delete-btn:hover {
+    background: red;
     border-bottom-color: #020049;
+    border-bottom-width: 2px;
 }

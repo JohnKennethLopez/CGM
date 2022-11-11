@@ -1,12 +1,15 @@
 <?php
+session_start();
+$con = new mysqli('localhost','root','','cgm');
+$dibconfig = mysqli_select_db($con,'cgm');
 
-    $con=new mysqli('localhost','root','','cgm');
 
-    if (isset($_GET['delete'])){
-        $id = $_GET['delete'];
-        $query_run=mysqli_query($con,"DELETE FROM announcement WHERE id=$id") or die ($con->error());
-    }
+if(isset($_POST['delete_btn_set']))
+{
+    $del_id = $_POST['delete_id'];
 
-    header("location:editAnnounce.php");
+    $query = "DELETE FROM announcement WHERE id='$del_id'";
+    $query_run = mysqli_query($con, $query);
+}
 
 ?>

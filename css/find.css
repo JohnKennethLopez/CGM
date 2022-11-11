@@ -3,10 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Silkscreen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 * {
     margin: 0;
     padding: 0;
@@ -126,11 +123,7 @@ ul li a {
 .text {
     font-size: 19px;
     padding-bottom: 5px;
-<<<<<<< HEAD
     font-family: 'Kaushan Script', cursive;
-=======
-    font-family: 'Dancing Script', cursive;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     font-weight: bolder;
     margin-left: 10%;
     margin-right: 10%;
@@ -201,7 +194,6 @@ select::-webkit-scrollbar-thumb:hover {
     background: hsl(0 0% 0% / 0.5);
 }
 /*Google Map of the selected chapter*/
-<<<<<<< HEAD
 #googlemap {
     background: url("image/wwww.jpg");
     background-size:cover;
@@ -209,9 +201,8 @@ select::-webkit-scrollbar-thumb:hover {
     background-position: top center;
     height: auto;
     min-height: 0;
+    padding-bottom: 2px;
 }
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 #tanauan {
     display: none;
 }
@@ -227,23 +218,61 @@ select::-webkit-scrollbar-thumb:hover {
 #edsa {
     display: none;
 }
+#bacoor {
+    display: none;
+}
+#bustos {
+    display: none;
+}
+#cabuyao {
+    display: none;
+}
+#candaba {
+    display: none;
+}
+#gattaran {
+    display: none;
+}
+#hinigaran {
+    display: none;
+}
+#mariveles {
+    display: none;
+}
+#nasugbo {
+    display: none;
+}
+#navotas {
+    display: none;
+}
+#prieto {
+    display: none;
+}
+#sampaloc {
+    display: none;
+}
+#sanpedro {
+    display: none;
+}
+#starosa {
+    display: none;
+}
+#taguig {
+    display: none;
+}
+#tinio {
+    display: none;
+}
+
 .outer {
-<<<<<<< HEAD
     position: relative;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     border: 0px solid black;
     padding: 2rem;
     background: linear-gradient(145deg, #020049, #2427ff);
     width: 700px;
     margin-left: 50%;
-<<<<<<< HEAD
     top: 2rem;
     margin-bottom: 4rem;
-=======
-    margin-top: 2rem;
-    margin-bottom: 2rem;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     transform: translateX(-50%);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
@@ -363,6 +392,10 @@ span {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -402,6 +435,7 @@ span {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -437,7 +471,7 @@ span {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: 100vh;
     }
@@ -491,6 +525,7 @@ span {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;

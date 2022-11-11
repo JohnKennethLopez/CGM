@@ -44,11 +44,7 @@
     margin-right: auto;
     font-family: 'Orbitron', sans-serif;
     border-collapse: collapse;
-<<<<<<< HEAD
     width: 60%;
-=======
-    width: 90%;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.7);
@@ -78,19 +74,12 @@ tbody tr:last-of-type {
 .edit {
     background: #020049;
     color: white;
-<<<<<<< HEAD
     padding: 10px;
-=======
-    padding: 5px;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     font-family: 'Orbitron', sans-serif;
     border: 0 solid black;
     border-bottom-color: #8a0000;
     border-bottom-width: 2px;
-<<<<<<< HEAD
     text-transform: uppercase;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 }
 .edit:hover {
     background: #1a77e0;

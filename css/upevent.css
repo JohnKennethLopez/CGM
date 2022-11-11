@@ -123,7 +123,6 @@ hr {
     height: auto;
     padding-bottom: 10rem;
 }
-<<<<<<< HEAD
 /*event*/
 .container .wrapper {
     height: 180px;
@@ -196,81 +195,6 @@ hr {
 .container #custom-btn:hover{
     background: linear-gradient(90deg, #2427ff, #020049);
 }
-/*announcement*/
-.containerr .wraper {
-    height: 180px;
-    position: relative;
-    border: 1px dashed black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.wraper.active {
-    border: none;
-}
-.wraper .upimgg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.wraper .upimgg img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.wraper #cancell {
-    display: none;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-}
-.wraper #cancell:hover {
-    width: 18px;
-}
-.wraper.active:hover #cancell {
-    display: block;
-}
-.wraper.active:hover .filename {
-    display: block;
-}
-.wraper .filename {
-    display: none;
-    position: absolute;
-    bottom: 0px;
-    letter-spacing: 3px;
-    color: white;
-    padding: 5px;
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(145deg, #020049, #2427ff);
-}
-.containerr #BTN{
-    margin-top: 10px;
-    width: 100%;
-    display: block;
-    border: none;
-    padding: 5px;
-    outline: none;
-    color: white;
-    background: linear-gradient(145deg, #020049, #2427ff);
-    font-family: 'Orbitron', sans-serif;
-    border-radius: 5px;
-    text-align: center;
-    cursor:pointer;
-}
-.containerr #BTN:hover{
-    background: linear-gradient(90deg, #2427ff, #020049);
-}
-/**/
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 .pinakalabas {
     position: relative;
     top: 5rem;
@@ -343,11 +267,7 @@ hr {
     border-color: #020049;
 }
 .isang textarea {
-<<<<<<< HEAD
     height: 100px;
-=======
-    height: 60px;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     width: 100%;
 }
 .isang textarea:focus {
@@ -415,6 +335,12 @@ hr {
 }
 .inside:hover {
     background: linear-gradient(180deg, #020049, #2427ff);
+}
+.uplAnnounce {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 8px;
+    border-radius: 5px;
 }
 .homepic {
     border: 0px solid black;

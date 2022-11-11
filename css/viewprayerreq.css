@@ -123,6 +123,31 @@ hr {
     min-height: 100vh;
     padding-bottom: 5rem;
 }
+.filter {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    background: linear-gradient(180deg, #020049, #2427ff);
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.inn {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+.backbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
 .table::-webkit-scrollbar {
     width: 10px;
 }
@@ -140,15 +165,17 @@ hr {
 .table {
     overflow-y: scroll;
     height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;
+    top: 2rem;
 }
 .tablecont {
     position: relative;
     top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
     font-family: 'Orbitron', sans-serif;
     border-collapse: collapse;
-    width: 80%;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.7);
@@ -177,20 +204,10 @@ tbody tr {
 tbody tr:last-of-type {
     border-bottom: 2px solid #020049;
 }
-.edit {
-    background: #020049;
-    color: white;
-    padding: 5px;
-    font-family: 'Orbitron', sans-serif;
-    border: 0 solid black;
-    border-top-color: #8a0000;
-    border-top-width: 2px;
-}
-.edit:hover {
-    background: #8a0000;
-    border-top-color: #020049;
-}
-.del {
+
+
+.delete-btn {
+    text-decoration: none;
     background: #020049;
     color: white;
     padding: 5px;
@@ -199,7 +216,8 @@ tbody tr:last-of-type {
     border-bottom-color: #8a0000;
     border-bottom-width: 2px;
 }
-.del:hover {
-    background: #8a0000;
+.delete-btn:hover {
+    background: red;
     border-bottom-color: #020049;
+    border-bottom-width: 2px;
 }

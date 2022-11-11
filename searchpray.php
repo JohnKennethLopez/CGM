@@ -14,7 +14,7 @@
                 <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
             </div>
         </div>
-        <h1 class="head">Attendance List</h1><hr>
+        <h1 class="head">Prayer Requests &<br> Answered Prayers</h1><hr>
             <div class="search">
                 <form action="" method="GET">
                     <div class="searchbar">
@@ -27,12 +27,10 @@
             <table class="tablecont">
                 <thead>
                     <th>CGM CHAPTER</th>
-                    <th>DATE</th>
-                    <th>FULL NAME</th>
-                    <th>AGE</th>
-                    <th>GENDER</th>
-                    <th>CONTACT NUMBER</th>
-                    <th>ADDRESS</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>PRAY REQUESTS</th>
+                    <th>ANSWERED PRAYERS</th>
                 </thead>
                 <?php
                     $con = new mysqli('localhost','root','','cgm');
@@ -41,7 +39,7 @@
                     if(isset($_GET['search']))
                     {
                         $filter = $_GET['search'];
-                        $query = "SELECT * FROM attendance WHERE CONCAT(cgmchapter, date) LIKE '%$filter%' ";
+                        $query = "SELECT * FROM prayer WHERE CONCAT(cgmchapter) LIKE '%$filter%' ";
                         $query_run = mysqli_query($con,$query);
 
                         if(mysqli_num_rows($query_run) > 0)
@@ -50,13 +48,11 @@
                             {
                                 ?>
                                     <tr class="scroll">
-                                        <td><?= $items['cgmchapter']; ?></td>
-                                        <td><?= $items['date']; ?></td>
-                                        <td><?= $items['fullname']; ?></td>
-                                        <td><?= $items['age']; ?></td>
-                                        <td><?= $items['gender']; ?></td>
-                                        <td><?= $items['contactnumber']; ?></td>
-                                        <td><?= $items['address']; ?></td>
+                                    <td><?= $items['cgmchapter']; ?></td>
+                                    <td><?= $items['name']; ?></td>
+                                    <td><?= $items['email']; ?></td>
+                                    <td><?= $items['request']; ?></td>
+                                    <td><?= $items['report']; ?></td>
                                     </tr>
                                 <?php
                             }

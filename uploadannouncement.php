@@ -6,76 +6,60 @@ if(!isset($_SESSION["username"]))
     header("location:admin.php");
 }
 ?>
+
+
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-    <link rel="stylesheet" href="css/Editbtn.css">
+    <link rel="stylesheet" href="css/upannounce.css">
+    <script src="JavaScript/announcepic.js" defer></script>
 </head>
 <body>
-
-<?php
-
-    $con = mysqli_connect('localhost','root','','cgm');    
-
-    $id = $_GET['edit'];
-    $sql = "SELECT * FROM announcement WHERE id = $id";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-    $img = $row['img'];
-    $chapter = $row['cgmchapter'];
-    $anntitle = $row['announceTitle'];
-    $caption = $row['caption'];
-
-    if(isset($_POST['submitannounce'])){
-        $image = $_FILES['img'];
-        print_r($_FILES['img']);
-        $img_loc = $_FILES['img']['tmp_name'];
-        $img_name = $_FILES['img']['name'];
-        $img ="upload/" .$img_name;
-        move_uploaded_file($img_loc,'upload/'.$img_name);
-
-
-        $chap = $_POST['cgmchapter'];
-        $anntitle = $_POST['announceTitle'];
-        $caption = $_POST['caption'];
-
-        $query = "UPDATE announcement SET img='$img', cgmchapter='$chap', announceTitle='$anntitle', caption='$caption' where id=$id";
-        $query_run = mysqli_query($con,$query);
-
-        if($query_run){
-            $_SESSION['status'] = "Post Successfully";
-            $_SESSION['status-code'] = "success";
-            header('location:editAnnounce.php');
-        }else{
-            $_SESSION['status'] = "Something is wrong";
-            $_SESSION['status-code'] = "error";
-            header('location:editAnnounce.php');
-        }
-
-    }
-?>
-
-
-
-    <section id="upload">
-        
-                
+    <section id="announcement">
+    <div class="back">
+            <div class="inn">
+                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+            </div>
+        </div>
         <div class="pinakalabas">
-        <div class="labas">
-                <form method="POST" enctype="multipart/form-data">
+            <div class="labass">
+                <form action="announce.php" method="POST" enctype="multipart/form-data">
                 <h1>ANNOUNCEMENT:</h1>
                 <div class="loob">
                 <div class="iisang">
-                        <label for="img">Add Image:</label>
-                        <input value="" type="file" name="img"><img src="<?php echo $img; ?>" alt="" width="100px">
+                <div class="container">
+                            <div class="wrapper">
+                                <div class="upimg">
+                                    <img id="uploadimage" src="" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="icon">
+                                        <img src="css/image/photo.png" alt="" width="60px">
+                                    </div>
+                                    <div class="nofile">
+                                        <p>Add Photo</p>
+                                    </div>
+                                </div>
+                                <div id="cancel">
+                                    <img src="css/image/cancel.png" alt="" width="15px">
+                                </div>
+                                <div class="file-name">
+                                    <p>File Name Here</p>
+                                </div>
+                            </div>
+                            <input id="intBTN" type="file" name="img" hidden required>
+                            <p onclick="defaultbtnactive()" id="custom-btn">Choose a File</p>
+                            
+                        </div>
+                        
                     </div>
                     <div class="isang">
                         <label for="church">CGM Chapter</label>
-                            <select name="cgmchapter" id="church" required value="">
-                                <option value="<?php echo $chapter; ?>" disabled selected><?php echo $chapter; ?></option>
+                            <select name="cgmchapter" id="church" required>
+                                <option value="select" disabled selected>Select CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
                                     <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
@@ -97,28 +81,23 @@ if(!isset($_SESSION["username"]))
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
                             </select>
-                    </div>
-                    <div class="isang">
-                        <label for="announceTitle">Announcement Title:</label>
-                        <input type="text" name="announceTitle" placeholder="Enter the Title of the Announcement" value="<?php echo $anntitle; ?>">
-                    </div>
-                    <div class="isang">
-                        <label for="caption">Add caption/Imformation:</label>
-                        <textarea name="caption" id="caption" placeholder="Add caption/Information"><?php echo $caption; ?></textarea>
-                    </div>
-                    <div class="button">
-                        <div class="submit">
-                            <button name="submitannounce" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editAnnounce.php"> CANCEL</a></button>
                         </div>
+                        <div class="isang">
+                            <label for="announceTitle">Announcement Title:</label>
+                            <input type="text" name="announceTitle" placeholder="Enter the Announcement Title" required>
+                        </div>
+                        <div class="isang">
+                            <label for="caption">Add caption/Imformation:</label>
+                            <textarea name="caption" id="caption" placeholder="Add caption/Information"></textarea>
+                        </div>
+                            <input type="submit" name="submitannounce" id="send" value="POST">
                     </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-        
-        
-    </section>
+        </section>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 

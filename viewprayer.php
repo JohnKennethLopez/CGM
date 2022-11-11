@@ -15,6 +15,7 @@ if(!isset($_SESSION["username"]))
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/viewprayerreq.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <section id="admin">
@@ -40,6 +41,11 @@ if(!isset($_SESSION["username"]))
                 <h1 class="prayer">Prayer Requests &<br> Answered Prayers</h1>
     </section>
     <section id="prayerReq">
+        <div class="filter">
+            <div class="inn">
+                <p class="backbtn"><a href="searchpray.php">Search a <br>CGM CHAPTER</a></p>
+            </div>
+        </div>
         <div class="table">
             <table class="tablecont">
                 <tr>
@@ -48,7 +54,7 @@ if(!isset($_SESSION["username"]))
                     <th>EMAIL</th>
                     <th>PRAY REQUESTS</th>
                     <th>ANSWERED PRAYERS</th>
-                    <th class="DE">DELETE & EDIT</th>
+                    <th class="DE">DELETE</th>
                 </tr>
                 <?php
                     $con = new mysqli('localhost','root','','cgm');
@@ -61,12 +67,15 @@ if(!isset($_SESSION["username"]))
                         while($row = mysqli_fetch_array($query_run)){
                     ?>
                     <tr>
+                    <td class="official_id" hidden ><?php echo $row['id']?></td>
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['name']?></td>
                         <td><?php echo $row['email']?></td>
                         <td><?php echo $row['request']?></td>
                         <td><?php echo $row['report']?></td>
-                        <td><button class="edit">edit</button><a href="pray_delete.php?delete=<?php echo $row['id']; ?>"><button class="del">delete</button></a></td>
+                        <td><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
+                    <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a>
+</td>
                         
                     </tr>
                     <?php
@@ -80,14 +89,61 @@ if(!isset($_SESSION["username"]))
             </table>
         </div>
     </section>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
-<?php
-if(isset($_POST['delete_btn_set']))
-{
-    $del_id = $_POST['delete_id'];
+<script>
+    $('.delete_btn_ajax').click(function(e){
+        e.preventDefault();
 
-    $query = "DELETE FROM pray WHERE id='$del_id'";
-    $query_run = mysqli_query($connect, $query);
+        var deleteid = $(this).closest("tr").find('.delete_id_value').val();
+        console.log(deleteid);
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this Data!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    type: "POST",
+                    url: "deletepray.php",
+                    data: {
+                        "delete_btn_set": 1,
+                        "delete_id": deleteid,
+                    },
+                    success: function(response) {
+
+                        swal("Data Deleted Successfully!", {
+                                icon: "success",
+                            }).then((result) => {
+                                location.reload();
+                            });
+                    }
+                });
+            }
+            });
+    })
+</script>
+
+<?php
+if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $_SESSION['status']; ?>",
+            // text: "You clicked the button!",
+            icon: "<?php echo $_SESSION['status-code']; ?>",
+            confirmButtonColor: "#020049",
+            confirmButtonText: "Ok",
+
+            });
+    </script>
+    <?php
+    unset($_SESSION['status']);
 }
 ?>
+
+

@@ -15,11 +15,7 @@
     z-index: 1;
     height: auto;
     min-height: 100vh;
-<<<<<<< HEAD
     padding-bottom: 10rem;
-=======
-    padding-bottom: 5rem;
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
 }
 .nav {
     position: fixed;
@@ -121,7 +117,7 @@ ul li a {
 .history {
     position: relative;
     top: 5rem;
-    padding: 5rem 2rem 3rem 2rem;
+    padding: 2rem 2rem 3rem 2rem;
     margin-left: 10%;
     margin-right: 10%;
     font-size: 20px;
@@ -137,7 +133,7 @@ ul li a {
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
-    z-index: 1;
+
     height: auto;
     min-height: 100vh;
     padding-bottom: 10rem;
@@ -264,6 +260,10 @@ ul li a {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -306,6 +306,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -341,18 +342,15 @@ ul li a {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: auto;
         min-height: 100vh;
         padding-bottom: 8rem;
-<<<<<<< HEAD
     }
     .homelg {
         width: 60px;
         height: 60px;
-=======
->>>>>>> 2d96d18e26a5aef646c0981383efdf952df60d03
     }
     .lg {
         display: block;
@@ -400,6 +398,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
@@ -469,8 +468,6 @@ ul li a {
         font-size: 12px;
     }
     .vision {
-        color: white;
-        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
         margin-left: 0;
         margin-top: 5%;
     }

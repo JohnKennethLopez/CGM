@@ -107,7 +107,7 @@ ul li a {
 /*FORM*/
 .form {
     position: relative;
-    top: 5rem;
+    top: 15rem;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -289,6 +289,10 @@ ul li a {
         padding-left: 2rem;
         padding-top: 2rem;
     }
+    .homelg {
+        width: 60px;
+        height: 60px;
+    }
     .logo {
         display: none;
     }
@@ -328,10 +332,11 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -341,7 +346,7 @@ ul li a {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: black;
         border-radius: 1px;
         transition: all .3s ease-in-out;
     }
@@ -362,6 +367,9 @@ ul li a {
         transform: rotate(-45deg) translate(10px, 10px);
     }
     /*form*/
+    .form {
+        top: 5rem;
+    }
     .prayerform {
         border-radius: 0 0 0 0;
     }
@@ -383,7 +391,7 @@ ul li a {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: auto;
         min-height: 100vh;
@@ -439,6 +447,7 @@ ul li a {
         transition: all .3s ease-in-out;
     }
     .bur {
+        position: fixed;
         display: block;
         width: 25px;
         height: 3px;
