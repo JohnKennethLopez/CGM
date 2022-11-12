@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="looob">
                                                 <?php
-                                    $con = new mysqli('localhost','root','','cgm');
+                                    include('cgmdbconnection.php');
                                     $dibconfig = mysqli_select_db($con,'cgm');
                                     
                                     $query = "SELECT * FROM announcement";
