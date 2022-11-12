@@ -143,13 +143,13 @@ session_start();
     <body>
         <section id="bg-image">
             <div class="homelg">
-                <a href="CGM.php"><img class="lg" src="logo.png" alt=""></a>
+                <a href="index.php"><img class="lg" src="logo.png" alt=""></a>
             </div>
             <div class="menu">
                 <div class="bur"></div>
             </div>
             <div class="nav" data-visible="false">
-                <h1 class="logo"><a href="CGM.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
+                <h1 class="logo"><a href="index.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
             <ul>
                 <li><a href="about.html" class="text-white">About</a></li>
                 <li><a href="findchurch.html">Find a Church</a></li>
