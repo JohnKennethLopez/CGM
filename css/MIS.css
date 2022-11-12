@@ -199,7 +199,7 @@ ul li a {
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
-    z-index: 1;
+
     height: auto;
     min-height: 100vh;
     padding-bottom: 14rem;
@@ -377,7 +377,7 @@ ul li a {
     }
 }
 /*phone responsive*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     #bg-image {
         height: auto;
         min-height: 100vh;

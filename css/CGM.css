@@ -624,8 +624,9 @@ p a {
         display: inline-block;
         align-content: center;
         top: 25rem;
-        left: 7.5rem;
-        z-index: 9999;
+        left: 0rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
     .who {
         background: hsl(0 0% 100% / 0.1);
@@ -702,5 +703,38 @@ p a {
     }
     .copyright a{
         font-size: 12px;
+    }
+}
+/*phone responsive*/
+@media only screen and (max-width: 380px) {
+    .who {
+        background: hsl(0 0% 100% / 0.1);
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem 1rem 1rem 1rem;
+        margin-right: 0;
+    }
+    .where {
+        background: hsl(0 0% 100% / 0.1);
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+    p a {
+        color: black;
+        font-size: 12px;
+    }
+    /*display image*/
+    .slider {
+        width: 340px;
+        height: auto;
+        object-fit: cover;
+    }
+    .nav-man{
+        width: 340px;
+        margin-top: -260px;
+    }
+    .auto{
+        width: 320px;
     }
 }

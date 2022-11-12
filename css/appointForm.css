@@ -12,6 +12,7 @@
     height: auto;
     min-height: 100vh;
     padding-bottom: 12rem;
+    overflow-x: hidden;
 }
 .nav {
     position: fixed;
@@ -226,6 +227,7 @@ th {
     background-position: top center;
     height: auto;
     padding-bottom: 10rem;
+    overflow-x: hidden;
 }
 .h1form {
     font-family: 'Orbitron', sans-serif;
@@ -908,5 +910,54 @@ th {
     }
     .copyright a{
         font-size: 12px;
+    }
+}
+@media only screen and (max-width: 440px) {
+    /*CALENDAR*/
+    table, th, td {
+        font-family: 'Orbitron', sans-serif;
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 7px;
+    }
+    td {
+        padding: .5rem 5px .5rem 5px;
+    }
+    th {
+        padding: 5px 5px;
+    }
+    .Hcalendar {
+        font-size: 20px;
+    }
+    .prebtn {
+        font-size: 10px;
+        padding: 2px;
+    }
+    .curbtn {
+        font-size: 10px;
+        padding: 2px;
+    }
+    .nxtbtn {
+        font-size: 10px;
+        padding: 2px;
+    }
+    .NAbtn {
+        font-size: 7px;
+        padding: 2px;
+    }
+    .btnBook {
+        font-size: 8px;
+        padding: 2px;
+    }
+    .labelchap {
+        position: relative;
+        top: 10px;
+        font-size: 12px;
+    }
+    .form-control {
+        position: relative;
+        top: 10px;
+        height: 25px;
+        font-size: 10px;
     }
 }
