@@ -37,7 +37,7 @@
                     <th>MESSAGE</th>
                 </thead>
                 <?php
-                    $con = new mysqli('localhost','root','','cgm');
+                    include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
                     if(isset($_GET['search']))

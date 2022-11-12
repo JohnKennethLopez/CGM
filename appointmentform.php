@@ -5,7 +5,7 @@ session_start();
 
 <?php
     function build_calendar($month,$year, $room){
-        $con = mysqli_connect('localhost','root','','cgm');
+        include('cgmdbconnection.php');
 
         //CGM Las Pinas Main
         $query = $con->prepare("SELECT * FROM chapter");

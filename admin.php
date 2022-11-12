@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost','root','','cgm');
+include('cgmdbconnection.php');
 
 session_start();
 

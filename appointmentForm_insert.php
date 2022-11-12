@@ -1,6 +1,6 @@
 <?php
 session_start();
-    $con = mysqli_connect('localhost','root','','cgm');
+include('cgmdbconnection.php');
 
     if(isset($_POST['sendappoint'])){
         $date = $_POST['date'];

@@ -57,7 +57,7 @@ if(!isset($_SESSION["username"]))
                     <th class="DE">DELETE & EDIT</th>
                 </thead>
                 <?php
-                    $con = new mysqli('localhost','root','','cgm');
+                    include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
                     $query = "SELECT * FROM attendance";

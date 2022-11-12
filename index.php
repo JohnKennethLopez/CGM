@@ -43,7 +43,7 @@
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
                 <?php
-                                    $con = new mysqli('localhost','root','','cgm');
+                                    include('cgmdbconnection.php');
                                     $dibconfig = mysqli_select_db($con,'cgm');
                                     
                                     $query = "SELECT * FROM home";

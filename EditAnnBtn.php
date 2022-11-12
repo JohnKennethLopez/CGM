@@ -18,7 +18,7 @@ if(!isset($_SESSION["username"]))
 
 <?php
 
-    $con = mysqli_connect('localhost','root','','cgm');    
+include('cgmdbconnection.php');    
 
     $id = $_GET['edit'];
     $sql = "SELECT * FROM announcement WHERE id = $id";

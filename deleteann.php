@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = new mysqli('localhost','root','','cgm');
+include('cgmdbconnection.php');
 $dibconfig = mysqli_select_db($con,'cgm');
 
 

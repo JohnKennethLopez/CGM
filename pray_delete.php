@@ -1,6 +1,6 @@
 <?php
 
-    $con=new mysqli('localhost','root','','cgm');
+include('cgmdbconnection.php');
 
     if (isset($_GET['delete'])){
         $id = $_GET['delete'];
