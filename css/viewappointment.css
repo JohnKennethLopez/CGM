@@ -202,7 +202,8 @@ tbody tr {
 tbody tr:last-of-type {
     border-bottom: 2px solid #020049;
 }
-.edit {
+.delete-btn {
+    text-decoration: none;
     background: #020049;
     color: white;
     padding: 5px;
@@ -211,30 +212,8 @@ tbody tr:last-of-type {
     border-bottom-color: #8a0000;
     border-bottom-width: 2px;
 }
-.edit:hover {
-    background: #8a0000;
+.delete-btn:hover {
+    background: red;
     border-bottom-color: #020049;
-}
-.del {
-    background: #020049;
-    color: white;
-    padding: 5px;
-    font-family: 'Orbitron', sans-serif;
-    border: 0 solid black;
-    border-bottom-color: #8a0000;
     border-bottom-width: 2px;
-}
-.del:hover {
-    background: #8a0000;
-    border-bottom-color: #020049;
-}
-@media only screen and (max-height: 900px) {
-    #admin {
-        height: 140%;
-    }
-}
-@media only screen and (max-height: 770px) {
-    #admin {
-        height: 169%;
-    }
 }
