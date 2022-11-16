@@ -58,7 +58,7 @@ if(!isset($_SESSION["username"]))
                     <th>TIME</th>
                     <th>ADDRESS</th>
                     <th>MESSAGE</th>
-                    <th class="DE">DELETE & EDIT</th>
+                    <th class="DE">DELETE</th>
                 </tr>
                 <?php
                     include('cgmdbconnection.php');
