@@ -42,7 +42,7 @@
                     {
                         $filter = $_GET['search'];
                         //$query = "SELECT * FROM attendance WHERE CONCAT(cgmchapter, date) LIKE '%$filter%' ";
-                        $query = "SELECT * FROM attendance WHERE cgmchapter='CGM Mabini, Tanauan' AND date='2022/11/06'";
+                        $query = "SELECT * FROM attendance WHERE cgmchapter='CGM Mabini, Tanauan' AND date='2022/11/16'";
                         $query_run = mysqli_query($con,$query);
 
                         if(mysqli_num_rows($query_run) > 0)
