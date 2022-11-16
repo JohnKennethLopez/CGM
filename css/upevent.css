@@ -323,40 +323,75 @@ hr {
 
 /*Edit posted events, announcements, and home page pictures part*/
 .edit {
-    display: flex;
-    justify-content: space-between;
+    background: #e6e6e6;
+    padding: 1rem;
+    border: 0 solid black;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 5px 30px 40px rgba(0, 0, 0, 1);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     margin-top: 6%;
 }
 .inside {
     border: 0px solid black;
-    background: linear-gradient(90deg, #2427ff, #020049);
+    background: linear-gradient(90deg, #0003b8, #020049);
     padding: 8px;
+    height: 100%;
     border-radius: 5px;
 }
 .inside:hover {
     background: linear-gradient(180deg, #020049, #2427ff);
 }
 .uplAnnounce {
+    text-align: center;
     border: 0px solid black;
-    background: #e6e6e6;
+    background: #b8b8b8;
     padding: 8px;
     border-radius: 5px;
 }
 .homepic {
+    text-align: center;
     border: 0px solid black;
-    background: #e6e6e6;
+    background: #b8b8b8;
     padding: 8px;
     border-radius: 5px;
 }
 .editevent {
+    
+    text-align: center;
     border: 0px solid black;
-    background: #e6e6e6;
+    background: #b8b8b8;
     padding: 8px;
     border-radius: 5px;
 }
 .editann {
+    text-align: center;
     border: 0px solid black;
-    background: #e6e6e6;
+    background: #b8b8b8;
+    padding: 8px;
+    border-radius: 5px;
+}
+.editabout {
+    
+    text-align: center;
+    border: 0px solid black;
+    background: #b8b8b8;
+    padding: 8px;
+    border-radius: 5px;
+}
+.editgmap {
+    
+    text-align: center;
+    border: 0px solid black;
+    background: #b8b8b8;
+    padding: 8px;
+    border-radius: 5px;
+}
+.editCM {
+    text-align: center;
+    border: 0px solid black;
+    background: #b8b8b8;
     padding: 8px;
     border-radius: 5px;
 }

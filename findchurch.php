@@ -23,7 +23,7 @@
             <div class="nav" data-visible="false">
                 <h1 class="logo"><a href="index.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
             <ul>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li class="focus"><a href="">Find a Church</a></li>
                 <li><a href="CounMin.html">Council & Ministries</a></li>
                 <li><a href="program.html">Program</a></li>
@@ -72,6 +72,19 @@
         <section id="googlemap">
             <div id="tanauan">
                 <div class="outer">
+                    <?php
+                    include ('cgmdbconnection.php');
+                    ?>
+                    <?php
+                    $sql = "SELECT * FROM gmap WHERE id='10'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $f2f = $row['f2fservice'];
+                    $online = $row['online'];
+                    $add = $row['address'];
+                    $gmap = $row['googlemap'];
+                    $fb = $row['fblink'];
+                    ?>
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Mabini Tanauan
@@ -81,31 +94,41 @@
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday |<span> 1st Service 9:00am-11:00am</span> | <span>2nd service at Bagbag Area 3:00pm-5:00pm</span>
+                            <?php echo $f2f; ?>
                         </p>
                         <hr /><br>
                         <h3 class="h3cgm">
                             Online Service :
                         </h3>
                         <div class="psched">
-                            <a href="https://www.facebook.com/edwinmoncayo81"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                            <a href="<?php echo $fb; ?>"><img class="fblink" src="css/image/fb.png"> Facebook</a>
                         </div>
                         <p class="psched">
-                            Sunday |<span> 9:00am-11:00am</span> | To watch the live stream just go to CGM Mabini Tanauan Facebook Page.
+                            <?php echo $online; ?>
                         </p>
                         <hr /><br>
                         <p class="padd">
-                            012 Brgy. Mabini, Tanauan City, Batangas
+                            <?php echo $add; ?>
                         </p>
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4296.959604661916!2d121.11772050826217!3d14.058818325462532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6fb321148ee9%3A0x6bb27b83fe3fa56b!2sChurch%20of%20God&#39;s%20Miracles%20Mabini%20Tanauan%20Chapter!5e1!3m2!1sen!2sph!4v1665693942024!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <?php echo $gmap; ?>
                 </div>
             </div>
             
             <div id="balete">
                 <div class="outer">
+                    <?php
+                    $sql = "SELECT * FROM gmap WHERE id='3'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $f2f = $row['f2fservice'];
+                    $online = $row['online'];
+                    $add = $row['address'];
+                    $gmap = $row['googlemap'];
+                    $fb = $row['fblink'];
+                    ?>
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Balete
@@ -115,21 +138,31 @@
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday |<span> 1st Service 7:30am-10:30am</span> | <span>2nd to 5th Sunday, Afternoon Service at Brgy. Looc, Brgy. Malabanan, Brgy. Solis 2:00pm-4:00pm</span>
+                                <?php echo $f2f; ?>
                         </p>
                         <hr /><br>
                         <p class="padd">
-                            Brgy. Palsara, Balete, Batangas
+                                <?php echo $add; ?>
                         </p>
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57824.07506735483!2d121.02612018585205!3d14.013994872102785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6de22f39faf5%3A0x6970ce9d5fdeadbc!2sChurch%20Of%20God%C5%9B%20Miracles!5e1!3m2!1sen!2sph!4v1665694056850!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?php echo $gmap; ?>
                 </div>
             </div>
 
             <div id="main">
                 <div class="outer">
+                    <?php
+                    $sql = "SELECT * FROM gmap WHERE id='1'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $f2f = $row['f2fservice'];
+                    $online = $row['online'];
+                    $add = $row['address'];
+                    $gmap = $row['googlemap'];
+                    $fb = $row['fblink'];
+                    ?>
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Las Piñas Main
@@ -139,31 +172,41 @@
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday | <span>1st Service 7:00am-8:30am</span> | <span> service 9:00am-10:30am</span> | <span>3rd Service 4:00pm-5:30pm</span>
+                                <?php echo $f2f; ?>
                         </p>
                         <hr /><br>
                         <h3 class="h3cgm">
                             Online Service :
                         </h3>
                         <div class="psched">
-                            <a href="https://www.facebook.com/CGMMain"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                            <a href="<?php echo $fb; ?>"><img class="fblink" src="css/image/fb.png"> Facebook</a>
                         </div>
                         <p class="psched">
-                            Sunday | <span>1st Service 7:00am-8:30am</span> | <span> service 9:00am-10:30am</span> | <span>3rd Service 4:00pm-5:30pm</span> | To watch the live stream just go to CGM Las Piñas Main Facebook Page.
+                                <?php echo $online; ?>
                         </p>
                         <hr /><br>
                         <p class="padd">
-                            Lot 1-A Liderato Hernandez St., 1750 Metrocor, Southgate Homes Almanza Uno, Las Pinas, Cavite
+                                <?php echo $add; ?>
                         </p>
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.8155137319616!2d121.01069839395186!3d14.436063075434395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d1de0f20117f%3A0xe5adc43eafd4b06e!2sChurch%20of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665694154854!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?php echo $gmap; ?>
                 </div>
             </div>
 
             <div id="pulilan">
                 <div class="outer">
+                    <?php
+                    $sql = "SELECT * FROM gmap WHERE id='15'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $f2f = $row['f2fservice'];
+                    $online = $row['online'];
+                    $add = $row['address'];
+                    $gmap = $row['googlemap'];
+                    $fb = $row['fblink'];
+                    ?>
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Pulilan
@@ -173,31 +216,41 @@
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday Service | <span>8:00am-10:30am</span> | <span>Friday Miracle Night 7:00pm-8:30pm</span>
+                            <?php echo $f2f; ?>
                         </p>
                         <hr /><br>
                         <h3 class="h3cgm">
                             Online Service :
                         </h3>
                         <div class="psched">
-                            <a href="https://www.facebook.com/CGM-Pulilan-107443997478145"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                            <a href="<?php echo $fb; ?>"><img class="fblink" src="css/image/fb.png"> Facebook</a>
                         </div>
                         <p class="psched">
-                            Sunday | <span>8:00am-10:30am</span> | <span>Friday Miracle Night 7:00pm-8:30pm</span> | To watch the live stream just go to CGM pulilan Facebook.
+                            <?php echo $online; ?>
                         </p>
                         <hr /><br>  
                         <p class="padd">
-                            072 Dimas St. Lumbac Pulilan, Bulacan
+                            <?php echo $add; ?>
                         </p>
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.4187822216086!2d120.86981591774259!3d14.912315200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339654e0b1980c43%3A0x193045d224cf992c!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698115489!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <?php echo $gmap; ?>
                 </div>
             </div>
 
             <div id="edsa">
                 <div class="outer">
+                    <?php
+                    $sql = "SELECT * FROM gmap WHERE id='7'";
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $f2f = $row['f2fservice'];
+                    $online = $row['online'];
+                    $add = $row['address'];
+                    $gmap = $row['googlemap'];
+                    $fb = $row['fblink'];
+                    ?>
                     <div class="inner">
                         <h1 class="h1cgm">
                             CGM Edsa
@@ -207,26 +260,26 @@
                             Face-to-Face Service :
                         </h3>
                         <p class="psched">
-                            Sunday Service | <span>10:00am-11:30am </span> | 
+                                <?php echo $f2f; ?> 
                         </p>
                         <hr /><br>
                         <h3 class="h3cgm">
                             Online Service :
                         </h3>
                         <div class="psched">
-                            <a href="https://www.facebook.com/cgmedsa07"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                            <a href="<?php echo $fb; ?>"><img class="fblink" src="css/image/fb.png"> Facebook</a>
                         </div>
                         <p class="psched">
-                            Sunday | <span>10:00am-11:30am </span>| To watch the live stream just go to CGM Edsa Facebook.
+                                <?php echo $online; ?>
                         </p>
                         <hr /><br>
                         <p class="padd">
-                            #304 SHAW BOULEVARD (DUMLAO SPORTS CENTER) PLEASANT HILLS, MANDALUYONG CITY
+                                <?php echo $add; ?>
                         </p>
                     </div>
                 </div>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.8236003449283!2d121.04634831874382!3d14.585758000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83bd0286f0f%3A0x46f2a4fd36b42dad!2sChurch%20Of%20God&#39;s%20Miracles!5e1!3m2!1sen!2sph!4v1665698199940!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?php echo $gmap; ?>
                 </div>
             </div>
 

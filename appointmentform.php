@@ -151,8 +151,8 @@ session_start();
             <div class="nav" data-visible="false">
                 <h1 class="logo"><a href="index.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
             <ul>
-                <li><a href="about.html" class="text-white">About</a></li>
-                <li><a href="findchurch.html">Find a Church</a></li>
+                <li><a href="about.php" class="text-white">About</a></li>
+                <li><a href="findchurch.php">Find a Church</a></li>
                 <li><a href="CounMin.html">Council & Ministries</a></li>
                 <li><a href="program.html">Program</a></li>
                 <li><a href="event.php">Events</a></li>
@@ -203,7 +203,7 @@ session_start();
                     <div class="loob">
                         <div class="INP">
                             <label for="date">Date:</label>
-                            <input type="date" name="date"  value="<?php echo date('Y-m-d',strtotime($date)); ?>">
+                            <input type="date" name="date" readonly  value="<?php echo date('Y-m-d',strtotime($date)); ?>">
                         </div>
                         <div class="INP">
                             <label for="fullname">Full Name:</label>

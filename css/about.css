@@ -125,6 +125,13 @@ ul li a {
     border: 0px solid black;
     background: hsl(0 0% 0% / 0.5);
     color: white;
+    text-align: justify;
+}
+.history p {
+    text-indent: 8rem;
+    line-height: 2.5rem;
+}
+.hisH1 {
     text-align: center;
 }
 #misvis {
@@ -441,6 +448,11 @@ ul li a {
         font-size: 15px;
         top: 3rem;
         padding: 3rem 2rem 3rem 2rem;
+        text-align: justify;
+    }
+    .history p {
+        text-indent: 3rem;
+        line-height: 1.5rem;
     }
     #misvis {
         background: url("./image/white2.jpg");

@@ -105,7 +105,7 @@ if(!isset($_SESSION["username"]))
                     </div>
                     <div class="editevent">
                         <div class="inside">
-                            <p class="editbtn"><a href="editEvent.php">Edit Posted Events</a></p>
+                            <p class="editbtn"><a href="editEvent.php">Edit Posted<br>Events</a></p>
                         </div>
                     </div>
                     <div class="homepic">
@@ -116,6 +116,21 @@ if(!isset($_SESSION["username"]))
                     <div class="editann">
                         <div class="inside">
                             <p class="editbtn"><a href="editAnnounce.php">Edit Posted Announcement</a></p>
+                        </div>
+                    </div>
+                    <div class="editabout">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editAbout.php">Edit<br>About</a></p>
+                        </div>
+                    </div>
+                    <div class="editgmap">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editGmap.php">Edit Google<br>Map</a></p>
+                        </div>
+                    </div>
+                    <div class="editCM">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editCM.php">Edit Councile & Ministry</a></p>
                         </div>
                     </div>
                 </div>

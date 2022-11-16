@@ -19,8 +19,8 @@
         <div class="nav" data-visible="false">
             <h1 class="logo"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</h1>
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="findchurch.html">Find a Church</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="findchurch.php">Find a Church</a></li>
                     <li><a href="CounMin.html">Council & Ministries</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li><a href="event.php">Events</a></li>
@@ -144,7 +144,38 @@
                     </div> 
             </div>
         </section>
+        //FaceBook Messenger code
+                <!-- Messenger Chat Plugin Code -->
+            <div id="fb-root"></div>
 
+            <!-- Your Chat Plugin code -->
+            <div id="fb-customer-chat" class="fb-customerchat">
+            </div>
+
+            <script>
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "498094316971732");
+            chatbox.setAttribute("attribution", "biz_inbox");
+            </script>
+
+            <!-- Your SDK code -->
+            <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                xfbml            : true,
+                version          : 'v15.0'
+                });
+            };
+
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script>
+        //End of FaceBook Messenger code
         <section id="footer">
             <div class="foot1">
                 <h1 class="update">To keep updated<br>Follow us on:</h1>
