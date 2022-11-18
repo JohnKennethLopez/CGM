@@ -27,7 +27,7 @@ if(!isset($_SESSION["username"]))
         <div class="pinakalabas">
             <div class="labass">
                 <form action="announce.php" method="POST" enctype="multipart/form-data">
-                <h1>ANNOUNCEMENT:</h1>
+                <h1 class="h1up">ANNOUNCEMENT</h1>
                 <div class="loob">
                 <div class="iisang">
                 <div class="container">

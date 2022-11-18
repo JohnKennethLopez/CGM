@@ -27,7 +27,7 @@ if(!isset($_SESSION["username"]))
                 <form action="" method="GET">
                     <div class="filter">
                             <select name="chapter" id="church" >
-                                    <option value="select" disabled selected>Choose a CGM Church</option>
+                                    <option value="select" disabled selected>Select a CGM Chapter</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
                                     <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
@@ -49,7 +49,7 @@ if(!isset($_SESSION["username"]))
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
                             </select><br>
-                            <input type="date" name="attendDate"><br>
+                            <input type="date" name="attendDate" value="<?php if(isset($_GET['chapter'])){ echo $_GET['attendDate']; } ?>"><br>
                         <button type="submit" class="filterbtn">Filter<i class="fa-solid fa-filter"></i></button>
                     </div>
                     

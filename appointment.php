@@ -27,7 +27,7 @@ if(!isset($_SESSION["username"]))
                     <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                            <p class="btn"><a href="uploadevent.php">Upload Events</a></p>
+                            <p class="btn"><a href="uploadevent.php#upload">Upload Events</a></p>
                             <p class="btn"><a href="appointment.php">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php">Attendance</a><p>

@@ -28,10 +28,10 @@ if(!isset($_SESSION["username"]))
                     <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                            <p class="btn"><a href="uploadevent.php">Upload Events</a></p>
+                            <p class="btn"><a href="">Upload Events</a></p>
                             <p class="btn"><a href="appointment.php">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php">Attendance</a><p>
+                            <p class="btn"><a href="attendance.php#attendance">Attendance</a><p>
                             <p class="btn"><a href="attendancelist.php">View Attendance List</a><p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ if(!isset($_SESSION["username"]))
         <div class="pinakalabas">
             <div class="labas">
                 <form action="upcoming.php" method="POST" enctype="multipart/form-data">
-                    <h1 class="h1up">UPCOMING EVENT:</h1>
+                    <h1 class="h1up">UPCOMING EVENT</h1>
                 <div class="loob">
                     <div class="iisang">
                         <div class="container">

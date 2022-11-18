@@ -12,6 +12,14 @@
     min-height: 100vh;
     padding-bottom: 8rem;
 }
+.h1up {
+    background: linear-gradient(145deg, #020049, #2427ff);
+    color: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 15px;
+    letter-spacing: 5px;
+}
 .back {
     position: relative;
     top: 1rem;
@@ -129,7 +137,6 @@
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 .labass {
-    margin-top: 6%;
     border: 0 solid black;
     border-radius: 0 0 20px 20px;
     background: #e6e6e6;
@@ -225,7 +232,7 @@
     transition: all 0.5s ease;
     width: 100%;
     height: 45px;
-    margin: 40px 0 5px 0;
+    margin: 40px 35% 5px 35%;
     border-radius: 10px;
     background: linear-gradient(90deg, #2427ff, #020049);
     color: white;
