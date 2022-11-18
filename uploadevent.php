@@ -29,10 +29,10 @@ if(!isset($_SESSION["username"]))
                     <div class="inner">
                         <div class="dashnav">
                             <p class="btn"><a href="">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php">View Prayer Requests</a><p>
+                            <p class="btn"><a href="appointment.php#appointment">View Appointment</a><p>
+                            <p class="btn"><a href="viewprayer.php#prayerReq">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php">View Attendance List</a><p>
+                            <p class="btn"><a href="attendancelist.php#attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
@@ -131,6 +131,11 @@ if(!isset($_SESSION["username"]))
                     <div class="editCM">
                         <div class="inside">
                             <p class="editbtn"><a href="editCM.php">Edit Councile & Ministry</a></p>
+                        </div>
+                    </div>
+                    <div class="editprog">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editprog.php">Edit Live stream<br>Iframe</a></p>
                         </div>
                     </div>
                 </div>

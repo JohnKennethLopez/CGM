@@ -21,8 +21,8 @@
                 <ul>
                     <li><a href="about.php">About</a></li>
                     <li><a href="findchurch.php">Find a Church</a></li>
-                    <li><a href="CounMin.html">Council & Ministries</a></li>
-                    <li><a href="program.html">Program</a></li>
+                    <li><a href="CounMin.php">Council & Ministries</a></li>
+                    <li><a href="program.php">Program</a></li>
                     <li><a href="event.php">Events</a></li>
                     <li><a href="prayer.php">Need Prayers?</a></li>
                     <li><a href="MisSer.html">Missions & Services</a></li>
@@ -144,7 +144,7 @@
                     </div> 
             </div>
         </section>
-        //FaceBook Messenger code
+
                 <!-- Messenger Chat Plugin Code -->
             <div id="fb-root"></div>
 
@@ -175,7 +175,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             </script>
-        //End of FaceBook Messenger code
+
         <section id="footer">
             <div class="foot1">
                 <h1 class="update">To keep updated<br>Follow us on:</h1>

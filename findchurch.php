@@ -25,8 +25,8 @@
             <ul>
                 <li><a href="about.php">About</a></li>
                 <li class="focus"><a href="">Find a Church</a></li>
-                <li><a href="CounMin.html">Council & Ministries</a></li>
-                <li><a href="program.html">Program</a></li>
+                <li><a href="CounMin.php">Council & Ministries</a></li>
+                <li><a href="program.php">Program</a></li>
                 <li><a href="event.php">Events</a></li>
                 <li><a href="prayer.php">Need Prayers?</a></li>
                 <li><a href="MisSer.html">Missions & Services</a></li>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="SelectChapter">
                             <select name="cgmchapter" onchange="showGoogleMap()" id="church">
-                                <option value="select" disabled selected>Choose a CGM Church</option>
+                                    <option value="select" disabled selected>Choose a CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
                                     <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>

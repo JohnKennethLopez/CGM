@@ -403,6 +403,13 @@ hr {
     padding: 8px;
     border-radius: 5px;
 }
+.editprog {
+    text-align: center;
+    border: 0px solid black;
+    background: #b8b8b8;
+    padding: 8px;
+    border-radius: 5px;
+}
 .editbtn a {
     color: white;
     text-decoration: none;

@@ -28,10 +28,10 @@ if(!isset($_SESSION["username"]))
                     <div class="inner">
                         <div class="dashnav">
                             <p class="btn"><a href="uploadevent.php#upload">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php">View Attendance List</a><p>
+                            <p class="btn"><a href="appointment.php#appointment">View Appointment</a><p>
+                            <p class="btn"><a href="viewprayer.php#prayerReq">View Prayer Requests</a><p>
+                            <p class="btn"><a href="">Attendance</a><p>
+                            <p class="btn"><a href="attendancelist.php#attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>

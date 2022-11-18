@@ -170,6 +170,63 @@ select::-webkit-scrollbar-thumb:hover {
     height: 1000px;
     width: 1200px;
 }
+#tanauan {
+    display: none;
+}
+#balete {
+    display: none;
+}
+#pulilan {
+    display: none;
+}
+#edsa {
+    display: none;
+}
+#bacoor {
+    display: none;
+}
+#bustos {
+    display: none;
+}
+#cabuyao {
+    display: none;
+}
+#candaba {
+    display: none;
+}
+#gattaran {
+    display: none;
+}
+#hinigaran {
+    display: none;
+}
+#mariveles {
+    display: none;
+}
+#nasugbo {
+    display: none;
+}
+#navotas {
+    display: none;
+}
+#prieto {
+    display: none;
+}
+#sampaloc {
+    display: none;
+}
+#sanpedro {
+    display: none;
+}
+#starosa {
+    display: none;
+}
+#taguig {
+    display: none;
+}
+#tinio {
+    display: none;
+}
 /*watch*/
 #watch_program {
 

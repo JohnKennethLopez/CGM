@@ -23,8 +23,8 @@
             <ul>
                 <li class="focus"><a href="">About</a></li>
                 <li><a href="findchurch.php">Find a Church</a></li>
-                <li><a href="CounMin.html">Council & Ministries</a></li>
-                <li><a href="program.html">Program</a></li>
+                <li><a href="CounMin.php">Council & Ministries</a></li>
+                <li><a href="program.php">Program</a></li>
                 <li><a href="event.php">Events</a></li>
                 <li><a href="prayer.php">Need Prayers?</a></li>
                 <li><a href="MisSer.html">Missions & Services</a></li>
