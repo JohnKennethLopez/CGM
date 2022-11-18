@@ -755,4 +755,60 @@ select::-webkit-scrollbar-thumb:hover {
     .copyright a{
         font-size: 12px;
     }
+    /*LIVE Stream*/
+    .SelectChapter {
+        position: relative;
+        top: 4rem;
+        margin-right: 0%;
+        border-radius: 0 0 0 0;
+        width: 300px;
+        float: right;
+    }
+    .SelectChapter Select {
+        font-size: 10px;
+    }
+    .SelectChapter select:hover {
+        border-radius: 10px 10px 0 0;
+    }
+    .SelectChapter option {
+        border-radius: 0 0 10px 10px;
+    }
+    .live {
+        position: relative;
+        top: 6rem;
+        margin-left: 0 auto;
+    }
+    .live iframe {
+        height: 200px;
+        width: 360px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    /*LIVE Stream*/
+    .SelectChapter {
+        position: relative;
+        top: 4rem;
+        margin-right: 0%;
+        border-radius: 0 0 0 0;
+        width: 300px;
+        float: right;
+    }
+    .SelectChapter Select {
+        font-size: 10px;
+    }
+    .SelectChapter select:hover {
+        border-radius: 10px 10px 0 0;
+    }
+    .SelectChapter option {
+        border-radius: 0 0 10px 10px;
+    }
+    .live {
+        position: relative;
+        top: 6rem;
+        margin-left: 0;
+    }
+    .live iframe {
+        height: 200px;
+        width: 360px;
+    }
 }
