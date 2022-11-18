@@ -31,7 +31,7 @@ if(!isset($_SESSION["username"]))
                             <p class="btn"><a href="">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php#prayerReq">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php#attendancelist">View Attendance List</a><p>
+                            <p class="btn"><a href="attendancelist.php#Attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
