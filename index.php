@@ -32,8 +32,8 @@
         <h1 class="welcome">Welcome to Church of God's Miracles Website!</h1>
 
         <div class="wh">
-            <p class="who"><a href="about.html">Who We Are</a></p>
-            <p class="where"><a href="findchurch.html">Where We Are</a><p>
+            <p class="who"><a href="about.php">Who We Are</a></p>
+            <p class="where"><a href="findchurch.php">Where We Are</a><p>
         </div>
         
         <div class="slider">
