@@ -38,7 +38,7 @@
 .isang {
     margin: 1rem 0;
 }
-.isang input {
+.iisang input {
     height: 45px;
     width: 100%;
     font-size: 17px;
@@ -50,6 +50,21 @@
     outline: none;
     border-radius: 5px;
 
+    transition: all 0.5s ease;
+}
+.isang input {
+    height: 45px;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
     transition: all 0.5s ease;
 }
 .isang input:focus {

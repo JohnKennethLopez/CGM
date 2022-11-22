@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +20,9 @@
     background-position: top center;
     position: relative;
     z-index: 1;
-    height: 100vh;
-
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: -5rem;
 }
 .nav {
     position: fixed;
@@ -115,6 +117,7 @@ ul li a {
     padding-top: 5rem;
     font-size: 20px;
     letter-spacing: 5px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 /*LIVE Stream*/
 .SelectChapter {
@@ -163,12 +166,26 @@ select::-webkit-scrollbar-thumb:hover {
 }
 .live {
     position: relative;
-    top: 4rem;
+    top: 2rem;
+    margin-bottom: 5%;
+    margin-right: 30%;
     margin-left: 5%;
 }
 .live iframe {
-    height: 1000px;
-    width: 1200px;
+    height: 100%;
+    width: 100%;
+}
+.streamTitle {
+    position: relative;
+    top: -20rem;
+    margin-left: 5%;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 6px;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+    border: 1px solid black;
+    width: 65%;
+    padding-left: 10px;
 }
 #tanauan {
     display: none;
@@ -229,7 +246,7 @@ select::-webkit-scrollbar-thumb:hover {
 }
 /*watch*/
 #watch_program {
-
+    
     height: auto;
     min-height: 100vh;
     padding-bottom: 16rem;
@@ -402,94 +419,7 @@ select::-webkit-scrollbar-thumb:hover {
 .answer {
     padding-right: 1rem;
 }
-/*Daily Scriptures*/
-.dailyscriptures {
-    position: relative;
-    top: 10rem;
-    margin-left: 5%;
-    margin-right: 5%;
-    background: hsl(0 0% 0% / 0.8);
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
-}
-.script {
-    font-family: 'Fugaz One', cursive;
-    padding: 1rem 0 1rem 2rem;
-    font-size: 20px;
-    letter-spacing: 3px;
-    color: white;
-}
-.watchscrip {
-    overflow-x: scroll;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    background: hsl(0 0% 0% / 0.8);
-    padding: 2rem 2rem 0 2rem;
-}
-.watchscrip::-webkit-scrollbar {
-    width: 10px;
-}
-.watchscrip::-webkit-scrollbar-track {
-    
-    border-radius: 5px;
-}
-.watchscrip::-webkit-scrollbar-thumb {
-    background: linear-gradient(145deg, #020049, #2427ff);
-    border-radius: 5px;
-}
-.watchscrip::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(145deg, #2427ff, #020049);
-}
-.dailyscrip {
-    display: flex;
-}
-.scriptures {
-    padding-right: 1rem;
-}
-/*Bed of Promises*/
-.bedofpromises {
-    position: relative;
-    top: 12rem;
-    padding-bottom: 1rem;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 0 0 1rem 1rem;
-    background: hsl(0 0% 0% / 0.8);
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
-}
-.bed {
-    font-family: 'Fugaz One', cursive;
-    padding: 1rem 0 1rem 2rem;
-    font-size: 20px;
-    letter-spacing: 3px;
-    color: white;
-}
-.watchbed {
-    overflow-x: scroll;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    background: hsl(0 0% 0% / 0.8);
-    padding: 2rem 2rem 0 2rem;
-}
-.watchbed::-webkit-scrollbar {
-    width: 10px;
-}
-.watchbed::-webkit-scrollbar-track {
-    
-    border-radius: 5px;
-}
-.watchbed::-webkit-scrollbar-thumb {
-    background: linear-gradient(145deg, #020049, #2427ff);
-    border-radius: 5px;
-}
-.watchbed::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(145deg, #2427ff, #020049);
-}
-.bedof {
-    display: flex;
-}
-.promises {
-    padding-right: 1rem;
-}
+
 
 
 /*Footer*/
@@ -542,7 +472,32 @@ select::-webkit-scrollbar-thumb:hover {
     text-decoration: none;
     text-align: center;
 }
-
+@media only screen and (max-width: 1600px) {
+    /*LIVE Stream*/
+    .live {
+        position: relative;
+        top: 2rem;
+        margin-bottom: 5%;
+        margin-right: 35%;
+        margin-left: 5%;
+    }
+    .live iframe {
+        height: 100%;
+        width: 100%;
+    }
+    .streamTitle {
+        position: relative;
+        top: -17rem;
+        margin-left: 5%;
+        font-family: 'Anton', sans-serif;
+        font-size: 26px;
+        letter-spacing: 6px;
+        text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+        border: 1px solid black;
+        width: 60%;
+        padding-left: 10px;
+    }
+}
 @media only screen and (max-width: 1400px) {
     .logo {
         font-size: 15px;
@@ -552,6 +507,30 @@ select::-webkit-scrollbar-thumb:hover {
     }
     ul li a {
         font-size: 12px;
+    }
+    /*LIVE Stream*/
+    .live {
+        position: relative;
+        top: 2rem;
+        margin-bottom: 5%;
+        margin-right: 35%;
+        margin-left: 5%;
+    }
+    .live iframe {
+        height: 100%;
+        width: 100%;
+    }
+    .streamTitle {
+        position: relative;
+        top: -14rem;
+        margin-left: 5%;
+        font-family: 'Anton', sans-serif;
+        font-size: 23px;
+        letter-spacing: 6px;
+        text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+        border: 1px solid black;
+        width: 60%;
+        padding-left: 10px;
     }
 }
 
@@ -640,6 +619,46 @@ select::-webkit-scrollbar-thumb:hover {
     }
     .menu.open .bur::after {
         transform: rotate(-45deg) translate(10px, 10px);
+    }
+    /*LIVE Stream*/
+    .SelectChapter {
+        position: relative;
+        top: 4rem;
+        margin-right: 0;
+        border-radius: 0 0 0 0;
+        width: 300px;
+        float: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .SelectChapter Select {
+        font-size: 18px;
+    }
+    .SelectChapter select:hover {
+        border-radius: 10px 10px 0 0;
+    }
+    .SelectChapter option {
+        border-radius: 0 0 10px 10px;
+    }
+    .live {
+        position: relative;
+        top: 6rem;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .live iframe {
+        height: 600px;
+        width: 100%;
+    }
+    .streamTitle {
+        position: relative;
+        top: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        width: 85%;
+        padding-left: 0;
+        text-align: center;
     }
 }
 /*phone responsive*/
@@ -816,42 +835,15 @@ select::-webkit-scrollbar-thumb:hover {
     .SelectChapter {
         position: relative;
         top: 4rem;
-        margin-right: 0%;
+        margin-right: 0;
+        text-align: center;
         border-radius: 0 0 0 0;
         width: 300px;
-        float: right;
-    }
-    .SelectChapter Select {
-        font-size: 10px;
-    }
-    .SelectChapter select:hover {
-        border-radius: 10px 10px 0 0;
-    }
-    .SelectChapter option {
-        border-radius: 0 0 10px 10px;
-    }
-    .live {
-        position: relative;
-        top: 6rem;
         margin-left: 0 auto;
-    }
-    .live iframe {
-        height: 200px;
-        width: 360px;
-    }
-}
-@media only screen and (max-width: 360px) {
-    /*LIVE Stream*/
-    .SelectChapter {
-        position: relative;
-        top: 4rem;
-        margin-right: 0%;
-        border-radius: 0 0 0 0;
-        width: 300px;
-        float: right;
+        float: none;
     }
     .SelectChapter Select {
-        font-size: 10px;
+        font-size: 12px;
     }
     .SelectChapter select:hover {
         border-radius: 10px 10px 0 0;
@@ -862,10 +854,18 @@ select::-webkit-scrollbar-thumb:hover {
     .live {
         position: relative;
         top: 6rem;
-        margin-left: 0;
     }
     .live iframe {
         height: 200px;
-        width: 360px;
+        width: 100%;
+    }
+    .streamTitle {
+        position: relative;
+        top: 7rem;
+        margin-left: 0;
+        font-size: 15px;
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
     }
 }

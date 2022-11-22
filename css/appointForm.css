@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -218,6 +219,12 @@ th {
     border: 1px solid #ccc;
     border-bottom-width: 3px ;
     transition: all 0.5s ease;
+}
+.note {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 /*APPOINTMENT FORM*/
 #form{

@@ -21,31 +21,35 @@ if(!isset($_SESSION["username"]))
 include('cgmdbconnection.php');    
 
     $id = $_GET['edit'];
-    $sql = "SELECT * FROM stream WHERE id = $id";
+    $sql = "SELECT * FROM give WHERE id = $id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
     $chap = $row['cgmchapter'];
-    $live = $row['live'];
-    $title = $row['title'];
+    $des = $row['des'];
+    $method = $row['method'];
+    $gcash = $row['gcash'];
+    $gform = $row['gform'];
 
-    if(isset($_POST['submitlive'])){
+    if(isset($_POST['submitgive'])){
         
+        $des = $_POST['des'];
+        $method = $_POST['method'];
+        $gcash = $_POST['gcash'];
+        $gform = $_POST['gform'];
 
-        $live = $_POST['live'];
-        $title = $_POST['title'];
 
-        $query = "UPDATE stream SET live='$live', title='$title' where id=$id";
+        $query = "UPDATE give SET des='$des' , method='$method' , gcash='$gcash', gform='$gform' where id=$id";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editprog.php');
+            header('location:editgive.php');
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editprog.php');
+            header('location:editgive.php');
         }
 
     }
@@ -59,23 +63,34 @@ include('cgmdbconnection.php');
         <div class="pinakalabas">
             <div class="labas">
                             
-                <form method="POST" enctype="multipart/form-data">
-                    <h1 class="h1up">Live Stream Replay Iframe for <?php echo $chap; ?>:</h1>
+                <form method="POST">
+                    <h1 class="h1up">Tithes & Offerings Information of <?php echo $chap; ?>:</h1>
                 <div class="loob">
+                
                     <div class="isang">
-                        <label for="title">Title:</label>
-                        <input type="text" name="title" placeholder="Enter the title of the stream" value="<?php echo $title; ?>">
+                        <label for="des">Description of giving:</label>
+                        <textarea name="des" id="des"><?php echo $des; ?></textarea>
                     </div>
                     <div class="isang">
-                        <label for="live">Live Stream Iframe:</label>
-                        <textarea name="live" id="live"><?php echo $live; ?></textarea>
-                        <p class="note">Note: Please remove all ' in the iframe so that you don't encounter some error</p>
+                        <label for="method">Bank Account Number:</label>
+                        <textarea name="method" id="method"><?php echo $method; ?></textarea>
+                        <p class="note">Note: Type "Google Form" If you are going to use Google Form as your method</p>
+                    </div>
+                    <div class="isang">
+                        <label for="gcash">Gcash Number:</label>
+                        <input type="text" name="gcash" value="<?php echo $gcash; ?>">
+                        <p class="note">Note: </p>
+                    </div>
+                    <div class="isang">
+                        <label for="gform">Google Form Link:</label>
+                        <textarea name="gform" id="gform"><?php echo $gform; ?></textarea>
+                        <p class="note">Note: Please Input the link Here If You are using Google Form </p>
                     </div>
             
                     <div class="button">
                         <div class="submit">
-                            <button name="submitlive" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editprog.php"> CANCEL</a></button>
+                            <button name="submitgive" id="send">UPDATE</button>
+                            <button class="cancel"> <a href="editgive.php"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

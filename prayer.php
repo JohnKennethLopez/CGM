@@ -29,8 +29,8 @@
                 <li><a href="program.php">Program</a></li>
                 <li><a href="event.php">Events</a></li>
                 <li class="focus"><a href="">Need Prayers?</a></li>
-                <li><a href="MisSer.html">Missions & Services</a></li>
-                <li><a href="Give.html">Give</a></li>
+                <li><a href="MisSer.php">Missions & Services</a></li>
+                <li><a href="Give.php">Give</a></li>
             </ul>
             </div>
             <div class="form">

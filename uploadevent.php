@@ -138,6 +138,16 @@ if(!isset($_SESSION["username"]))
                             <p class="editbtn"><a href="editprog.php">Edit Live stream<br>Iframe</a></p>
                         </div>
                     </div>
+                    <div class="editmisser">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editmisser.php">Edit<br>Mission & Service</a></p>
+                        </div>
+                    </div>
+                    <div class="editgive">
+                        <div class="inside">
+                            <p class="editbtn"><a href="editgive.php">Edit Give<br>Information</a></p>
+                        </div>
+                    </div>
                 </div>
     </section>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

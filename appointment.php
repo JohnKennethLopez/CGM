@@ -64,7 +64,7 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    $query = "SELECT * FROM appointment";
+                    $query = "SELECT * FROM appointment order by id desc";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){

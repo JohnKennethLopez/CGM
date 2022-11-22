@@ -87,7 +87,7 @@ include('cgmdbconnection.php');
                                     <option value="CGM Hinigaran, Negros">CGM Hinigaran, Negros</option>
                                     <option value="CGM Mabini, Tanauan">CGM Mabini, Tanauan</option>
                                     <option value="CGM Mariveles, Bataan">CGM Mariveles, Bataan</option>
-                                    <option value="CGM Nasugbo, Batangas">CGM Nasugbo, Batangas</option>
+                                    <option value="CGM Nasugbo, Batangas">CGM Nasugbu, Batangas</option>
                                     <option value="CGM Navotas City">CGM Navotas City</option>
                                     <option value="CGM Prieto Diaz, Sorsogon">CGM Prieto Diaz Sorsogon</option>
                                     <option value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>

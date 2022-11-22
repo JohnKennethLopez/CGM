@@ -13,14 +13,27 @@ if(!isset($_SESSION["username"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-    <link rel="stylesheet" href="css/editgmap.css">
+    <link rel="stylesheet" href="css/editprog.css">
 </head>
 <body>
     <section id="editevent">
-        <div class="back">
-            <div class="inn">
-                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
-            </div>
+        <div class="labasbtn">
+                <div class="back">
+                    <div class="inn">
+                        <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+                    </div>
+                </div>
+                <div class="mm">
+                    <div class="nn">
+                        <p class="bckbtn"> <a href="upload5.php"> Upload<br>Limang Minunto</a></p>
+                    </div>
+                    <div class="nn">
+                        <p class="bckbtn"> <a href="uploadmanna.php"> Upload<br>Daily Manna</a></p>
+                    </div>
+                    <div class="nn">
+                        <p class="bckbtn"> <a href="uploadanswer.php"> Upload<br>Jesus is the Answer</a></p>
+                    </div>
+                </div>
         </div>
         <div class="table">
             <table class="tablecont">

@@ -25,8 +25,8 @@
                     <li><a href="program.php">Program</a></li>
                     <li><a href="event.php">Events</a></li>
                     <li><a href="prayer.php">Need Prayers?</a></li>
-                    <li><a href="MisSer.html">Missions & Services</a></li>
-                    <li><a href="Give.html">Give</a></li>
+                    <li><a href="MisSer.php">Missions & Services</a></li>
+                    <li><a href="Give.php">Give</a></li>
                 </ul>
         </div>
         <h1 class="welcome">Welcome to Church of God's Miracles Website!</h1>
@@ -175,7 +175,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             </script>
-
+            <!--END OF MESSENGER CHAT PLUGIN CODE-->
         <section id="footer">
             <div class="foot1">
                 <h1 class="update">To keep updated<br>Follow us on:</h1>

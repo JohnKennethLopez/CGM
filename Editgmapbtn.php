@@ -64,7 +64,7 @@ include('cgmdbconnection.php');
         <div class="pinakalabas">
             <div class="labas">
                             
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" >
                     <h1 class="h1up">Google Map and Service Schedule of <?php echo $chap; ?>:</h1>
                 <div class="loob">
                 
@@ -81,6 +81,7 @@ include('cgmdbconnection.php');
                     <div class="isang">
                         <label for="address">Address:</label>
                         <textarea name="address" id="address"><?php echo $add; ?></textarea>
+                        <p class="note">Note: If the Google map for this Chapter is available, please input the Iframe and remove "WE WILL SOON BE ADDING A GOOGLE MAP FOR THIS CHAPTER!!!"</p>
                     </div>
                     <div class="isang">
                         <label for="googlemap">Google Map Iframe:</label>

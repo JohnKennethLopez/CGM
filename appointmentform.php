@@ -60,7 +60,7 @@ session_start();
 
         $calendar.= "<a class='nxtbtn' href='?month=".date('m', mktime(0,0,0,$month+1, 1, $year)).".&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Next Month</a></center>";
         $calendar.= "
-                    <form id='room_select_form'>
+                    <form id='room_select_form' method='GET'>
                         <div class='roww'>
                             <label class='labelchap'>Select CGM Chapter</label><br>
                                 <select class='form-control' id='room_select' name='room'>
@@ -105,7 +105,7 @@ session_start();
             }elseif($date<date('Y-m-d')){
                 $calendar.="<td><h4>$currentDay</h4> <button class='NAbtn'>N/A</button>";
             }else{
-                $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='?date=".$date."' class='btnBook'>Book</a>";
+                $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='?date=".$date."#form' class='btnBook'>Book</a>";
             }
 
             $calendar.= "</td>";
@@ -153,12 +153,12 @@ session_start();
             <ul>
                 <li><a href="about.php" class="text-white">About</a></li>
                 <li><a href="findchurch.php">Find a Church</a></li>
-                <li><a href="CounMin.html">Council & Ministries</a></li>
-                <li><a href="program.html">Program</a></li>
+                <li><a href="CounMin.php">Council & Ministries</a></li>
+                <li><a href="program.php">Program</a></li>
                 <li><a href="event.php">Events</a></li>
                 <li><a href="prayer.php">Need Prayers?</a></li>
-                <li><a href="MisSer.html">Missions & Services</a></li>
-                <li><a href="Give.html">Give</a></li>
+                <li><a href="MisSer.php">Missions & Services</a></li>
+                <li><a href="Give.php">Give</a></li>
             </ul>
             </div>
             <h1 class="appoint">Set an Appointment Reservation</h1>
@@ -226,7 +226,7 @@ session_start();
                             <input type="text" name="address" placeholder="Enter your Address" required>
                         </div>
                         <div class="INP">
-                            <label for="service">Service:</label>
+                            <label for="service">Subject/Topic to discuss (Service):</label>
                             <select name="service" id="ser" required>
                                 <option value="select" disabled selected>Select Service</option>
                                 <option value="wedding">Wedding</option>
@@ -237,6 +237,7 @@ session_start();
                                 <option value="Water baptism">Water Baptism</option>
                                 <option value="other">Other</option>
                             </select>
+                            <p class="note">Note: If you select "Other", Please specify in the Message box what is your agenda.</p>
                         </div>
                         <div class="INP">
                             <label for="church">CGM Chapter:</label>
@@ -253,7 +254,7 @@ session_start();
                                     <option value="CGM Hinigaran, Negros">9. CGM Hinigaran, Negros</option>
                                     <option value="CGM Mabini, Tanauan">10. CGM Mabini, Tanauan</option>
                                     <option value="CGM Mariveles, Bataan">11. CGM Mariveles, Bataan</option>
-                                    <option value="CGM Nasugbo, Batangas">12. CGM Nasugbo, Batangas</option>
+                                    <option value="CGM Nasugbo, Batangas">12. CGM Nasugbu, Batangas</option>
                                     <option value="CGM Navotas City">13. CGM Navotas City</option>
                                     <option value="CGM Prieto Diaz, Sorsogon">14. CGM Prieto Diaz Sorsogon</option>
                                     <option value="CGM Pulilan, Bulacan">15. CGM Pulilan, Bulacan</option>
@@ -270,7 +271,8 @@ session_start();
                         </div>
                         <div class="INP">
                             <label for="room_id">CGM chapter Number:</label>
-                            <input type="room" name="room_id"  placeholder="Enter the Number of the chapter">
+                            <input type="text" name="room_id" placeholder="Enter the Number of the chapter">
+                            <p class="note">Note: There is a number in the Selection of CGM Chapter, Please Enter the correct CGM chapter Number</p>
                         </div> 
                     </div>
                     <input type="submit" name="sendappoint" id="send" value="SEND APPOINTMENT">

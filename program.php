@@ -29,8 +29,8 @@
                 <li class="focus"><a href="">Program</a></li>
                 <li><a href="event.php">Events</a></li>
                 <li><a href="prayer.php">Need Prayers?</a></li>
-                <li><a href="MisSer.html">Missions & Services</a></li>
-                <li><a href="Give.html">Give</a></li>
+                <li><a href="MisSer.php">Missions & Services</a></li>
+                <li><a href="Give.php">Give</a></li>
             </ul>
             </div>
             <h1 class="prhead"> CGM Program</h1>
@@ -48,7 +48,7 @@
                         <option value="CGM Hinigaran, Negros">CGM Hinigaran, Negros</option>
                         <option value="Tanauan">CGM Mabini, Tanauan</option>
                         <option value="CGM Mariveles, Bataan">CGM Mariveles, Bataan</option>
-                        <option value="CGM Nasugbo, Batangas">CGM Nasugbo, Batangas</option>
+                        <option value="CGM Nasugbo, Batangas">CGM Nasugbu, Batangas</option>
                         <option value="CGM Navotas City">CGM Navotas City</option>
                         <option value="CGM Prieto Diaz, Sorsogon">CGM Prieto Diaz Sorsogon</option>
                         <option value="CGM Pulilan, Bulacan">CGM Pulilan, Bulacan</option>
@@ -56,7 +56,7 @@
                         <option value="CGM San Pedro, Laguna">CGM San Pedro, Laguna</option>
                         <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
                         <option value="CGM Taguig City">CGM Taguig City</option>
-                        <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
+                        <option value="CGM Gen. Tinio, Nueva Ecija">CGM Gen. Tinio, Nueva Ecija</option>
                 </select>
             </div>
             <div id="main">
@@ -68,10 +68,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -81,10 +84,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -94,10 +100,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -107,10 +116,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -120,10 +132,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -133,10 +148,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -146,10 +164,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -159,10 +180,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -172,10 +196,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -185,10 +212,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -198,10 +228,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -211,10 +244,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -224,10 +260,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -237,10 +276,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -250,10 +292,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -263,10 +308,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -276,10 +324,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -289,10 +340,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -302,10 +356,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -315,10 +372,13 @@
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
-                        
+                        $title = $row['title'];
                     ?>
                 <div class="live">
                     <?php echo $live; ?>
+                </div>
+                <div class="streamTitle">
+                    <p><?php echo $title; ?></p>
                 </div>
             </div>
 
@@ -335,54 +395,27 @@
                 </div>
             <div class="watch">
                 <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM limang order by id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
                     <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Qujz7pak3zo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <?php echo $row['limang']?>
                     </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WKfngIBEtzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UxnqAIMbEt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/peYt8ax2vzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Qkwq9JQzg2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jIhA1-Nj1AA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FfR2g_1d1w4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aygCvgp1hEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ekxlyTC0Pu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RE1XNR7JRYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/rQn4Ew7lJ6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aPgWx3_fJok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/s0dt9ouQHZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5MaJU2K2eyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VNLQ82P1Jnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="limavid">
-                        <a href="limang.html"><h1 class="more">See More <i class="limang">Limang</i> <span class="minuto">MINUTO</span></h1></a>
-                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO Limang Minuto Video FOUND!!!";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -398,36 +431,25 @@
             </div>
             <div class="watchManna">
                 <div class="daily">
+                    
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM manna order by id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
                     <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F1286941102070852%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" poster="css/image/white.jpg" ></iframe>
+                        <?php echo $row['manna']?>
                     </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F1270795317053971%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F1159140261354109%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F483478937166031%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F537530438281501%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F512926534018073%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F479045703992738%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F8127954743941193%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=362&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F676418783736354%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="manna">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eee1EPTQtIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO Daily Manna Video FOUND!!!";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -443,167 +465,30 @@
             </div>
             <div class="watchanswer">
                 <div class="Jesusisthe">
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM answer order by id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
                     <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F832862051085243%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        <?php echo $row['answer']?>
                     </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F4815482711888174%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F1118078545746063%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmdailymanna%2Fvideos%2F815429583104905%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F1158330561778666%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F798982644701796%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F902641164047706%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F1185180615400672%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="answer">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgmjesusistheanswer%2Fvideos%2F487435389770347%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    
+                    <?php
+                        }
+                        } else{
+                            echo "NO Jesus is the Answer Video FOUND!!!";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
         <!--END OF JESUS IS THE ANSWER-->
 
-        <!--DAILY SCRIPTURES-->
-        <div class="dailyscriptures">
-            <div class="script">
-                <h1>DAILY SCRIPTURES</h1>
-            </div>
-            <div class="limainfo">
-                <p>The main purpose of this daily 30-minute program is to encourage and enlighten all the viewers through the Word of God.</p>
-            </div>
-            <div class="watchscrip">
-                <div class="dailyscrip">
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F1449025082232941%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F961269441495985%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F438957558172327%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F839788860387166%2F&show_text=false&width=267&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F428829042759749%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F931399137829214%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F3369530563372304%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F5518785798209165%2F&show_text=false&width=267&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F1244580699435847%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F388097696748186%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F6185719488109222%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F1806373166383060%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F651404353021099%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F814106266403661%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F425507013060350%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="scriptures">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcgme.dailyscriptures%2Fvideos%2F488450576504630%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--END OF DAILY SCRIPTURES-->
-
-        <!--DAILY SCRIPTURES-->
-        <div class="bedofpromises">
-            <div class="bed">
-                <h1>BED OF PROMISES</h1>
-            </div>
-            <div class="limainfo">
-                <p>The main purpose of this daily 30-minute program is to encourage and enlighten all the viewers through the Word of God.</p>
-            </div>
-            <div class="watchbed">
-                <div class="bedof">
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F1468104440339356%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F3242849692648385%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F1748560798846264%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F1310328873103996%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F703129420654172%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F1539761846473321%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F431732282408277%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F5585097204911563%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F783513472863651%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F792388795175957%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F1100191694223138%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FBOPGGG7%2Fvideos%2F2353430481488650%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9axOrq1uYoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XSbwym7oljk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UiF6d3kBIfI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FUC85Hb1YIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="promises">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/m7VSJAMmK5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--END OF BED OF PROMISES-->
+        
 
         </section>
 

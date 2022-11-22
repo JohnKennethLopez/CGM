@@ -12,7 +12,7 @@ if(!isset($_SESSION["username"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-    <link rel="stylesheet" href="css/Editabout.css">
+    <link rel="stylesheet" href="css/cmup.css">
 </head>
 <body>
 
@@ -21,31 +21,35 @@ if(!isset($_SESSION["username"]))
 include('cgmdbconnection.php');    
 
     $id = $_GET['edit'];
-    $sql = "SELECT * FROM stream WHERE id = $id";
+    $sql = "SELECT * FROM givepic WHERE id = $id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
-
-    $chap = $row['cgmchapter'];
-    $live = $row['live'];
+    $img_des = $row['image'];
     $title = $row['title'];
+    $info = $row['info'];
 
-    if(isset($_POST['submitlive'])){
-        
+    if(isset($_POST['submitgivepic'])){
+        $image = $_FILES['image'];
+        print_r($_FILES['image']);
+        $img_loc = $_FILES['image']['tmp_name'];
+        $img_name = $_FILES['image']['name'];
+        $img_des ="upload/" .$img_name;
+        move_uploaded_file($img_loc,'upload/'.$img_name);
 
-        $live = $_POST['live'];
         $title = $_POST['title'];
+        $info = $_POST['info'];
 
-        $query = "UPDATE stream SET live='$live', title='$title' where id=$id";
+        $query = "UPDATE givepic SET image='$img_des', title='$title' , info='$info' where id=$id";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editprog.php');
+            header('location:editgivepic.php');
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editprog.php');
+            header('location:editgivepic.php');
         }
 
     }
@@ -60,22 +64,26 @@ include('cgmdbconnection.php');
             <div class="labas">
                             
                 <form method="POST" enctype="multipart/form-data">
-                    <h1 class="h1up">Live Stream Replay Iframe for <?php echo $chap; ?>:</h1>
+                    <h1 class="h1up">GIVE PAGE PHOTO & INFO:</h1>
                 <div class="loob">
-                    <div class="isang">
-                        <label for="title">Title:</label>
-                        <input type="text" name="title" placeholder="Enter the title of the stream" value="<?php echo $title; ?>">
+                    <div class="iisang">
+                        <label for="image">Add Image:</label>
+                        <input type="file"  name="image" required><img src="<?php echo $img_des; ?>" alt="" width="500px">
                     </div>
                     <div class="isang">
-                        <label for="live">Live Stream Iframe:</label>
-                        <textarea name="live" id="live"><?php echo $live; ?></textarea>
+                        <label for="title">Title:</label>
+                        <input type="text" value="<?php echo $title; ?>" name="title">
+                    </div>
+                    <div class="isang">
+                        <label for="info">INFO/DESCRIPTION:</label>
+                        <textarea name="info" id="info"><?php echo $info; ?></textarea>
                         <p class="note">Note: Please remove all ' in the iframe so that you don't encounter some error</p>
                     </div>
             
                     <div class="button">
                         <div class="submit">
-                            <button name="submitlive" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editprog.php"> CANCEL</a></button>
+                            <button name="submitgivepic" id="send">UPDATE</button>
+                            <button class="cancel"> <a href="editgivepic.php"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

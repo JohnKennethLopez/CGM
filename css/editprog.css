@@ -12,6 +12,10 @@
     min-height: 100vh;
     padding-bottom: 6rem;
 }
+.labasbtn {
+    display: flex;
+    justify-content: space-between;
+}
 .back {
     position: relative;
     top: 1rem;
@@ -22,12 +26,40 @@
     border-radius: 0 15px 15px 0;
     margin-left: 2%;
 }
+.mm {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    padding: 10px;
+    margin-right: 1%;
+    display: flex;
+}
 .inn {
     border: 0px solid black;
     background: #e6e6e6;
-    padding: 10px;
+    padding: 15px;
     border-radius: 0 15px 15px 0;
     text-align: center;
+}
+.nn {
+    border: 0px solid black;
+    background: #2427ff;
+    padding: 10px 3rem 10px 3rem;
+    margin: 5px 15px 5px 15px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.nn:hover {
+    background: #0003ad;
+}
+.bckbtn a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
 .backbtn a {
     text-decoration: none;
@@ -85,5 +117,4 @@ tbody tr:last-of-type {
 }
 .edit:hover {
     background: #1a77e0;
-
 }
