@@ -50,7 +50,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['address']?></td>
                         <td><?php echo $row['googlemap']?></td>
                         <td><?php echo $row['fblink']?></td>
-                        <td><a href="EditgmapBtn.php?edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a></td>
+                        <td><a href="Editgmapbtn.php?edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a></td>
                     </tr>
                     <?php
                         }
