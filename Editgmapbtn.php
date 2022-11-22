@@ -126,6 +126,6 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
             });
     </script>
     <?php
-    unset($_SESSION['status']);
+    unset($_SESSION['statuss']);
 }
 ?>
