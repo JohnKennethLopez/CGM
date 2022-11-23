@@ -49,7 +49,7 @@ if(!isset($_SESSION["username"]))
                         <div class="inputform">
                             <label for="church">CGM Chapter</label>
                             <select name="cgmchapter" id="church" required>
-                                <option value="select" disabled selected>Select CGM Church</option>
+                                <option value="select" disabled selected required>Select CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
                                     <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
