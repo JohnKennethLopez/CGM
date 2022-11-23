@@ -54,7 +54,7 @@ if(!isset($_SESSION["username"]))
                     <th>GENDER</th>
                     <th>CONTACT NUMBER</th>
                     <th>ADDRESS</th>
-                    <th class="DE">DELETE & EDIT</th>
+                    <!--<th class="DE">DELETE & EDIT</th>-->
                 </thead>
                 <?php
                     include('cgmdbconnection.php');
@@ -74,7 +74,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['gender']?></td>
                         <td><?php echo $row['contactnumber']?></td>
                         <td><?php echo $row['address']?></td>
-                        <td><button class="edit">edit</button><a href="delete.php?delete=<?php echo $row['id']; ?>"><button class="del">delete</button></a></td>
+                        <!--<td><button class="edit">edit</button><a href="delete.php?delete=<?php echo $row['id']; ?>"><button class="del">delete</button></a></td>-->
                     </tr>
                     <?php
                         }
