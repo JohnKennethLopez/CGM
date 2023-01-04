@@ -54,7 +54,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                     <tr>
                         <th>CGM Chapter</th>
                         <th>Location</th>
-                        <th>Distance</th>
+                        <th>Distance in Miles</th>
                     </tr>
 
                     <?php 
