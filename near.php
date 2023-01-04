@@ -7,7 +7,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
         <meta charset=" utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CGM</title>
-        <link rel="stylesheet" href="css/about.css">
+        <link rel="stylesheet" href="css/find.css">
         <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
         <script src="JavaScript/menu.js" defer></script>
@@ -47,9 +47,9 @@ $dibconfig = mysqli_select_db($con,'cgm');
                 }
                 ?>
 
-                <div   style="padding-top: 100px;">
+                <div class="table"   style="padding-top: 100px;">
 
-                <table style="width:100%; text-align: center;">
+                <table class="tablecont" style="width:100%; text-align: center;">
                     <tr>
                         <th>CGM Chapter</th>
                         <th>Location</th>
@@ -63,7 +63,17 @@ $dibconfig = mysqli_select_db($con,'cgm');
 
                     <tr>
                         <td><?php echo $row['cgmchapter'] ?></td>
-                        <td><a href="gmap.php?id=<?=$row['id']?>" class="button" name="near" id="near">Show on Map</a></td>
+                        <td>
+                            <a href="gmap.php?id=<?=$row['id']?>" class="a_btn" name="near" id="near">
+                            <?php
+                        if (empty($row['lat'])) {
+                            echo "Details";
+                        }
+                        else{
+                            echo "Show on Map";
+                            } ?>
+                        </a>
+                        </td>
                         <td><?php $distance_km = $row['distance_in_km'];
                         if (empty($row['lat'])) {
                             echo "Will be available soon";
