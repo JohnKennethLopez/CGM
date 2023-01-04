@@ -2,21 +2,17 @@
 include('cgmdbconnection.php');
 $dibconfig = mysqli_select_db($con,'cgm');
 
-if(isset($_SESSION['date'])){
-    $exp_date = date('Y/m/d');
-    $event_date = $_SESSION['date'];
-    $new_event_date = date("Y/m/d", strtotime($event_date));
-    
+$qry = "SELECT * FROM upcoming WHERE date<=curdate ";
+$qry_run = mysqli_query($con,$qry);
+        while ($rows = mysqli_fetch_array($qry_run)) {
 
-    $qry = "SELECT * FROM upcoming WHERE date='' ";
-    $qry_run = mysqli_query($con,$qry);
+            $archive = "INSERT INTO event_archive (id, title, image, des, date, time, loc)
+            VALUES ('$rows[id]', '$rows[title]', '$rows[image]', '$rows[des]', '$rows[date]', '$rows[time]', '$rows[loc]')";
+            $archive_run = mysqli_query($con,$archive);
 
-    if($new_event_date>$exp_date){
-        $QRY=" INSERT INTO upcoming (`title`, `image`, `des`, `date`, `time`, `loc`) SELECT * FROM upcoming WHERE date='$new_event_date>$exp_date' ";
-        $QRY_RUN = mysqli_query($con,$QRY);
-    }else{
+    $delete = "DELETE FROM upcoming WHERE date<=curdate";
+    $delete_run = mysqli_query($con,$delete);
         
-    } //error po ito nag tatry lang po ako kung magagawa ko bali dito po yung sa event archive
 }
 ?>
 <html>
