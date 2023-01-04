@@ -49,7 +49,7 @@
                             <p class="verse">-Hebrews 10:25</p>
                         </div>
                         <div class="SelectChapter">
-                            <select name="cgmchapter" onchange="showGoogleMap()" id="church">
+                            <select name="cgmchapter" id="church">
                                     <option value="select" disabled selected>Choose a CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
@@ -73,7 +73,7 @@
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Gen. Tinio, Nueva Ecija</option>
                             </select>
                         </div>
-                        <script text="text/javascript">
+                        <!-- <script text="text/javascript">
                             ob_start()
                             function getlocation(){
                                 if(navigator.geolocation){
@@ -86,15 +86,29 @@
                                 document.getElementById("long").value=+position.coords.longitude;
                             }
 
-                        </script>
+                        </script> -->
                         
                         <div class="near">
-                            <form method="POST">
+                            
                                 <input type="hidden" name="lat" id="lat">
                                 <input type="hidden" name="long" id="long">
-                                <input class="button" type="submit" name="near" id="near" value="Find the nearest CGM chapter">
-                                
-                            </form>
+                                <button onclick="getPreciseLocation()" class="button" name="near" id="near" >Find the nearest CGM chapter</button>
+                                <p id="location"></p>
+                                <script>
+                                    var x = document .getElementById("location"); 
+                                    function getPreciseLocation(){
+                                        if(navigator.geolocation){ 
+                                            navigator.geolocation.getCurrentPosition(showExactPosition) } 
+                                        else{
+                                            x.innerHTML = "Geolocation is not supported" }
+                                    }
+                                    function showExactPosition(position){
+
+                                        window.location = "/near.php?lat="+position.coords.latitude+"&long="+position.coords.longitude+"";
+                                    }
+                        
+                                </script>
+                            
                         </div>
                     </div>
         </section>

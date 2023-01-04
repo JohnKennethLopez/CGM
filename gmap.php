@@ -37,40 +37,17 @@ $dibconfig = mysqli_select_db($con,'cgm');
             </div>
 
                 <?php
-                if (isset($_GET["lat"])) {
-                    $lat1 = $_GET["lat"];
-                    $long1 = $_GET["long"];
-
-                    $distance = "SELECT *, ST_Distance_Sphere( point ('$long1', '$lat1'), 
-                    point(lng, lat)) * .000621371192 AS `distance_in_miles` FROM near ORDER BY distance_in_miles";
-                    
-                    $distance_run = mysqli_query($con, $distance);
-                }
+                $id = $_GET['map'];
+                    $distance = "SELECT * FROM near WHERE id = $id";
+                    $distance_run = mysqli_query($con,$distance);
+                    while($row = mysqli_fetch_array($distance_run)){
                 ?>
 
                 <div   style="padding-top: 100px;">
-
-                <table style="width:100%; text-align: center;">
-                    <tr>
-                        <th>CGM Chapter</th>
-                        <th>Location</th>
-                    </tr>
-
-                    <?php 
-                        while ($row = mysqli_fetch_array($distance_run))
-                        {
-                    ?>
-
-                    <tr>
-                        <td><?php echo $row['cgmchapter'] ?></td>
-                        <td><a href="gmap.php?map=<?=$row['id']?>" class="button" name="near" id="near">Show on Map</a></td>
-                    </tr>
-
-                    <?php  } ?>
-                </table>	
+                    <?php echo $row['iframe'] ?>
                 </div>
                 
-
+                        <?php } ?> 
 
         </div>
 
