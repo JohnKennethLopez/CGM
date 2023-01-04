@@ -7,12 +7,12 @@ $dibconfig = mysqli_select_db($con,'cgm');
         <meta charset=" utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CGM</title>
-        <link rel="stylesheet" href="css/about.css">
+        <link rel="stylesheet" href="css/find.css">
         <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
         <script src="JavaScript/menu.js" defer></script>
         <script src="JavaScript/nav.js" defer></script>
         <script src="JavaScript/scroll.js" defer></script>
+        <script src="JavaScript/Gmap.js" defer></script>
     </head>
     <body>
         <div id="bg-image">
@@ -37,15 +37,55 @@ $dibconfig = mysqli_select_db($con,'cgm');
             </div>
 
                 <?php
-                $id = $_GET['map'];
-                    $distance = "SELECT * FROM near WHERE id = $id";
+                $id = $_GET['id'];
+                    $distance = "SELECT * FROM gmap WHERE id = $id";
                     $distance_run = mysqli_query($con,$distance);
                     while($row = mysqli_fetch_array($distance_run)){
                 ?>
 
-                <div   style="padding-top: 100px;">
-                    <?php echo $row['iframe'] ?>
+                <div   style="padding-top: 100px; max-width: 90%; margin: auto;">
+                    <?php echo $row['googlemap'] ?>
                 </div>
+
+                <div>
+                <div class="outer">
+                        <?php
+                        $chapter = $row['cgmchapter'];
+                            $f2f = $row['f2fservice'];
+                            $online = $row['online'];
+                            $add = $row['address'];
+                            $gmap = $row['googlemap'];
+                            $fb = $row['fblink'];
+                        ?>
+                    <div class="inner">
+                        <h1 class="h1cgm">
+                            
+                        </h1>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Face-to-Face Service :
+                        </h3>
+                        <p class="psched">
+                            <?php echo $f2f; ?>
+                        </p>
+                        <hr /><br>
+                        <h3 class="h3cgm">
+                            Online Service :
+                        </h3>
+                        <div class="psched">
+                            <a href="<?php echo $fb; ?>"><img class="fblink" src="css/image/fb.png"> Facebook</a>
+                        </div>
+                        <p class="psched">
+                            <?php echo $online; ?>
+                        </p>
+                        <hr /><br>
+                        <p class="padd">
+                            <?php echo $add; ?>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 
                         <?php } ?> 
 

@@ -92,24 +92,40 @@
                             
                                 <input type="hidden" name="lat" id="lat">
                                 <input type="hidden" name="long" id="long">
-                                <button onclick="getPreciseLocation()" class="button" name="near" id="near" >Find the nearest CGM chapter</button>
+                                <button onclick="myGeolocator()" class="button" name="near" id="near" >Find the nearest CGM chapter</button>
                                 <p id="location"></p>
                                 <script>
-                                    var x = document .getElementById("location"); 
-                                    function getPreciseLocation(){
-                                        if(navigator.geolocation){ 
-                                            navigator.geolocation.getCurrentPosition(showExactPosition) } 
-                                        else{
-                                            x.innerHTML = "Geolocation is not supported" }
-                                    }
-                                    function showExactPosition(position){
+                                    // var x = document .getElementById("location"); 
+                                    // function getPreciseLocation(){
+                                    //     if(navigator.geolocation){ 
+                                    //         navigator.geolocation.getCurrentPosition(showExactPosition) } 
+                                    //     else{
+                                    //         x.innerHTML = "Geolocation is not supported" }
+                                    // }
+                                    // function showExactPosition(position){
 
-                                        window.location = "near.php?lat="+position.coords.latitude+"&long="+position.coords.longitude+"";
-                                    }
+                                    //     window.location = "near.php?lat="+position.coords.latitude+"&long="+position.coords.longitude+"";
+                                    // }
+
+                                    let userLocation = navigator.geolocation;
+      function myGeolocator() {
+         if(userLocation) {
+            userLocation.getCurrentPosition(success);
+         } else {
+            "The geolocation API is not supported by your browser.";
+         }
+      }
+      function success(data) {
+         let lat = data.coords.latitude;
+         let long = data.coords.longitude;
+         window.location = "near.php?lat="+data.coords.latitude+"&long="+data.coords.longitude+"";
+      }
                         
                                 </script>
                             
                         </div>
+
+                        
                     </div>
         </section>
 

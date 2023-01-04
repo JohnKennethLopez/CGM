@@ -41,8 +41,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                     $lat1 = $_GET["lat"];
                     $long1 = $_GET["long"];
 
-                    $distance = "SELECT *, ST_Distance_Sphere( point ('$long1', '$lat1'), 
-                    point(lng, lat)) * .000621371192 AS `distance_in_miles` FROM near ORDER BY distance_in_miles";
+                    $distance = "SELECT *, (((acos(sin((".$lat1."*pi()/180)) * sin((`lat`*pi()/180))+cos((".$lat1."*pi()/180)) * cos((`lat`*pi()/180)) * cos(((".$long1."- `lng`)*pi()/180))))*180/pi())*60*1.1515*1.609344) AS distance_in_km FROM gmap ORDER BY distance_in_km";
 
                     $distance_run = mysqli_query($con, $distance);
                 }
@@ -54,7 +53,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                     <tr>
                         <th>CGM Chapter</th>
                         <th>Location</th>
-                        <th>Distance in Miles</th>
+                        <th>Distance in km</th>
                     </tr>
 
                     <?php 
@@ -64,8 +63,14 @@ $dibconfig = mysqli_select_db($con,'cgm');
 
                     <tr>
                         <td><?php echo $row['cgmchapter'] ?></td>
-                        <td><a href="gmap.php?map=<?=$row['id']?>" class="button" name="near" id="near">Show on Map</a></td>
-                        <td><?php echo $row['distance_in_miles'] ?></td>
+                        <td><a href="gmap.php?id=<?=$row['id']?>" class="button" name="near" id="near">Show on Map</a></td>
+                        <td><?php $distance_km = $row['distance_in_km'];
+                        if (empty($row['lat'])) {
+                            echo "Will be available soon";
+                        }
+                        else{
+                            echo number_format($distance_km, 2);
+                            } ?></td>
                     </tr>
 
                     <?php  } ?>
