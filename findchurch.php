@@ -1,11 +1,4 @@
-<?php
-    if(isset($_POST['near'])){
-    $lat = $_POST['lat'];
-    $long = $_POST['long'];
 
-    header("location: near.php?lat=$lat&long=$long");
-    }
-?>
 <html>
     <head>
         <meta charset=" utf-8">
@@ -49,7 +42,7 @@
                             <p class="verse">-Hebrews 10:25</p>
                         </div>
                         <div class="SelectChapter">
-                            <select name="cgmchapter" id="church">
+                            <!-- <select name="cgmchapter" id="church">
                                     <option value="select" disabled selected>Choose a CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
@@ -71,7 +64,7 @@
                                     <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Gen. Tinio, Nueva Ecija</option>
-                            </select>
+                            </select> -->
                         </div>
                         <!-- <script text="text/javascript">
                             ob_start()

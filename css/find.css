@@ -667,3 +667,16 @@ span {
         width: 320px;
     }
 }
+.button {
+    width: 60%;
+    height: 55px;
+    margin: 20px 0 5px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2427ff, #020049);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+.button:hover {
+    background: linear-gradient(180deg, #020049, #2427ff);
+}
