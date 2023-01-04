@@ -1,4 +1,24 @@
+<?php
+include('cgmdbconnection.php');
+$dibconfig = mysqli_select_db($con,'cgm');
 
+if(isset($_SESSION['date'])){
+    $exp_date = date('Y/m/d');
+    $event_date = $_SESSION['date'];
+    $new_event_date = date("Y/m/d", strtotime($event_date));
+    
+
+    $qry = "SELECT * FROM upcoming WHERE date='' ";
+    $qry_run = mysqli_query($con,$qry);
+
+    if($new_event_date>$exp_date){
+        $QRY=" INSERT INTO upcoming (`title`, `image`, `des`, `date`, `time`, `loc`) SELECT * FROM upcoming WHERE date='$new_event_date>$exp_date' ";
+        $QRY_RUN = mysqli_query($con,$QRY);
+    }else{
+        
+    } //error po ito nag tatry lang po ako kung magagawa ko bali dito po yung sa event archive
+}
+?>
 <html>
     <head>
         <meta charset=" utf-8">

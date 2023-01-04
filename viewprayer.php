@@ -41,9 +41,16 @@ if(!isset($_SESSION["username"]))
                 <h1 class="prayer">Prayer Requests &<br> Answered Prayers</h1>
     </section>
     <section id="prayerReq">
-        <div class="filter">
-            <div class="inn">
-                <p class="backbtn"><a href="searchpray.php">Search a <br>CGM CHAPTER</a></p>
+        <div class="labas">
+            <div class="filter">
+                <div class="inn">
+                    <p class="backbtn"><a href="searchpray.php">Filter the<br>CGM CHAPTER</a></p>
+                </div>
+            </div>
+            <div class="print">
+                <div class="pr">
+                    <p class="printbtn"><a href="printpray.php">Print Prayer<br>Request/Reports List</a></p>
+                </div>
             </div>
         </div>
         <div class="table">

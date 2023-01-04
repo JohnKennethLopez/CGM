@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header {
+    text-align: center;
+}
+.lg {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.cgm {
+    display: none;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+hr {
+    display: none;
+}
+.tablehead {
+    font-family: 'Signika Negative', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.head {
+    font-family: 'Signika Negative', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 5px;
+    text-shadow: none;
+}
+#Attendancelist {
+    background: url("./image/white.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+.tablecont {
+    font-family: 'Signika Negative', sans-serif;
+    border-collapse: collapse;
+    border-radius: 0;
+    margin-left: 3%;
+    margin-right: 3%;
+    box-shadow: none;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    background: #dfdfdf;
+    font-weight: bolder;
+}
+.table th {
+    border: 1px solid black;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: 5px;
+    color: black;
+    box-shadow: none;
+    background: #838383;
+}
+.printbtn {
+    font-family: 'Signika Negative', sans-serif;
+    letter-spacing: 3px;
+    padding: 5px 1.5rem;
+    margin: 1rem 0 0 1rem;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background: #2427ff;
+    cursor: pointer;
+    color: white;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.printbtn a {
+    text-decoration: none;
+    color: white    ;
+}
+.totalattend {
+    border: 1px solid black;
+    background: #a8a8a8;
+    width:fit-content;
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.total {
+    text-align: center;
+    padding: 5px 2rem 5px 2rem;
+    letter-spacing: 5px;
+    font-family: 'Hind Madurai', sans-serif;
+}
+@media print {
+    .printbtn, .printbtn *{
+        display: none;
+    }
+    .lg, .lg *{
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    .cgm, .cgm *{
+        display: block;
+    }
+    .totalattend, .totalattend *{
+        width: 100%;
+    }
+    .tablehead, .tablehead *{
+        font-size: 25px;
+    }
+}

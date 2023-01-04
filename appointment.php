@@ -41,9 +41,16 @@ if(!isset($_SESSION["username"]))
                 <h1 class="appoint">Appointment Reservation</h1>
     </section>
     <section id="Appointment">
-        <div class="filter">
-            <div class="inn">
-                <p class="backbtn"><a href="searchappoint.php">Search a <br>CGM CHAPTER</a></p>
+        <div class="labas">
+            <div class="filter">
+                <div class="inn">
+                    <p class="backbtn"><a href="searchappoint.php">Filter the Date and <br>CGM CHAPTER</a></p>
+                </div>
+            </div>
+            <div class="print">
+                <div class="pr">
+                    <p class="printbtn"><a href="printappoint.php">Print<br>Appointment List</a></p>
+                </div>
             </div>
         </div>
         <div class="table">

@@ -123,7 +123,20 @@ hr {
     min-height: 100vh;
     padding-bottom: 5rem;
 }
+.labas {
+    display: flex;
+    justify-content: space-between;
+}
 .filter {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.print {
     position: relative;
     top: 1rem;
     border: 0px solid black;
@@ -136,12 +149,28 @@ hr {
     border: 0px solid black;
     background: #2427ff;
     padding: 10px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+    box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.pr {
+    border: 0px solid black;
+    background: #2427ff;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
     text-align: center;
     box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.7);
 }
 .inn:hover {
     background: linear-gradient(145deg, #020049, #2427ff);
+}
+.printbtn a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
 .backbtn a {
     text-decoration: none;

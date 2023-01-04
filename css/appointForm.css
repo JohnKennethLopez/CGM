@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -227,6 +228,46 @@ th {
     letter-spacing: 3px;
 }
 /*APPOINTMENT FORM*/
+
+.times {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+    border: 1px solid black;
+    padding: 1rem 0rem 3rem 0rem;
+    border-radius: 10px;
+    background: #e6e6e6;
+}
+.timeH1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Carter One', cursive;
+    letter-spacing: 3px;
+    font-size: 30px;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+}
+.time-btn {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: white;
+    background: #373bff;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+.time-btn:hover {
+    background: #020049;
+}
+.timeIN {
+    display: flex;
+    justify-content: center;
+}
+#app-modal {
+    display: none;
+}
 #form{
     background: url("image/wwww.jpg");
     background-size:cover;
@@ -235,6 +276,17 @@ th {
     height: auto;
     padding-bottom: 10rem;
     overflow-x: hidden;
+}
+.close-modal {
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+    margin-top: -30px;
+    color: #414141;
+    text-shadow: 2px 8px 8px rgba(0, 0, 0, 0.8);
+}
+.close-modal:hover {
+    color: antiquewhite;
 }
 .h1form {
     font-family: 'Orbitron', sans-serif;

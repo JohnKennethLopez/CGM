@@ -127,6 +127,36 @@ session_start();
 
     }
 ?>
+<?php
+    //TIME SLOTS CODE
+
+    $duration = 120;
+    $cleanup = 60;
+    $start = "09:00";
+    $end = "18:00";
+
+
+    function timeslots($duration, $cleanup, $start, $end){
+        $start = new DateTime($start);
+        $end = new DateTime($end);
+        $interval = new DateInterval("PT".$duration."M");
+        $cleanupInterval = new DateInterval("PT".$cleanup."M");
+        $slots = array();
+
+        for($intStart = $start; $intStart<$end; $intStart->add($interval)->add($cleanupInterval)){
+            $endPeriod = clone $intStart;
+            $endPeriod->add($interval);
+            if($endPeriod>$end){
+                break;
+            }
+
+            $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
+
+        }
+        return $slots;
+    }
+    //END OF TIME SLOTS CODE
+?>
 
 <html>
     <head>
@@ -136,9 +166,11 @@ session_start();
         <link rel="stylesheet" href="css/appointForm.css">
         <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <script src="JavaScript/menu.js" defer></script>
         <script src="JavaScript/nav.js" defer></script>
         <script src="JavaScript/scroll.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
     </head>
     <body>
         <section id="bg-image">
@@ -195,8 +227,32 @@ session_start();
                 
             ?>
         <section id="form">
-            <div class="PinLabas">
-                
+            <div id="timelabas">
+                <div class="times">
+                    <h1 class="timeH1">SELECT TIME FOR YOUR APPOINTMENT</h1>
+                                <?php
+                                    $timeslots = timeslots($duration, $cleanup, $start, $end);
+                                    foreach($timeslots as $ts){
+                                ?>
+                                <div class="timeIN">
+                                    <button id="time-btn" class="time-btn" data-timeslot="<?php echo $ts; ?>">
+                                        <?php echo $ts; ?>
+                                    </button>
+                                </div>
+                                <?php        
+                                    }
+                                ?>
+                </div>
+            </div>
+            <div id="app-modal">
+                <div class="modal">
+                    <div class="top-form">
+                        
+                        <div class="app-form">
+                <div class="PinLabas">
+                <div class="close-modal">
+                        <i class="fa-solid fa-xmark"></i>
+                </div>
                 <div class="labas">
                     <form action="appointmentForm_insert.php" method="POST">
                     <h1 class="h1form">APPOINTMENT FORM</h1>
@@ -204,6 +260,10 @@ session_start();
                         <div class="INP">
                             <label for="date">Date:</label>
                             <input type="date" name="date" readonly  value="<?php echo date('Y-m-d',strtotime($date)); ?>">
+                        </div>
+                        <div class="INP">
+                            <label for="time">Time:</label>
+                            <input type="text" name="time" id="timeslot" readonly required>
                         </div>
                         <div class="INP">
                             <label for="fullname">Full Name:</label>
@@ -217,10 +277,7 @@ session_start();
                             <label for="contact">Contact Number:</label>
                             <input type="text" name="contact" placeholder="Enter your Contact Number" required>
                         </div>
-                        <div class="INP">
-                            <label for="time">Time:</label>
-                            <input type="text" name="time" placeholder="Enter the Time(0:00am/pm)" required>
-                        </div>
+                        
                         <div class="INP">
                             <label for="address">Address:</label>
                             <input type="text" name="address" placeholder="Enter your Address" required>
@@ -268,15 +325,21 @@ session_start();
                         <div class="INP">
                             <label for="message">Add Message:</label>
                             <textarea name="message" placeholder="Add Message"></textarea>
-                        </div>
+                        </div> 
                         <div class="INP">
                             <label for="room_id">CGM chapter Number:</label>
                             <input type="text" name="room_id" placeholder="Enter the Number of the chapter">
                             <p class="note">Note: There is a number in the Selection of CGM Chapter, Please Enter the correct CGM chapter Number</p>
-                        </div> 
+                        </div>
+                        
                     </div>
                     <input type="submit" name="sendappoint" id="send" value="SEND APPOINTMENT">
+                    <!--<button><a href='?date=".$date."#form' >CLOSE</a></button>-->
                 </form>
+                </div>
+            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -305,6 +368,24 @@ session_start();
             });
 
             $("#room_select option[value='<?php echo $room; ?>']").attr('selected','selected');
+        </script>
+        
+        <script>
+            $(".time-btn").click(function(){
+                var timeslot=$(this).attr('data-timeslot');
+                $("#timeslot").val(timeslot);
+            })
+            
+        </script>
+        <script>
+            $(function(){
+                $('.time-btn').click(function(){
+                    $('#app-modal').fadeIn().css("display", "flex");
+                });
+                $('.close-modal').click(function(){
+                    $('#app-modal').fadeOut();
+                });
+            });
         </script>
     </body>
 </html>

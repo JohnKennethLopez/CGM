@@ -1,6 +1,6 @@
 <?php
 
-$con=new mysqli('localhost','u115931882_cgm','churchofGodsmiracles1','u115931882_cgm');
+$con=new mysqli('localhost','root','','cgm');
 
 if(!$con){
     die(mysqli_error($con));

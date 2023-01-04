@@ -39,11 +39,20 @@ if(!isset($_SESSION["username"]))
                 <h1 class="list">Attendance List</h1>
     </section>
     <section id="Attendancelist">
-        <div class="filter">
-            <div class="inn">
-                <p class="backbtn"><a href="search.php">Filter the Date and <br>CGM CHAPTER</a></p>
+        <div class="labas">
+            <div class="filter">
+                <div class="inn">
+                    <p class="backbtn"><a href="search.php">Filter the Date and <br>CGM CHAPTER</a></p>
+                </div>
+            </div>
+            <div class="print">
+                <div class="pr">
+                    <p class="printbtn"><a href="printattend.php">Print<br>Attendance List</a></p>
+                </div>
             </div>
         </div>
+        
+        
         <div class="table">
             <table class="tablecont">
                 <thead>
@@ -60,6 +69,8 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
+                    
+
                     $query = "SELECT * FROM attendance";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
@@ -74,8 +85,9 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['gender']?></td>
                         <td><?php echo $row['contactnumber']?></td>
                         <td><?php echo $row['address']?></td>
-                        <!--<td><button class="edit">edit</button><a href="delete.php?delete=<?php echo $row['id']; ?>"><button class="del">delete</button></a></td>-->
                     </tr>
+                    
+                    
                     <?php
                         }
                         } else{
@@ -86,6 +98,14 @@ if(!isset($_SESSION["username"]))
                 ?>
             </table>
         </div>
+            <?php 
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance");
+                $row_count = mysqli_fetch_assoc($count_query);
+                $count = $row_count['total'];
+            ?>
+            <div class="totalattend">
+                <h1 class="total">Total of Attendees: <?php echo $count; ?></h1>
+            </div>
     </section>
 </body>
 </html>

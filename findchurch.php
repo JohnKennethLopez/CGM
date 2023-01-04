@@ -1,4 +1,11 @@
+<?php
+    if(isset($_POST['near'])){
+    $lat = $_POST['lat'];
+    $long = $_POST['long'];
 
+    header("location: near.php?lat=$lat&long=$long");
+    }
+?>
 <html>
     <head>
         <meta charset=" utf-8">
@@ -11,7 +18,7 @@
         <script src="JavaScript/scroll.js" defer></script>
         <script src="JavaScript/Gmap.js" defer></script>
     </head>
-    <body>
+    <body onload="getlocation()">
         <section id="bg-image">
 
             <div class="homelg">
@@ -65,6 +72,29 @@
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Gen. Tinio, Nueva Ecija</option>
                             </select>
+                        </div>
+                        <script text="text/javascript">
+                            ob_start()
+                            function getlocation(){
+                                if(navigator.geolocation){
+                                    navigator.geolocation.getCurrentPosition(showPosition);
+                                }
+                            }
+
+                            function showPosition(position){
+                                document.getElementById("lat").value=+position.coords.latitude;
+                                document.getElementById("long").value=+position.coords.longitude;
+                            }
+
+                        </script>
+                        
+                        <div class="near">
+                            <form method="POST">
+                                <input type="hidden" name="lat" id="lat">
+                                <input type="hidden" name="long" id="long">
+                                <input class="button" type="submit" name="near" id="near" value="Find the nearest CGM chapter">
+                                
+                            </form>
                         </div>
                     </div>
         </section>
