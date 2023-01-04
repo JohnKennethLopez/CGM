@@ -43,7 +43,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
 
                     $distance = "SELECT *, ST_Distance_Sphere( point ('$long1', '$lat1'), 
                     point(lng, lat)) * .000621371192 AS `distance_in_miles` FROM near ORDER BY distance_in_miles";
-                    
+
                     $distance_run = mysqli_query($con, $distance);
                 }
                 ?>
@@ -54,6 +54,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                     <tr>
                         <th>CGM Chapter</th>
                         <th>Location</th>
+                        <th>Distance</th>
                     </tr>
 
                     <?php 
@@ -64,6 +65,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                     <tr>
                         <td><?php echo $row['cgmchapter'] ?></td>
                         <td><a href="gmap.php?map=<?=$row['id']?>" class="button" name="near" id="near">Show on Map</a></td>
+                        <td><?php echo $row['distance_in_miles'] ?></td>
                     </tr>
 
                     <?php  } ?>

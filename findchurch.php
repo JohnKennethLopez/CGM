@@ -104,7 +104,7 @@
                                     }
                                     function showExactPosition(position){
 
-                                        window.location = "/near.php?lat="+position.coords.latitude+"&long="+position.coords.longitude+"";
+                                        window.location = "near.php?lat="+position.coords.latitude+"&long="+position.coords.longitude+"";
                                     }
                         
                                 </script>
