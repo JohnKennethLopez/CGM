@@ -177,7 +177,7 @@
                                 <img class="MISpic" src="<?php echo $image; ?>" alt="">
                             </div>
                             <div class="medicalH">
-                                <h1 class="h1title"><?php echo $title; ?>/h1>
+                                <h1 class="h1title"><?php echo $title; ?></h1>
                             </div>
                             <div class="medicalinfo">
                                 <p class="P_info"><?php echo $info; ?></p>

@@ -98,9 +98,8 @@ ul li a {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     padding-top: 5rem;
-    font-size: 20px;
+    font-size: 30px;
     letter-spacing: 5px;
-    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 .wh {
     position: relative;
@@ -274,17 +273,18 @@ p a {
     font-family: 'Orbitron', sans-serif;
 }
 .verse {
-    font-size: 19px;
-    font-weight: 600;
-    font-family: 'Kaushan Script', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 3px;
 }
 .verse:not(:last-child) {
     margin-bottom: 40px;
 }
 .chap {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 .white {
     color: azure;

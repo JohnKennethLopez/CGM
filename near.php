@@ -47,7 +47,7 @@ $dibconfig = mysqli_select_db($con,'cgm');
                 }
                 ?>
 
-                <div class="table"   style="padding-top: 100px;">
+                <div class="table">
 
                 <table class="tablecont" style="width:100%; text-align: center;">
                     <tr>
@@ -91,6 +91,23 @@ $dibconfig = mysqli_select_db($con,'cgm');
 
         </div>
 
+
+        <section id="footer">
+            <div class="foot1">
+                <h1 class="update">To keep updated<br>Follow us on:</h1>
+                    <div class="socmed">
+                            <div class="fbyt">
+                                <a href="https://www.facebook.com/CGMMain"><img class="footimg" src="css/image/fb.png"><p>Church of God's Miracles - Las Piñas Main</p></a>
+                                <a href="https://www.youtube.com/channel/UCmrFWaixqTWQLfHWfuEJcYA/featured"><img class="footimg" src="css/image/yt.png"><p>Church of God's Miracles OFFICIAL</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="foot2">
+                <div class="copyright">
+                    <a href="#bg-image">© Copyright 2022 Church of God's Miracles</a>
+                </div>
+            </div>
+        </section>
 
     </body>
 </html>
