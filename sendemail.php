@@ -143,4 +143,73 @@ if (isset($_POST['confirm_prayer'])) {
     $update_run = mysqli_query($con, $update);
 }
 
+if(isset($_POST['sendappoint'])){
+        
+    $date = $_POST['date'];
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $time = $_POST['time'];
+    $address = $_POST['address'];
+    $service = $_POST['service'];
+    $cgmchapter = $_POST['cgmchapter'];
+    $message = $_POST['message'];
+    $room = $_POST['room_id'];
+
+
+
+    $email_sender = 'cgmchurchweb@gmail.com';
+    $name_sender = 'CGM Church';
+
+    
+    $subject = "New Appointment Reservation";
+    $message = "A new client just sent an appointment reservation. Please check the details and confirm the appointment reservation. Thank You.
+                \n Details: 
+                Date: " . date('F j, Y', strtotime($date)). " 
+                Name: " . $fullname . " 
+                Email: " . $email . "
+                Contact Number: " . $contact . "
+                Time: " . $time . "
+                Service: " . $service . "
+                CGM Chapter: " . $cgmchapter;
+
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+
+    $mail->Host = "smtp.gmail.com";
+
+    $mail->Username = "cgmchurchweb@gmail.com";
+    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom($email_sender, $name_sender);
+
+    $mail->addAddress($email_sender, $name_sender);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    $mail->send();
+
+
+    $query = "INSERT INTO `appointment`(`date`, `fullname`, `email`, `contact`, `time`, `address`, `service`, `cgmchapter`, `message`, `room_id`) VALUES ('$date','$fullname','$email','$contact','$time','$address', '$service','$cgmchapter', '$message', '$room')";
+    $query_run = mysqli_query($con,$query);
+
+    
+
+
+    if($query_run){
+        $_SESSION['status'] = "Sent Successfully";
+        $_SESSION['status-code'] = "success";
+        header('location:appointmentform.php');
+    }else{
+        $_SESSION['status'] = "Something is wrong";
+        $_SESSION['status-code'] = "error";
+        header('location:appointmentform.php');
+    }
+}
+
 ?>

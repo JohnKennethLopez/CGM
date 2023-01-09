@@ -254,7 +254,7 @@ session_start();
                         <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div class="labas">
-                    <form action="appointmentForm_insert.php" method="POST">
+                    <form action="sendemail.php" method="POST">
                     <h1 class="h1form">APPOINTMENT FORM</h1>
                     <div class="loob">
                         <div class="INP">
@@ -271,7 +271,7 @@ session_start();
                         </div>
                         <div class="INP">
                             <label for="email">Email:</label>
-                            <input type="text" name="email" placeholder="Enter your Email" required>
+                            <input type="email" name="email" placeholder="Enter your Email" required>
                         </div>
                         <div class="INP">
                             <label for="contact">Contact Number:</label>
@@ -333,7 +333,7 @@ session_start();
                         </div>
                         
                     </div>
-                    <input type="submit" name="sendappoint" id="send" value="SEND APPOINTMENT">
+                    <button class="" type="submit" name="sendappoint" id="send">Send Appointment</button>
                     <!--<button><a href='?date=".$date."#form' >CLOSE</a></button>-->
                 </form>
                 </div>
