@@ -65,6 +65,7 @@ if(!isset($_SESSION["username"]))
                     <th>TIME</th>
                     <th>ADDRESS</th>
                     <th>MESSAGE</th>
+                    <th>STATUS</th>
                     <th>ACTION</th>
                 </tr>
                 <?php
@@ -88,12 +89,17 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['time']?></td>
                         <td><?php echo $row['address']?></td>
                         <td><?php echo $row['message']?></td>
+                        <td><?php echo $row['status']?></td>
                         <td><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
 
                         <button class="confirm_btn_ajax confirm-btn" name="confirm" 
-                            <?php if($row['status'] == 'Confirmed')
-                            { ?> disabled <?php } ?>>Confirm</button> <br>
-                            
+                            <?php if($row['status'] == 'Pending')
+                            {  } else {?> disabled <?php } ?>>Confirm</button>
+
+                        <button class="reject_btn_ajax reject-btn" name="reject" 
+                            <?php if($row['status'] == 'Pending')
+                            {  } else {?> disabled <?php } ?>>Reject</button>
+
                     <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php
@@ -126,7 +132,7 @@ if(!isset($_SESSION["username"]))
             if (willConfirm) {
                 $.ajax({
                     type: "POST",
-                    url: "deleteappoint.php",
+                    url: "sendemail.php",
                     data: {
                         "confirm_btn_set": 1,
                         "confirm_id": confirmid,
@@ -147,6 +153,45 @@ if(!isset($_SESSION["username"]))
             }
             });
     })
+
+    $('.reject_btn_ajax').click(function(e){
+        e.preventDefault();
+
+        var rejectid = $(this).closest("tr").find('.delete_id_value').val();
+        console.log(rejectid);
+        swal({
+            title: "Reject Appointment?",
+            text: "Once rejected, notification will be sent",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willReject) => {
+            if (willReject) {
+                $.ajax({
+                    type: "POST",
+                    url: "sendemail.php",
+                    data: {
+                        "reject_btn_set": 1,
+                        "reject_id": rejectid,
+                    },
+                    success: function(response) {
+
+                        swal("Rejected Successfully!", {
+                                icon: "success",
+                            }).then((result) => {
+                                location.reload();
+                                   
+                            });
+                    }
+                });
+
+
+                
+            }
+            });
+    })
+
 
     $('.delete_btn_ajax').click(function(e){
         e.preventDefault();
