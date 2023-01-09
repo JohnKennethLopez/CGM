@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2023 at 09:27 AM
+-- Generation Time: Jan 09, 2023 at 09:55 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -133,7 +133,7 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `date`, `fullname`, `email`, `contact`, `time`, `address`, `service`, `cgmchapter`, `message`, `room_id`, `status`) VALUES
-(11, '2022-11-23', 'Grace', 'grace.grumo12@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'other', 'CGM Mabini, Tanauan', 'birthday ni mama', 10, 'Confirmed'),
+(11, '2022-11-23', 'Grace', 'grace.grumo12@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'other', 'CGM Mabini, Tanauan', 'birthday ni mama', 10, 'Rejected'),
 (12, '2022-11-08', 'Grace', 'grace.grumo12@gmail.com', '09771183520', '10:00am', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Bacoor, Cavite', 'ad asda sdas das das das a', 2, 'Rejected'),
 (13, '2022-11-09', 'john kenneth lopez', 'lopeznneth204@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'Water baptism', 'CGM Balete, Batangas', 'fd gdfg dfg df gdf gdf ', 3, 'Pending'),
 (14, '2022-11-10', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Child dedication', 'CGM Bustos, Bulacan', 'ads gebfgnb fgn fgn fgn g', 4, 'Confirmed'),
@@ -550,22 +550,23 @@ CREATE TABLE `prayer` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `request` longtext NOT NULL,
-  `report` longtext NOT NULL
+  `report` longtext NOT NULL,
+  `status` text NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `prayer`
 --
 
-INSERT INTO `prayer` (`id`, `cgmchapter`, `name`, `email`, `request`, `report`) VALUES
-(11, 'CGM Hinigaran, Negros', 'John Kenneth Lopez', 'lopezalyzanicole@gmail.com', 'fg hfgh fgh fgh fgh fg', 'swf sdgfd gdfd hgh '),
-(12, 'CGM Gattaran, Cagayan', 'John Kenneth Lopez', 'lopezkenneth25@yahoo.com', '', 'asd adggdafdg dfg dfg dgf'),
-(14, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', 'pakisama po sa prayer nyo kami ng mga kaibigan ko malapit na po kasi ang Final defense namin, dito po nakasalalay ang kinabukasan po namin. sana po ay makapasa kami in Jesus name alam po namin di kami iiwan ni Lord. Amen.', ''),
-(15, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopezalyzanicole@gmail.com', 'as da sd asd asd asd asd as dasd asd asd as', 'ad asd asd asdas das dd as das das d asdas das das das'),
-(16, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', 'asd asdas fdsf sdf dsaf dsf sdfsd fsd fsd fds fsd fsdf sdfsd fsd fsd fs dfsd fsd fsd fs dfs dfsd fsd fsd fs', ''),
-(18, 'CGM Las Piñas Main', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', ' asad ad asd asd asda s', 'das d asd asdas'),
-(19, 'CGM Balete, Batangas', 'John Kenneth Lopez', 'arlenelopez30@gmail.com', 'asd asd asda sdas d', 'asd asd asd asd asd'),
-(21, 'CGM Las Piñas Main', 'John Kenneth Lopez', 'lopezkenneth25@yahoo.com', ' asdas das das', 'asd asd asd asd');
+INSERT INTO `prayer` (`id`, `cgmchapter`, `name`, `email`, `request`, `report`, `status`) VALUES
+(11, 'CGM Hinigaran, Negros', 'John Kenneth Lopez', 'lopezalyzanicole@gmail.com', 'fg hfgh fgh fgh fgh fg', 'swf sdgfd gdfd hgh ', 'Pending'),
+(12, 'CGM Gattaran, Cagayan', 'John Kenneth Lopez', 'lopezkenneth25@yahoo.com', '', 'asd adggdafdg dfg dfg dgf', 'Pending'),
+(14, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', 'pakisama po sa prayer nyo kami ng mga kaibigan ko malapit na po kasi ang Final defense namin, dito po nakasalalay ang kinabukasan po namin. sana po ay makapasa kami in Jesus name alam po namin di kami iiwan ni Lord. Amen.', '', 'Pending'),
+(15, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopezalyzanicole@gmail.com', 'as da sd asd asd asd asd as dasd asd asd as', 'ad asd asd asdas das dd as das das d asdas das das das', 'Pending'),
+(16, 'CGM Mabini, Tanauan', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', 'asd asdas fdsf sdf dsaf dsf sdfsd fsd fsd fds fsd fsdf sdfsd fsd fsd fs dfsd fsd fsd fs dfs dfsd fsd fsd fs', '', 'Pending'),
+(18, 'CGM Las Piñas Main', 'John Kenneth Lopez', 'lopeznneth204@gmail.com', ' asad ad asd asd asda s', 'das d asd asdas', 'Pending'),
+(19, 'CGM Balete, Batangas', 'John Kenneth Lopez', 'arlenelopez30@gmail.com', 'asd asd asda sdas d', 'asd asd asd asd asd', 'Pending'),
+(21, 'CGM Las Piñas Main', 'Grace', 'grace.grumo12@gmail.com', ' asdas das das', 'asd asd asd asd', 'Pending');
 
 -- --------------------------------------------------------
 
