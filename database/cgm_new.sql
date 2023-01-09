@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2023 at 05:02 AM
+-- Generation Time: Jan 09, 2023 at 09:27 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -133,13 +133,13 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `date`, `fullname`, `email`, `contact`, `time`, `address`, `service`, `cgmchapter`, `message`, `room_id`, `status`) VALUES
-(11, '2022-11-23', 'John Kenneth M. Lopez', 'lopeznneth204@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'other', 'CGM Mabini, Tanauan', 'birthday ni mama', 10, 'Pending'),
-(12, '2022-11-08', 'John Kenneth M. Lopez', 'arlenelopez30@gmail.com', '09771183520', '10:00am', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Bacoor, Cavite', 'ad asda sdas das das das a', 2, 'Confirmed'),
+(11, '2022-11-23', 'Grace', 'grace.grumo12@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'other', 'CGM Mabini, Tanauan', 'birthday ni mama', 10, 'Confirmed'),
+(12, '2022-11-08', 'Grace', 'grace.grumo12@gmail.com', '09771183520', '10:00am', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Bacoor, Cavite', 'ad asda sdas das das das a', 2, 'Rejected'),
 (13, '2022-11-09', 'john kenneth lopez', 'lopeznneth204@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'Water baptism', 'CGM Balete, Batangas', 'fd gdfg dfg df gdf gdf ', 3, 'Pending'),
-(14, '2022-11-10', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Child dedication', 'CGM Bustos, Bulacan', 'ads gebfgnb fgn fgn fgn g', 4, 'Pending'),
+(14, '2022-11-10', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Child dedication', 'CGM Bustos, Bulacan', 'ads gebfgnb fgn fgn fgn g', 4, 'Confirmed'),
 (15, '2022-11-20', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Water baptism', 'CGM Las Piñas Main', 'a asd asd asd ad as', 1, 'Pending'),
 (16, '2022-11-08', 'John Kenneth M. Lopez', 'lopeznneth204@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'wedding', 'CGM Balete, Batangas', 'asd asd asd afgdgfgfg d fgd fg df ', 3, 'Pending'),
-(18, '2022-11-07', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Mabini, Tanauan', 'asd a af sgf dh gjnghfjty j  tre ', 10, 'Pending'),
+(18, '2022-11-07', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '12:00pm', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Mabini, Tanauan', 'asd a af sgf dh gjnghfjty j  tre ', 10, 'Rejected'),
 (19, '2022-11-08', 'John Kenneth M. Lopez', 'arlenelopez30@gmail.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Las Piñas Main', 'ad agghfdg hf ghfg hfgh fg h', 1, 'Confirmed'),
 (20, '2022-11-09', 'John Kenneth M. Lopez', 'lopezkenneth25@yahoo.com', '09771183520', '3:00pm', '12 barangay, mabini, tanauan city batangas', 'Water baptism', 'CGM Las Piñas Main', 'asd sgfgfd sghd fgd fgfd gdf ', 1, 'Confirmed'),
 (22, '2023-01-03', 'john kenneth lopez', 'lopezkenneth25@yahoo.com', '09771183520', '09:00AM-11:00AM', '12 barangay, mabini, tanauan city batangas', 'Business blessing', 'CGM Las Piñas Main', '', 1, 'Confirmed');
