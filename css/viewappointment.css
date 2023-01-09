@@ -199,7 +199,7 @@ hr {
     height: 90%;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     position: relative;
     top: 2rem;
 }
@@ -212,9 +212,7 @@ hr {
     overflow: hidden;
     box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.7);
 }
-.DE {
-    font-size: 10px;
-}
+
 td {
     text-align: left;
     padding: 12px 15px;
@@ -249,3 +247,25 @@ tbody tr:last-of-type {
     border-bottom-color: #020049;
     border-bottom-width: 2px;
 }
+.confirm-btn {
+    text-decoration: none;
+    background: #0095ff;
+    color: white;
+    padding: 5px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #0095ff;
+    border-bottom-width: 2px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+.confirm-btn:hover {
+    background: rgb(2, 248, 174);
+    border-bottom-color: #020049;
+    border-bottom-width: 2px;
+}
+.confirm-btn:disabled{
+    color:#fff;
+    border-color: #a0a0a0;
+    background-color: #7d7d7d;
+  }

@@ -65,7 +65,7 @@ if(!isset($_SESSION["username"]))
                     <th>TIME</th>
                     <th>ADDRESS</th>
                     <th>MESSAGE</th>
-                    <th class="DE">DELETE</th>
+                    <th>ACTION</th>
                 </tr>
                 <?php
                     include('cgmdbconnection.php');
@@ -76,6 +76,7 @@ if(!isset($_SESSION["username"]))
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
                         while($row = mysqli_fetch_array($query_run)){
+                            
                     ?>
                     <tr class="scroll">
                         <td><?php echo $row['date']?></td>
@@ -88,6 +89,11 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['address']?></td>
                         <td><?php echo $row['message']?></td>
                         <td><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
+
+                        <button class="confirm_btn_ajax confirm-btn" name="confirm" 
+                            <?php if($row['status'] == 'Confirmed')
+                            { ?> disabled <?php } ?>>Confirm</button> <br>
+                            
                     <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php
@@ -105,6 +111,43 @@ if(!isset($_SESSION["username"]))
 </body>
 </html>
 <script>
+    $('.confirm_btn_ajax').click(function(e){
+        e.preventDefault();
+
+        var confirmid = $(this).closest("tr").find('.delete_id_value').val();
+        console.log(confirmid);
+        swal({
+            title: "Confirm Appointment?",
+            text: "Once confirmed, notification will be sent",
+            icon: "info",
+            buttons: true,
+            })
+            .then((willConfirm) => {
+            if (willConfirm) {
+                $.ajax({
+                    type: "POST",
+                    url: "deleteappoint.php",
+                    data: {
+                        "confirm_btn_set": 1,
+                        "confirm_id": confirmid,
+                    },
+                    success: function(response) {
+
+                        swal("Confirmed Successfully!", {
+                                icon: "success",
+                            }).then((result) => {
+                                location.reload();
+                                   
+                            });
+                    }
+                });
+
+
+                
+            }
+            });
+    })
+
     $('.delete_btn_ajax').click(function(e){
         e.preventDefault();
 
