@@ -139,7 +139,7 @@ if (isset($_POST['confirm_prayer'])) {
     $mail->send();
 
 
-    $update = "UPDATE appointment SET status = 'Confirmed' WHERE id = '$con_id'";
+    $update = "UPDATE prayer SET status = 'Confirmed' WHERE id = '$con_id'";
     $update_run = mysqli_query($con, $update);
 }
 
