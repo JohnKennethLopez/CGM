@@ -27,7 +27,7 @@ if (isset($_POST['confirm_btn_set'])) {
     
     $subject = "Appointment Confirmed";
     $message = "Good day, " . $row['fullname'] . ". Your appointment to " . $row['cgmchapter'] . " for the service of " . $row['service'] .
-    " in Room #" . $row['room_id'] . " on " . $row['date'] . " " . $row['time'] . " is now confirmed.";
+    " in Room #" . $row['room_id'] . " on " . date('F j, Y', strtotime($row['date'])) . " " . $row['time'] . " is now confirmed.";
 
 
     $mail = new PHPMailer(true);
@@ -45,7 +45,7 @@ if (isset($_POST['confirm_btn_set'])) {
     $mail->setFrom($email_sender, $name_sender);
 
     $mail->addAddress($email, $fullname);
-    $mail->Subject = "Appointment Confirmed";
+    $mail->Subject = $subject;
     $mail->Body = $message;
 
     $mail->send();
@@ -72,7 +72,7 @@ if (isset($_POST['reject_btn_set'])) {
     
     $subject = "Appointment Rejected";
     $message = "Good day, " . $row['fullname'] . ". Your appointment to " . $row['cgmchapter'] . " for the service of " . $row['service'] .
-    " in Room #" . $row['room_id'] . " on " . $row['date'] . " " . $row['time'] . " is rejected. Please book an appointment again with complete details.";
+    " in Room #" . $row['room_id'] . " on " . date('F j, Y', strtotime($row['date'])) . " " . $row['time'] . " is rejected. Please book an appointment again with complete details.";
 
 
     $mail = new PHPMailer(true);
@@ -100,5 +100,47 @@ if (isset($_POST['reject_btn_set'])) {
     $update_run = mysqli_query($con, $update);
 }
 
+if (isset($_POST['confirm_prayer'])) {
+    $con_id = $_POST['confirm_id'];
+
+    $select = "SELECT * FROM prayer WHERE id ='$con_id'";
+    $select_run = mysqli_query($con, $select);
+    $row = mysqli_fetch_array($select_run);
+
+
+    $email_sender = 'cgmchurchweb@gmail.com';
+    $name_sender = 'CGM Church';
+
+    $email = $row["email"];
+    $fullname = $row["name"];
+    
+    $subject = "Thank you for your prayer request!";
+    $message = "Thank you for contacting Church of God's Miracles with your prayer request. We consider it a privilege to stand in agreement with you about your prayer needs. God answers prayer!";
+
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+
+    $mail->Host = "smtp.gmail.com";
+
+    $mail->Username = "cgmchurchweb@gmail.com";
+    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom($email_sender, $name_sender);
+
+    $mail->addAddress($email, $fullname);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    $mail->send();
+
+
+    $update = "UPDATE appointment SET status = 'Confirmed' WHERE id = '$con_id'";
+    $update_run = mysqli_query($con, $update);
+}
 
 ?>

@@ -61,7 +61,8 @@ if(!isset($_SESSION["username"]))
                     <th>EMAIL</th>
                     <th>PRAY REQUESTS</th>
                     <th>ANSWERED PRAYERS</th>
-                    <th class="DE">DELETE</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
                 </tr>
                 <?php
                     include('cgmdbconnection.php');
@@ -80,8 +81,14 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['email']?></td>
                         <td><?php echo $row['request']?></td>
                         <td><?php echo $row['report']?></td>
+                        <td><?php echo $row['status']?></td>
                         <td><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
-                    <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a>
+                        <button class="confirm_btn_ajax confirm-btn" name="confirm" 
+                            <?php if($row['status'] == 'Pending')
+                            {  } else {?> disabled <?php } ?>>Confirm</button>
+
+
+                    <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
 </td>
                         
                     </tr>
@@ -100,6 +107,44 @@ if(!isset($_SESSION["username"]))
 </body>
 </html>
 <script>
+
+$('.confirm_btn_ajax').click(function(e){
+        e.preventDefault();
+
+        var confirmid = $(this).closest("tr").find('.delete_id_value').val();
+        console.log(confirmid);
+        swal({
+            title: "Confirm Appointment?",
+            text: "Once confirmed, notification will be sent",
+            icon: "info",
+            buttons: true,
+            })
+            .then((willConfirm) => {
+            if (willConfirm) {
+                $.ajax({
+                    type: "POST",
+                    url: "sendemail.php",
+                    data: {
+                        "confirm_prayer": 1,
+                        "confirm_id": confirmid,
+                    },
+                    success: function(response) {
+
+                        swal("Confirmed Successfully!", {
+                                icon: "success",
+                            }).then((result) => {
+                                location.reload();
+                                   
+                            });
+                    }
+                });
+
+
+                
+            }
+            });
+    })
+
     $('.delete_btn_ajax').click(function(e){
         e.preventDefault();
 
