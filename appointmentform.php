@@ -1,161 +1,79 @@
 <?php
 session_start();
+include('cgmdbconnection.php');
 
-?>
+// Set your timezone
+date_default_timezone_set('Asia/Tokyo');
 
-<?php
-    function build_calendar($month,$year, $room){
-        include('cgmdbconnection.php');
+// Get prev & next month
+if (isset($_GET['ym'])) {
+    $ym = $_GET['ym'];
+} else {
+    // This month
+    $ym = date('Y-m');
+}
 
-        //CGM Las Pinas Main
-        $query = $con->prepare("SELECT * FROM chapter");
-        $rooms ="";
-        $first_room=0;
-        $i=0;
-        if($query->execute()){
-            $result = $query->get_result();
-            if($result->num_rows>0){
-                while($row = $result->fetch_assoc()){
-                    if($i==0){
-                        $first_room = $row['id'];
-                    }
-                    $rooms.= "<option value='".$row['id']."'>".$row['cgmchapter']."</option>";
-                    $i++;
-                }
-                $query->close();
-            }
-        }
+// Check format
+$timestamp = strtotime($ym . '-01');
+if ($timestamp === false) {
+    $ym = date('Y-m');
+    $timestamp = strtotime($ym . '-01');
+}
 
-        if($room!=0){
-            $first_room = $room;
-        }
+// Today
+$today = date('Y-m-j', time());
 
-        $query = $con->prepare("SELECT * FROM appointment WHERE month(date)=? AND year(date)=? AND room_id=?");
-        $query -> bind_param('ssi',$month, $year, $first_room);
-        $bookings = array();
-        if($query->execute()){
-            $result = $query->get_result();
-            if($result->num_rows>0){
-                while($row = $result->fetch_assoc()){
-                    $bookings[] = $row['date'];
-                }
-                $query->close();
-            }
-        }
+// For H3 title
+$html_title = date('F', $timestamp);
 
-        $daysOfWeek = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-        $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
-        $numberDays = date('t',$firstDayOfMonth);
-        $dateComponents = getdate($firstDayOfMonth);
-        $monthName = $dateComponents['month'];
-        $dayOfWeek = $dateComponents['wday'];
-        $dateToday = date('Y-m-d');
+// Create prev & next month link     mktime(hour,minute,second,month,day,year)
+$prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
+$next = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)+1, 1, date('Y', $timestamp)));
+// You can also use strtotime!
+// $prev = date('Y-m', strtotime('-1 month', $timestamp));
+// $next = date('Y-m', strtotime('+1 month', $timestamp));
 
-        $calendar = "<table class='table'>";
-        $calendar.= "<center><h2 class='Hcalendar'>$monthName $year</h2>";
-        
-        $calendar.= "<a class='prebtn' href='?month=".date('m', mktime(0,0,0,$month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Previous Month</a>";
-        
-        $calendar.= "<a class='curbtn' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a>";
+// Number of days in the month
+$day_count = date('t', $timestamp);
+ 
+// 0:Sun 1:Mon 2:Tue ...
+$str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)));
+//$str = date('w', $timestamp);
 
-        $calendar.= "<a class='nxtbtn' href='?month=".date('m', mktime(0,0,0,$month+1, 1, $year)).".&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Next Month</a></center>";
-        $calendar.= "
-                    <form id='room_select_form' method='GET'>
-                        <div class='roww'>
-                            <label class='labelchap'>Select CGM Chapter</label><br>
-                                <select class='form-control' id='room_select' name='room'>
-                                    ".$rooms."
-                                </select>
-                                <input type='hidden' name='month' value='".$month."'>
-                                <input type='hidden' name='year' value='".$year."'>
-                        </div>
-                    </form>
-        ";
-        $calendar.= "<tr>";
 
-        foreach($daysOfWeek as $day){
-            $calendar.= "<th class='header'>$day</th>";
-        }
+// Create Calendar!!
+$weeks = array();
+$week = '';
 
-        $calendar.= "</tr><tr>";
+// Add empty cell
+$week .= str_repeat('<td></td>', $str);
 
-        if($dayOfWeek > 0 ){
-            for($k=0;$k<$dayOfWeek;$k++){
-                $calendar.= "<td></td>";
-            }
-        }
-        $currentDay=1;
-        $month = str_pad($month,2,"0",STR_PAD_LEFT);
-
-        while($currentDay<=$numberDays){
-
-            if($dayOfWeek==7){
-                $dayOfWeek = 0;
-                $calendar.= "</tr><tr>";
-            }
-
-            $currentDayRel =str_pad($currentDay,2,"0",STR_PAD_LEFT);
-            $date = "$year-$month-$currentDayRel";
-            
-            $dayname = strtolower(date('l',strtotime($date)));
-            $eventNum = 0;
-            $today = $date==date('Y-m-d')?"today":"";
-            if(in_array($date, $bookings)){
-                $calendar.="<td class='$today'><h4>$currentDay</h4> <button class='NAbtn'>Booked</button>";
-            }elseif($date<date('Y-m-d')){
-                $calendar.="<td><h4>$currentDay</h4> <button class='NAbtn'>N/A</button>";
-            }else{
-                $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='?date=".$date."#form' class='btnBook'>Book</a>";
-            }
-
-            $calendar.= "</td>";
-
-            $currentDay++;
-            $dayOfWeek++;
-
-        }
-        if($dayOfWeek != 7){
-            $remainingDays = 7-$dayOfWeek;
-            for($i = 0; $i < $remainingDays;$i++){
-                $calendar.= "<td></td>";
-            }
-        }
-        $calendar.= "</tr>";
-        $calendar.= "</table>";
-
-        echo $calendar;
-
+for ( $day = 1; $day <= $day_count; $day++, $str++) {
+     
+    $date = $ym . '-' . $day;
+     
+    if ($today == $date) {
+        $week .= '<td class="today">' . $day;
+    } else {
+        $week .= '<td>' . $day;
     }
-?>
-<?php
-    //TIME SLOTS CODE
+    $week .= '</td>';
+     
+    // End of the week OR End of the month
+    if ($str % 7 == 6 || $day == $day_count) {
 
-    $duration = 120;
-    $cleanup = 60;
-    $start = "09:00";
-    $end = "18:00";
-
-
-    function timeslots($duration, $cleanup, $start, $end){
-        $start = new DateTime($start);
-        $end = new DateTime($end);
-        $interval = new DateInterval("PT".$duration."M");
-        $cleanupInterval = new DateInterval("PT".$cleanup."M");
-        $slots = array();
-
-        for($intStart = $start; $intStart<$end; $intStart->add($interval)->add($cleanupInterval)){
-            $endPeriod = clone $intStart;
-            $endPeriod->add($interval);
-            if($endPeriod>$end){
-                break;
-            }
-
-            $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
-
+        if ($day == $day_count) {
+            // Add empty cell
+            $week .= str_repeat('<td></td>', 6 - ($str % 7));
         }
-        return $slots;
+
+        $weeks[] = '<tr>' . $week . '</tr>';
+
+        // Prepare for new week
+        $week = '';
     }
-    //END OF TIME SLOTS CODE
+
+}
 ?>
 
 <html>
@@ -171,6 +89,36 @@ session_start();
         <script src="JavaScript/nav.js" defer></script>
         <script src="JavaScript/scroll.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <style>
+        .container {
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 80px;
+        }
+        h3 {
+            margin-bottom: 30px;
+            color: white;
+        }
+        th {
+            height: 30px;
+            text-align: center;
+        }
+        td {
+            height: 100px;
+        }
+        .today {
+            background: orange;
+        }
+        th:nth-of-type(1), td:nth-of-type(1) {
+            color: red;
+        }
+        th:nth-of-type(7), td:nth-of-type(7) {
+            color: blue;
+        }
+    </style>
+    
     </head>
     <body>
         <section id="bg-image">
@@ -195,55 +143,30 @@ session_start();
             </div>
             <h1 class="appoint">Set an Appointment Reservation</h1>
             
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php
-                            $dateComponents = getdate();
-                                if(isset($_GET['month']) && isset($_GET['year'])){
-                                $month = $_GET['month']; 			     
-                                $year = $_GET['year'];
-                                 }else{
-                                $month = $dateComponents['mon']; 			     
-                                $year = $dateComponents['year'];
-                                }
-
-                                if(isset($_GET['room'])){
-                                    $room = $_GET['room'];
-                                }else{
-                                    $room = 0;
-                                }
-                            echo build_calendar($month, $year, $room);
-                        ?>
-                    </div>
-                </div>
-            </div>
+            <div class="container" style="margin-top: -10px;">
+        <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+            </tr>
+            <?php
+                foreach ($weeks as $week) {
+                    echo $week;
+                }
+            ?>
+        </table>
+    </div>
 
         </section>
-            <?php
-                if(isset($_GET['date'])){
-                    $date = $_GET['date'];
-                }
-                
-            ?>
-        <section id="form">
-            <div id="timelabas">
-                <div class="times">
-                    <h1 class="timeH1">SELECT TIME FOR YOUR APPOINTMENT</h1>
-                                <?php
-                                    $timeslots = timeslots($duration, $cleanup, $start, $end);
-                                    foreach($timeslots as $ts){
-                                ?>
-                                <div class="timeIN">
-                                    <button id="time-btn" class="time-btn" data-timeslot="<?php echo $ts; ?>">
-                                        <?php echo $ts; ?>
-                                    </button>
-                                </div>
-                                <?php        
-                                    }
-                                ?>
-                </div>
-            </div>
+
+        
+          
             <div id="app-modal">
                 <div class="modal">
                     <div class="top-form">
