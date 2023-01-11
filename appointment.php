@@ -28,14 +28,7 @@ if(!isset($_SESSION["username"]))
                     <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                        <?php
-                            $cgm_id = $_GET['chapter'];
-                            $level = "SELECT * FROM admin WHERE cgm_id = '$cgm_id'";
-                            $level_run = mysqli_query($con, $level);
-                            $row = mysqli_fetch_array($level_run);
-                            $chapter = $row['cgm_id'];
-                            
-                            ?>
+
                             <p class="btn"><a href="uploadevent.php#upload?chapter=<?php echo $chapter ?>">Upload Events</a></p>
                             <p class="btn"><a href="appointment.php#Appointment?chapter=<?php echo $chapter ?>">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php#prayerReq?chapter=<?php echo $chapter ?>">View Prayer Requests</a><p>
