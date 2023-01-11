@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('cgmdbconnection.php');
 
 if(!isset($_SESSION["username"]))
 {
@@ -27,11 +28,19 @@ if(!isset($_SESSION["username"]))
                     <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                            <p class="btn"><a href="uploadevent.php#upload">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php#Appointment">View Appointment</a><p>
-                            <p class="btn"><a href="">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php#Attendancelist">View Attendance List</a><p>
+                        <?php
+                            $cgm_id = $_GET['chapter'];
+                            $level = "SELECT * FROM admin WHERE cgm_id = '$cgm_id'";
+                            $level_run = mysqli_query($con, $level);
+                            $row = mysqli_fetch_array($level_run);
+                            $chapter = $row['cgm_id'];
+                            
+                            ?>
+                            <p class="btn"><a href="uploadevent.php#upload?chapter=<?php echo $chapter ?>">Upload Events</a></p>
+                            <p class="btn"><a href="appointment.php#Appointment?chapter=<?php echo $chapter ?>">View Appointment</a><p>
+                            <p class="btn"><a href="viewprayer.php#prayerReq?chapter=<?php echo $chapter ?>">View Prayer Requests</a><p>
+                            <p class="btn"><a href="attendance.php#attendance?chapter=<?php echo $chapter ?>">Attendance</a><p>
+                            <p class="btn"><a href="attendancelist.php#Attendancelist?chapter=<?php echo $chapter ?>">View Attendance List</a><p>
                         </div>
                     </div>
             </div>

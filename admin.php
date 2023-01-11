@@ -3,11 +3,7 @@ include('cgmdbconnection.php');
 
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['id'])) {  
-    header("location:admin2.php");
-}
-else
-{
+
 
 
 
@@ -15,18 +11,32 @@ if(isset($_POST['loginsubmit'])){
 $username=$_POST['username'];
 $password=$_POST['password'];
 
-$sql=mysqli_query($con, "select * as total from admin where username='".$username."' and password='".$password."'");
 
-$rw = mysqli_fetch_Array($sql);
-if($rw['total'] > 0){
-    $_SESSION['username'] = $username;
-    $_SESSION['id'] = $rw['id'];
-  header('location:admin2.php');
-    }else{
-        die(mysqli_error($con));
+
+
+            $level = "SELECT * FROM admin WHERE username='$username' and password='$password'";
+            $level_run = mysqli_query($con, $level);
+            $row = mysqli_fetch_array($level_run);
+            $cgm_level = $row['level'];
+            $chapter = $row['cgm_id'];
+
+            if($cgm_level === '1')
+            {
+                $_SESSION['username'] = $username;
+                $_SESSION['id'] = $row['id'];
+                header('location:admin2.php');
+            } elseif ($cgm_level === '0'){
+                $_SESSION['username'] = $username;
+                $_SESSION['id'] = $row['id'];
+                header("location: chapter_admin.php?chapter=$chapter");
+            }else{
+                die(mysqli_error($con));    
+            }
+
+
     }
 
-}
+
 
 ?>
 
@@ -55,7 +65,7 @@ if($rw['total'] > 0){
             </div>
             <div class="outer">
                 <div class="login">
-                    <form action="login.php"  method="POST">
+                    <form  method="POST">
                         <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
                         <input type="text" id="user" name="username" placeholder="Username"><br><br><br>
                         <input type="password" id="pass" name="password" placeholder="Password"><br><br>
@@ -67,6 +77,3 @@ if($rw['total'] > 0){
     </section>
 </body>
 </html>
-<?php
-}
-?>

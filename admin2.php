@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('cgmdbconnection.php');
 if(!isset($_SESSION["username"]))
 {
     header("location:admin.php");
