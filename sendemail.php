@@ -152,10 +152,13 @@ if(isset($_POST['sendappoint'])){
     $time = $_POST['time'];
     $address = $_POST['address'];
     $service = $_POST['service'];
-    $cgmchapter = $_POST['cgmchapter'];
-    $message = $_POST['message'];
-    $room = $_POST['room_id'];
+    $cgm_id = $_POST['chapter'];
+    $message_post = $_POST['message'];
 
+    $for_chaptername = "SELECT * FROM `chapter` WHERE id = $cgm_id";
+    $for_chaptername_run = mysqli_query($con, $for_chaptername);
+    $rows = mysqli_fetch_array($for_chaptername_run);
+    $chapter_name = $rows['cgmchapter'];
 
 
     $email_sender = 'cgmchurchweb@gmail.com';
@@ -171,7 +174,8 @@ if(isset($_POST['sendappoint'])){
                 Contact Number: " . $contact . "
                 Time: " . $time . "
                 Service: " . $service . "
-                CGM Chapter: " . $cgmchapter;
+                Chapter: " . $chapter_name . "
+                Message: " . $message_post;
 
 
     $mail = new PHPMailer(true);
@@ -195,7 +199,8 @@ if(isset($_POST['sendappoint'])){
     $mail->send();
 
 
-    $query = "INSERT INTO `appointment`(`date`, `fullname`, `email`, `contact`, `time`, `address`, `service`, `cgmchapter`, `message`, `room_id`) VALUES ('$date','$fullname','$email','$contact','$time','$address', '$service','$cgmchapter', '$message', '$room')";
+
+    $query = "INSERT INTO `appointment`(`date`, `fullname`, `email`, `contact`, `time`, `address`, `service`, `cgmchapter`, `cgm_id`, `message`) VALUES ('$date','$fullname','$email','$contact','$time','$address', '$service','$chapter_name','$cgm_id', '$message_post')";
     $query_run = mysqli_query($con,$query);
 
     
@@ -204,7 +209,8 @@ if(isset($_POST['sendappoint'])){
     if($query_run){
         $_SESSION['status'] = "Sent Successfully";
         $_SESSION['status-code'] = "success";
-        header('location:appointmentform.php');
+        header('Location: appointmentform.php?chapter=' . $cgm_id . '&date=' . $date);
+ 
     }else{
         $_SESSION['status'] = "Something is wrong";
         $_SESSION['status-code'] = "error";

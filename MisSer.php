@@ -140,7 +140,7 @@
 
         <section id="service">
             <div class="set">
-                <a href="appointmentform.php"><h3>Set an Appointment<br>Reservation</h3></a>
+                <a href="choose_chapter.php"><h3>Set an Appointment<br>Reservation</h3></a>
             </div>
             <div class="cont">        
                 <h1 class="mish1"><i>SERVICES</i></h1>

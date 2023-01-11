@@ -3,7 +3,7 @@ session_start();
 include('cgmdbconnection.php');
 
 // Set your timezone
-date_default_timezone_set('Asia/Tokyo');
+date_default_timezone_set('Asia/Manila');
 
 // Get prev & next month
 if (isset($_GET['ym'])) {
@@ -48,17 +48,43 @@ $week = '';
 // Add empty cell
 $week .= str_repeat('<td></td>', $str);
 
+$chapter = $_GET['chapter'];
+
 for ( $day = 1; $day <= $day_count; $day++, $str++) {
      
     $date = $ym . '-' . $day;
      
     if ($today == $date) {
-        $week .= '<td class="today">' . $day;
-    } else {
-        $week .= '<td>' . $day;
-    }
-    $week .= '</td>';
-     
+        $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$today' AND cgm_id = '$chapter' AND status = 'Confirmed'";
+        $query_run = mysqli_query($con, $query);
+        $date_count = mysqli_num_rows($query_run);
+        $row = mysqli_fetch_array($query_run);
+
+        $total = $row['total'];
+
+        if($total === '5'){
+                $week .= '<td class="today">' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
+        } else {
+            $week .= '<td class="today">' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
+    } 
+    
+    else{
+        $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$date' AND cgm_id = '$chapter' AND status = 'Confirmed'";
+        $query_run = mysqli_query($con, $query);
+        $date_count = mysqli_num_rows($query_run);
+        $row = mysqli_fetch_array($query_run);
+
+        $total = $row['total'];
+
+            if($total === '5'){
+                    $week .= '<td>' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
+            } else {
+                $week .= '<td>' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
+        }
+        
+    
+        $week .= '</td>';
+
     // End of the week OR End of the month
     if ($str % 7 == 6 || $day == $day_count) {
 
@@ -75,6 +101,11 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
 }
 ?>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+</script>
 
 <html>
     <head>
@@ -90,8 +121,9 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         <script src="JavaScript/scroll.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
     
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <style>
         .container {
             font-family: 'Orbitron', sans-serif;
@@ -107,6 +139,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         }
         td {
             height: 100px;
+            width: 100px;
         }
         .today {
             background: orange;
@@ -116,6 +149,9 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         }
         th:nth-of-type(7), td:nth-of-type(7) {
             color: blue;
+        }
+        a {
+            text-decoration: none;
         }
     </style>
     
@@ -144,7 +180,20 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
             <h1 class="appoint">Set an Appointment Reservation</h1>
             
             <div class="container" style="margin-top: -10px;">
-        <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
+                <div class="row">
+                    <div class="col">
+                        <h3 style="margin: auto; text-align: center;"><?php $chapter = $_GET['chapter'];
+                         $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                        echo $row['cgmchapter'] ?></h3>
+                    </div>
+
+                    <div class="col">
+                        <h3 style="margin-left: 20px;"><a href="?ym=<?php echo $prev; ?>&chapter=<?php echo $chapter; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>&chapter=<?php echo $chapter; ?>">&gt;</a></h3>
+                    </div>
+                    
+                </div>
         <table class="table table-bordered">
             <tr>
                 <th>S</th>
@@ -165,50 +214,108 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
         </section>
 
-        
-          
-            <div id="app-modal">
-                <div class="modal">
-                    <div class="top-form">
-                        
-                        <div class="app-form">
-                <div class="PinLabas">
-                <div class="close-modal">
-                        <i class="fa-solid fa-xmark"></i>
+        <div class="modal fade" tabindex="-1" role="dialog" id="my-modal">
+   <div class="modal-dialog" role="document" style="z-index: 35500;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Appointment Form</h4>
+         </div>
+         <div class="modal-body">
+            <form method="post" action="sendemail.php">
+            <input name="chapter" hidden value="<?php echo $_GET['chapter'] ?>">
+                <div class="INP">
+                    <label for="date">Date:</label>
+                    <input type="text" class="date" name="date" readonly  value="<?php 
+                        $getdate = $_GET['date'];
+                        echo $getdate;
+                    ?>">
                 </div>
-                <div class="labas">
-                    <form action="sendemail.php" method="POST">
-                    <h1 class="h1form">APPOINTMENT FORM</h1>
-                    <div class="loob">
-                        <div class="INP">
-                            <label for="date">Date:</label>
-                            <input type="date" name="date" readonly  value="<?php echo date('Y-m-d',strtotime($date)); ?>">
-                        </div>
-                        <div class="INP">
+                <div class="INP">
                             <label for="time">Time:</label>
-                            <input type="text" name="time" id="timeslot" readonly required>
+                            <select required class="form-control" name="time" id="ser">
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="9:00 AM - 10:00 AM" 
+                                
+                                <?php
+                                $chapter = $_GET['chapter'];
+                                $getdate = $_GET['date'];
+                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '9:00 AM - 10:00 AM' AND status = 'Confirmed'";
+                                $checktime_run = mysqli_query($con, $checktime);
+                                $row = mysqli_num_rows($checktime_run);
+                                // $total = $row['total'];
+                                if($row === 1) {?> hidden <?php } ?>
+                                >9:00 AM - 10:00 AM</option>]
+
+
+                                <option value="11:00 AM - 12:00 PM"
+                                <?php
+                                $chapter = $_GET['chapter'];
+                                $getdate = $_GET['date'];
+                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '11:00 AM - 12:00 PM' AND status = 'Confirmed'";
+                                $checktime_run = mysqli_query($con, $checktime);
+                                $row = mysqli_num_rows($checktime_run);
+                                // $total = $row['total'];
+                                if($row === 1) {?> hidden <?php } ?>
+                                >11:00 AM - 12:00 PM</option>
+
+
+                                <option value="1:00 PM - 2:00 PM"
+                                <?php
+                                $chapter = $_GET['chapter'];
+                                $getdate = $_GET['date'];
+                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '1:00 PM - 2:00 PM' AND status = 'Confirmed'";
+                                $checktime_run = mysqli_query($con, $checktime);
+                                $row = mysqli_num_rows($checktime_run);
+                                // $total = $row['total'];
+                                if($row === 1) {?> hidden <?php } ?>
+                                >1:00 PM - 2:00 PM</option>
+
+                                <option value="2:00 PM - 3:00 PM"
+                                <?php
+                                $chapter = $_GET['chapter'];
+                                $getdate = $_GET['date'];
+                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '2:00 PM - 3:00 PM' AND status = 'Confirmed'";
+                                $checktime_run = mysqli_query($con, $checktime);
+                                $row = mysqli_num_rows($checktime_run);
+                                // $total = $row['total'];
+                                if($row === 1) {?> hidden <?php } ?>
+                                >2:00 PM - 3:00 PM</option>
+
+                                <option value="4:00 PM - 5:00 PM"
+                                <?php
+                                $chapter = $_GET['chapter'];
+                                $getdate = $_GET['date'];
+                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '4:00 PM - 5:00 PM' AND status = 'Confirmed'";
+                                $checktime_run = mysqli_query($con, $checktime);
+                                $row = mysqli_num_rows($checktime_run);
+                                // $total = $row['total'];
+                                if($row === 1) {?> hidden <?php } ?>
+                                >4:00 PM - 5:00 PM</option>
+
+                            </select>
                         </div>
                         <div class="INP">
                             <label for="fullname">Full Name:</label>
-                            <input type="text" name="fullname" placeholder="Enter your Name" required>
+                            <input type="text" name="fullname" class="fullname" placeholder="Enter your Name" required>
                         </div>
                         <div class="INP">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" placeholder="Enter your Email" required>
+                            <input type="email" class="email" name="email" placeholder="Enter your Email" required>
                         </div>
                         <div class="INP">
                             <label for="contact">Contact Number:</label>
-                            <input type="text" name="contact" placeholder="Enter your Contact Number" required>
+                            <input type="text" class="contact" name="contact" placeholder="Enter your Contact Number" required>
                         </div>
                         
                         <div class="INP">
                             <label for="address">Address:</label>
-                            <input type="text" name="address" placeholder="Enter your Address" required>
+                            <input type="text" class="address" name="address" placeholder="Enter your Address" required>
                         </div>
                         <div class="INP">
                             <label for="service">Subject/Topic to discuss (Service):</label>
-                            <select name="service" id="ser" required>
-                                <option value="select" disabled selected>Select Service</option>
+                            <select required class="service" name="service" id="ser">
+                                <option value="" disabled selected>Select Service</option>
                                 <option value="wedding">Wedding</option>
                                 <option value="Child dedication">Child Dedication</option>
                                 <option value="House blessing">House Blessing</option>
@@ -220,51 +327,21 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                             <p class="note">Note: If you select "Other", Please specify in the Message box what is your agenda.</p>
                         </div>
                         <div class="INP">
-                            <label for="church">CGM Chapter:</label>
-                                <select name="cgmchapter" id="church" required>
-                                    <option value="select" disabled selected>Select CGM Church</option>
-                                    <option value="CGM Las Piñas Main">1. CGM Las Piñas Main</option>
-                                    <option value="CGM Bacoor, Cavite">2. CGM Bacoor, Cavite</option>
-                                    <option value="CGM Balete, Batangas">3. CGM Balete, Batangas</option>
-                                    <option value="CGM Bustos, Bulacan">4. CGM Bustos, Bulacan</option>
-                                    <option value="CGM Cabuyao, Laguna">5. CGM Cabuyao, Laguna</option>
-                                    <option value="CGM Candaba, Pampanga">6. CGM Candaba, Pampanga</option>
-                                    <option value="CGM EDSA Mandaluyong">7. CGM EDSA Mandaluyong</option>
-                                    <option value="CGM Gattaran, Cagayan">8. CGM Gattaran, Cagayan</option>
-                                    <option value="CGM Hinigaran, Negros">9. CGM Hinigaran, Negros</option>
-                                    <option value="CGM Mabini, Tanauan">10. CGM Mabini, Tanauan</option>
-                                    <option value="CGM Mariveles, Bataan">11. CGM Mariveles, Bataan</option>
-                                    <option value="CGM Nasugbo, Batangas">12. CGM Nasugbu, Batangas</option>
-                                    <option value="CGM Navotas City">13. CGM Navotas City</option>
-                                    <option value="CGM Prieto Diaz, Sorsogon">14. CGM Prieto Diaz Sorsogon</option>
-                                    <option value="CGM Pulilan, Bulacan">15. CGM Pulilan, Bulacan</option>
-                                    <option value="CGM Sampaloc, Quezon">16. CGM Sampaloc, Quezon</option>
-                                    <option value="CGM San Pedro, Laguna">17. CGM San Pedro, Laguna</option>
-                                    <option value="CGM Sta. Rosa, Laguna">18. CGM Sta. Rosa, Laguna</option>
-                                    <option value="CGM Taguig City">19. CGM Taguig City</option>
-                                    <option value="CGM Gen. Tinio, Nueva Ecija">20. CGM Tinio, Nueva Ecija</option>
-                                </select>
-                        </div>
-                        <div class="INP">
                             <label for="message">Add Message:</label>
                             <textarea name="message" placeholder="Add Message"></textarea>
                         </div> 
-                        <div class="INP">
-                            <label for="room_id">CGM chapter Number:</label>
-                            <input type="text" name="room_id" placeholder="Enter the Number of the chapter">
-                            <p class="note">Note: There is a number in the Selection of CGM Chapter, Please Enter the correct CGM chapter Number</p>
-                        </div>
-                        
-                    </div>
-                    <button class="" type="submit" name="sendappoint" id="send">Send Appointment</button>
-                    <!--<button><a href='?date=".$date."#form' >CLOSE</a></button>-->
-                </form>
-                </div>
-            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="submit" name="sendappoint">SEND</button>
+            </form>
+         </div>
+
+      </div>
+   </div>
+</div>
+        
+          
+           
         </section>
 
         <section id="footer">
@@ -285,31 +362,9 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         </section>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <script>
-            $("#room_select").change(function(){
-                $("#room_select_form").submit();
-            });
 
-            $("#room_select option[value='<?php echo $room; ?>']").attr('selected','selected');
-        </script>
+       
         
-        <script>
-            $(".time-btn").click(function(){
-                var timeslot=$(this).attr('data-timeslot');
-                $("#timeslot").val(timeslot);
-            })
-            
-        </script>
-        <script>
-            $(function(){
-                $('.time-btn').click(function(){
-                    $('#app-modal').fadeIn().css("display", "flex");
-                });
-                $('.close-modal').click(function(){
-                    $('#app-modal').fadeOut();
-                });
-            });
-        </script>
     </body>
 </html>
 
