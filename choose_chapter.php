@@ -30,7 +30,7 @@ include('cgmdbconnection.php');
     <h1 class="logo"><a href="index.php"><img class="logoimg" src="logo.png" alt="">Church of God's<br> Miracles</a></h1>
 <ul>
     <li><a href="about.php">About</a></li>
-    <li class="focus"><a href="">Find a Church</a></li>
+    <li><a href="findchurch.php">Find a Church</a></li>
     <li><a href="CounMin.php">Council & Ministries</a></li>
     <li><a href="program.php">Program</a></li>
     <li><a href="event.php">Events</a></li>

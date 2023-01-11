@@ -81,11 +81,12 @@ $qry_run = mysqli_query($con,$qry);
                         }
                     
 
-                ?>
-                    
+                ?>   
                                     
                 </div>
             </div>
+
+
         </section>
         <section id="announcement">
                         <div class="announce">
@@ -120,6 +121,43 @@ $qry_run = mysqli_query($con,$qry);
                                     ?>
                             </div>
                         </div>
+
+                        <div class="eventpic" style="margin-top: 50px;">
+                <div class="upco">
+                    <h1>EVENTS ARCHIVE:</h1>
+                </div>
+                <div class="loob">
+                <?php
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+                    
+                    $query = "SELECT * FROM event_archive";
+                    $query_run = mysqli_query($con,$query);
+                    $check_upload = mysqli_num_rows($query_run) > 0; 
+                    if($check_upload){
+                        while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                        <div class="pic">
+                        <img src="<?php echo $row['image']?>" alt="" width="300px">
+                        <div class="info">
+                            <h1><?php echo $row['title']?></h1><br>
+                            <p class="des"><?php echo $row['des']?></p><br>
+                            <p class="date"><?php echo $row['date']?></p><br>
+                            <p class="time"><?php echo $row['time']?></p><br>
+                            <p class="loc"><?php echo $row['loc']?></p>
+                        </div>
+                        </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO EVENT FOUND!!!";
+                        }
+                    
+
+                ?>   
+                                    
+                </div>
+            </div>
         </section>
         <!-- Messenger Chat Plugin Code -->
         <div id="fb-root"></div>
