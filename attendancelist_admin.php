@@ -22,18 +22,12 @@ if(!isset($_SESSION["username"]))
                 <h1 class="CGMh1"><img class="logo" src="logo.png" alt=""><br>CHURCH<br>OF GOD'S <br>MIRACLES<br></h1>
             </div>
             <div class="addash">
-            <h1 class="cgmadmin"><?php $chapter = $_GET['chapter'];
-                         $name = "SELECT * FROM chapter WHERE id = $chapter";
-                        $name_run = mysqli_query($con, $name);
-                        $row = mysqli_fetch_array($name_run);
-                        echo $row['cgmchapter'] ?> ADMIN</h1><br><br>
+            <h1 class="cgmadmin">CGM ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                        <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
+                        <p class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
+                        <p class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
+                            <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
@@ -46,12 +40,12 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="search.php?chapterid=<?php echo $chapter ?>">Filter the Date and <br>CGM CHAPTER</a></p>
+                    <p class="backbtn"><a href="search_admin.php">Filter the Date and <br>CGM CHAPTER</a></p>
                 </div>
             </div>
             <div class="print">
                 <div class="pr">
-                    <p class="printbtn"><a href="printattend.php?chapter=<?php echo $chapter ?>">Print<br>Attendance List</a></p>
+                    <p class="printbtn"><a href="printattend.php">Print<br>Attendance List</a></p>
                 </div>
             </div>
         </div>
@@ -75,7 +69,7 @@ if(!isset($_SESSION["username"]))
                     
                     
 
-                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter";
+                    $query = "SELECT * FROM attendance";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -103,7 +97,7 @@ if(!isset($_SESSION["username"]))
             </table>
         </div>
             <?php 
-                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance WHERE cgm_id = $chapter");
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance");
                 $row_count = mysqli_fetch_assoc($count_query);
                 $count = $row_count['total'];
             ?>

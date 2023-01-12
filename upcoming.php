@@ -16,18 +16,19 @@ include('cgmdbconnection.php');
         $date = $_POST['date'];
         $time = $_POST['time'];
         $loc = $_POST['loc'];
+        $chapter = $_POST['chapter'];
 
-        $query = "INSERT INTO upcoming (`title`, `image`, `des`, `date`, `time`, `loc`) VALUES ('$title',' $img_des','$des','$date','$time','$loc')";
+        $query = "INSERT INTO upcoming (`title`, `image`, `des`, `date`, `time`, `loc`, `cgm_id`) VALUES ('$title',' $img_des','$des','$date','$time','$loc', '$chapter')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Post Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:uploadevent.php');
+            header("location:uploadevent.php?chapter=$chapter");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:uploadevent.php');
+            header("location:uploadevent.php?chapter=$chapter");
         }
 
     }

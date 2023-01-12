@@ -3,14 +3,23 @@ session_start();
 include('cgmdbconnection.php');
 
     if(isset($_POST['praysubmit'])){
-        $cgmchapter = $_POST['cgmchapter'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $request = $_POST['request'];
         $report = $_POST['report'];
+        $chapter = $_POST['chapter'];
 
-        $query = "INSERT INTO prayer (`cgmchapter`, `name`, `email`, `request`, `report`) VALUES ('$cgmchapter','$name','$email','$request','$report')";
+
+        $select = "SELECT * FROM chapter WHERE id = $chapter";
+        $select_run = mysqli_query($con, $select);
+        $row = mysqli_fetch_array($select_run);
+        $cgmchapter = $row['cgmchapter'];
+
+        $query = "INSERT INTO prayer (`name`, `email`, `request`, `cgmchapter`, `cgm_id`, `report`) VALUES ('$name','$email','$request', '$cgmchapter', '$chapter', '$report')";
         $query_run = mysqli_query($con,$query);
+
+
+
 
         if($query_run){
             $_SESSION['status'] = "Sent Successfully";

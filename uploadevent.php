@@ -26,15 +26,20 @@ if(!isset($_SESSION["username"]))
                 <h1 class="CGMh1"><img class="logo" src="logo.png" alt=""><br>CHURCH<br>OF GOD'S <br>MIRACLES<br></h1>
             </div>
             <div class="addash">
-                    <br><h1 class="cgmadmin">CGM <br>ADMIN</h1><br><br>
+            <br><h1 class="cgmadmin"><?php 
+                        $chapter = $_GET['chapter'];
+                         $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                        echo $row['cgmchapter'] ?> ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
 
-                            <p class="btn"><a href="uploadevent.php#upload?chapter=<?php echo $chapter ?>">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php#Appointment?chapter=<?php echo $chapter ?>">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php#prayerReq?chapter=<?php echo $chapter ?>">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php#attendance?chapter=<?php echo $chapter ?>">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php#Attendancelist?chapter=<?php echo $chapter ?>">View Attendance List</a><p>
+                            <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
+                            <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
+                            <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
+                            <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
+                            <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
@@ -48,6 +53,7 @@ if(!isset($_SESSION["username"]))
             <div class="labas">
                 <form action="upcoming.php" method="POST" enctype="multipart/form-data">
                     <h1 class="h1up">UPCOMING EVENT</h1>
+                    <input name="chapter" hidden value="<?php echo $_GET['chapter'] ?>">
                 <div class="loob">
                     <div class="iisang">
                         <div class="container">

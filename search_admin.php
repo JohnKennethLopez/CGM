@@ -25,27 +25,37 @@ if(!isset($_SESSION["username"]))
         </div>
         <div class="back">
             <div class="inn">
-                <?php $chapter = $_GET['chapterid']; ?>
-                <a style="text-decoration: none;" class="printbtn" href="chapter_admin.php?chapter=<?php echo $chapter ?>">BACK</a>
+            <a style="text-decoration: none;" class="printbtn" href="admin2.php">BACK</a>
             </div>
         </div>
         <h1 class="head">Attendance List</h1><hr>
             <div class="filterpart">
-                <form action="" method="POST">
+                <form action="" method="GET">
                     <div class="filter">
-                            
+                            <select name="chapter" id="church" >
+                            <option value="select" disabled selected>Choose a CGM Church</option>
+                        <?php
+                        $chapter = "SELECT * FROM chapter";
+                        $chapter_run = mysqli_query($con, $chapter);
+
+                        while($row = mysqli_fetch_array($chapter_run)){
+
+                        ?>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['cgmchapter'] ?></option>
+                        <?php } ?>
+                            </select><br>
                             <div class="datefilter">
                                 <div class="fromdate">
                                     <label class="date_label" for="from_date">From Date:</label><br>
-                                    <input type="date" name="from_date">
+                                    <input type="date" name="from_date" value="<?php if(isset($_GET['chapter'])){ echo $_GET['from_date']; } ?>">
                                 </div>
                                 <div class="todate">
                                     <label class="date_label" for="to_date">To Date:</label><br>
-                                    <input type="date" name="to_date">
+                                    <input type="date" name="to_date" value="<?php if(isset($_GET['chapter'])){ echo $_GET['to_date']; } ?>">
                                 </div>
                             </div>
                             
-                        <button type="submit" class="filterbtn" name="filter">Filter<i class="fa-solid fa-filter"></i></button><br><br>
+                        <button type="submit" class="filterbtn">Filter<i class="fa-solid fa-filter"></i></button><br><br>
                         <button onclick="window.print()" class="printbtn">PRINT <i class="fa-solid fa-print"></i></button><br><br>
                     </div>
                 </form>
@@ -54,6 +64,7 @@ if(!isset($_SESSION["username"]))
             <div class="table">
             <table class="tablecont">
                 <thead>
+                    <th>CGM CHAPTER</th>
                     <th>DATE</th>
                     <th>FULL NAME</th>
                     <th>AGE</th>
@@ -65,12 +76,12 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    if(isset($_POST['filter']))
+                    if(isset($_GET['chapter']))
                     {
                         
-                        $chapter = $_GET['chapterid'];
-                        $from_date = $_POST['from_date'];
-                        $to_date = $_POST['to_date'];
+                        $chapter = $_GET['chapter'];
+                        $from_date = $_GET['from_date'];
+                        $to_date = $_GET['to_date'];
                         $new_from_date = date("Y/m/d", strtotime($from_date));
                         $new_to_date = date("Y/m/d", strtotime($to_date));
                         
@@ -84,6 +95,7 @@ if(!isset($_SESSION["username"]))
                             {
                                 ?>
                                     <tr class="scroll">
+                                        <td><?= $items['cgmchapter']; ?></td>
                                         <td><?= $items['date']; ?></td>
                                         <td><?= $items['fullname']; ?></td>
                                         <td><?= $items['age']; ?></td>
@@ -106,10 +118,9 @@ if(!isset($_SESSION["username"]))
                     $count = '0';
                     }
                     ?>
-                    
             </table>
         </div>
-            <div class="totalattend">
+        <div class="totalattend">
                 <h1 class="total">Total of Attendees: <?php echo $count; ?></h1>
             </div>
     </section>

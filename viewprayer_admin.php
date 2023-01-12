@@ -15,7 +15,7 @@ if(!isset($_SESSION["username"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-    <link rel="stylesheet" href="css/viewappointment.css">
+    <link rel="stylesheet" href="css/viewprayerreq.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -25,92 +25,77 @@ if(!isset($_SESSION["username"]))
                 <h1 class="CGMh1"><img class="logo" src="logo.png" alt=""><br>CHURCH<br>OF GOD'S <br>MIRACLES<br></h1>
             </div>
             <div class="addash">
-            <br><h1 class="cgmadmin"><?php $chapter = $_GET['chapter'];
-                         $name = "SELECT * FROM chapter WHERE id = $chapter";
-                        $name_run = mysqli_query($con, $name);
-                        $row = mysqli_fetch_array($name_run);
-                        echo $row['cgmchapter'] ?> ADMIN</h1><br><br>
+            <br><h1 class="cgmadmin">CGM ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                            <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
+                        <p class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
+                        <p class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
+                            <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
         </div>
         <button class="logout"><a href="logout.php">Logout</a></button>
                 <hr />
-                <h1 class="appoint">Appointment Reservation</h1>
+                <h1 class="prayer">Prayer Requests &<br> Answered Prayers</h1>
     </section>
-    <section id="Appointment">
+    <section id="prayerReq">
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="searchappoint.php?chapter=<?php echo $chapter ?>">Filter the Date and <br>CGM CHAPTER</a></p>
+                    <p class="backbtn"><a href="searchpray_admin.php">Filter the<br>CGM CHAPTER</a></p>
                 </div>
             </div>
             <div class="print">
                 <div class="pr">
-                    <p class="printbtn"><a href="printappoint.php">Print<br>Appointment List</a></p>
+                    <p class="printbtn"><a href="printpray.php">Print Prayer<br>Request/Reports List</a></p>
                 </div>
             </div>
         </div>
         <div class="table">
             <table class="tablecont">
                 <tr>
-                    <th>DATE</th>
-                    <th>CGM CHAPTER</th>
-                    <th>FULL NAME</th>
+                    <th>CHAPTER</th>
+                    <th>NAME</th>
                     <th>EMAIL</th>
-                    <th>CONTACT NUMBER</th>
-                    <th>SERVICE</th>
-                    <th>TIME</th>
-                    <th>ADDRESS</th>
-                    <th>MESSAGE</th>
+                    <th>PRAY REQUESTS</th>
+                    <th>ANSWERED PRAYERS</th>
                     <th>STATUS</th>
-                    <th>ACTION</th>
+                    <th>ACTIONS</th>
                 </tr>
                 <?php
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    $query = "SELECT * FROM appointment WHERE cgm_id = $chapter order by id desc";
+                    $query = "SELECT * FROM prayer order by id desc";
                     $query_run = mysqli_query($con,$query);
-                    $check_attendance = mysqli_num_rows($query_run) > 0; 
-                    if($check_attendance){
+
+                    $check_pray = mysqli_num_rows($query_run) > 0; 
+                    if($check_pray){
                         while($row = mysqli_fetch_array($query_run)){
-                            
                     ?>
-                    <tr class="scroll">
-                        <td><?php echo $row['date']?></td>
+                    <tr>
+                    <td class="official_id" hidden ><?php echo $row['id']?></td>
                         <td><?php echo $row['cgmchapter']?></td>
-                        <td><?php echo $row['fullname']?></td>
+                        <td><?php echo $row['name']?></td>
                         <td><?php echo $row['email']?></td>
-                        <td><?php echo $row['contact']?></td>
-                        <td><?php echo $row['service']?></td>
-                        <td><?php echo $row['time']?></td>
-                        <td><?php echo $row['address']?></td>
-                        <td><?php echo $row['message']?></td>
+                        <td><?php echo $row['request']?></td>
+                        <td><?php echo $row['report']?></td>
                         <td><?php echo $row['status']?></td>
                         <td><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
-
                         <button class="confirm_btn_ajax confirm-btn" name="confirm" 
                             <?php if($row['status'] == 'Pending')
                             {  } else {?> disabled <?php } ?>>Confirm</button>
 
-                        <button class="reject_btn_ajax reject-btn" name="reject" 
-                            <?php if($row['status'] == 'Pending')
-                            {  } else {?> disabled <?php } ?>>Reject</button>
 
                     <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
+</td>
+                        
                     </tr>
                     <?php
                         }
                         } else{
-                            echo " No Appointment Reservation Found!";
+                            echo " No Prayer Request & Prayer Reports Found!";
                         }
                     
 
@@ -122,7 +107,8 @@ if(!isset($_SESSION["username"]))
 </body>
 </html>
 <script>
-    $('.confirm_btn_ajax').click(function(e){
+
+$('.confirm_btn_ajax').click(function(e){
         e.preventDefault();
 
         var confirmid = $(this).closest("tr").find('.delete_id_value').val();
@@ -139,7 +125,7 @@ if(!isset($_SESSION["username"]))
                     type: "POST",
                     url: "sendemail.php",
                     data: {
-                        "confirm_btn_set": 1,
+                        "confirm_prayer": 1,
                         "confirm_id": confirmid,
                     },
                     success: function(response) {
@@ -159,45 +145,6 @@ if(!isset($_SESSION["username"]))
             });
     })
 
-    $('.reject_btn_ajax').click(function(e){
-        e.preventDefault();
-
-        var rejectid = $(this).closest("tr").find('.delete_id_value').val();
-        console.log(rejectid);
-        swal({
-            title: "Reject Appointment?",
-            text: "Once rejected, notification will be sent",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-            })
-            .then((willReject) => {
-            if (willReject) {
-                $.ajax({
-                    type: "POST",
-                    url: "sendemail.php",
-                    data: {
-                        "reject_btn_set": 1,
-                        "reject_id": rejectid,
-                    },
-                    success: function(response) {
-
-                        swal("Rejected Successfully!", {
-                                icon: "success",
-                            }).then((result) => {
-                                location.reload();
-                                   
-                            });
-                    }
-                });
-
-
-                
-            }
-            });
-    })
-
-
     $('.delete_btn_ajax').click(function(e){
         e.preventDefault();
 
@@ -214,7 +161,7 @@ if(!isset($_SESSION["username"]))
             if (willDelete) {
                 $.ajax({
                     type: "POST",
-                    url: "deleteappoint.php",
+                    url: "deletepray.php",
                     data: {
                         "delete_btn_set": 1,
                         "delete_id": deleteid,
@@ -250,3 +197,5 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
     unset($_SESSION['status']);
 }
 ?>
+
+

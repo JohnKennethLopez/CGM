@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('cgmdbconnection.php');
 
 if(!isset($_SESSION["username"]))
 {
@@ -28,7 +29,7 @@ if(!isset($_SESSION["username"]))
             <div class="print">
                 <div class="inn">
                     <button onclick="window.print()" class="printbtn">PRINT  <i class="fa-solid fa-print"></i></button>
-                    <button class="printbtn"><a href="admin2.php">BACK</a></button>
+                    <button class="printbtn" onclick="history.back()">BACK</button>
                 </div>
             </div>
         </div>
@@ -49,8 +50,8 @@ if(!isset($_SESSION["username"]))
                 <?php
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
-                    
-                    $query = "SELECT * FROM attendance";
+                    $chapter = $_GET['chapter'];
+                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -79,7 +80,7 @@ if(!isset($_SESSION["username"]))
         <?php 
                 include('cgmdbconnection.php');
 
-                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance");
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance WHERE cgm_id = $chapter");
                 $row_count = mysqli_fetch_assoc($count_query);
                 $count = $row_count['total'];
             ?>
