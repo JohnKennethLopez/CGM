@@ -66,9 +66,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 $week .= '<td class="today">' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
         } else {
             $week .= '<td class="today">' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
-    } 
-    
-    else{
+    } else {
         $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$date' AND cgm_id = '$chapter' AND status = 'Confirmed'";
         $query_run = mysqli_query($con, $query);
         $date_count = mysqli_num_rows($query_run);
@@ -76,11 +74,18 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
         $total = $row['total'];
 
-            if($total === '5'){
-                    $week .= '<td>' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
-            } else {
-                $week .= '<td>' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
-        }
+        $curdate = date("Y-m-d");
+            if ($total === '5') {
+              
+                $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
+            }
+             else {
+                
+                $week .= '<td>' . $day . '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';
+            
+            }
+        
+    }
         
     
         $week .= '</td>';
@@ -218,7 +223,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
    <div class="modal-dialog" role="document" style="z-index: 35500;">
       <div class="modal-content">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
             <h4 class="modal-title">Appointment Form</h4>
          </div>
          <div class="modal-body">
@@ -243,53 +248,53 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                                 $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '9:00 AM - 10:00 AM' AND status = 'Confirmed'";
                                 $checktime_run = mysqli_query($con, $checktime);
                                 $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
+
                                 if($row === 1) {?> hidden <?php } ?>
                                 >9:00 AM - 10:00 AM</option>]
 
 
                                 <option value="11:00 AM - 12:00 PM"
                                 <?php
-                                $chapter = $_GET['chapter'];
-                                $getdate = $_GET['date'];
-                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '11:00 AM - 12:00 PM' AND status = 'Confirmed'";
-                                $checktime_run = mysqli_query($con, $checktime);
-                                $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
-                                if($row === 1) {?> hidden <?php } ?>
+                               $chapter = $_GET['chapter'];
+                               $getdate = $_GET['date'];
+                               $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '11:00 AM - 12:00 PM' AND status = 'Confirmed'";
+                               $checktime_run = mysqli_query($con, $checktime);
+                               $row = mysqli_num_rows($checktime_run);
+
+                               if($row === 1) {?> hidden <?php } ?>
                                 >11:00 AM - 12:00 PM</option>
 
 
                                 <option value="1:00 PM - 2:00 PM"
                                 <?php
-                                $chapter = $_GET['chapter'];
-                                $getdate = $_GET['date'];
-                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '1:00 PM - 2:00 PM' AND status = 'Confirmed'";
-                                $checktime_run = mysqli_query($con, $checktime);
-                                $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
+                               $chapter = $_GET['chapter'];
+                               $getdate = $_GET['date'];
+                               $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '1:00 PM - 2:00 PM' AND status = 'Confirmed'";
+                               $checktime_run = mysqli_query($con, $checktime);
+                               $row = mysqli_num_rows($checktime_run);
+
                                 if($row === 1) {?> hidden <?php } ?>
                                 >1:00 PM - 2:00 PM</option>
 
                                 <option value="2:00 PM - 3:00 PM"
                                 <?php
-                                $chapter = $_GET['chapter'];
-                                $getdate = $_GET['date'];
-                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '2:00 PM - 3:00 PM' AND status = 'Confirmed'";
-                                $checktime_run = mysqli_query($con, $checktime);
-                                $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
+                               $chapter = $_GET['chapter'];
+                               $getdate = $_GET['date'];
+                               $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '2:00 PM - 3:00 PM' AND status = 'Confirmed'";
+                               $checktime_run = mysqli_query($con, $checktime);
+                               $row = mysqli_num_rows($checktime_run);
+
                                 if($row === 1) {?> hidden <?php } ?>
                                 >2:00 PM - 3:00 PM</option>
 
                                 <option value="4:00 PM - 5:00 PM"
                                 <?php
-                                $chapter = $_GET['chapter'];
-                                $getdate = $_GET['date'];
-                                $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '4:00 PM - 5:00 PM' AND status = 'Confirmed'";
-                                $checktime_run = mysqli_query($con, $checktime);
-                                $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
+                               $chapter = $_GET['chapter'];
+                               $getdate = $_GET['date'];
+                               $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '4:00 PM - 5:00 PM' AND status = 'Confirmed'";
+                               $checktime_run = mysqli_query($con, $checktime);
+                               $row = mysqli_num_rows($checktime_run);
+
                                 if($row === 1) {?> hidden <?php } ?>
                                 >4:00 PM - 5:00 PM</option>
 
